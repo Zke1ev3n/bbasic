@@ -1,5 +1,5 @@
 #include "anvm.h"
-#include "Screen.h"
+#include "screen.h"
 #include "Input.h"
 #include <string.h>
 #include <ctype.h>

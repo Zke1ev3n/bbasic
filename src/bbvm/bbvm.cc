@@ -58,6 +58,7 @@ void BBVM::Run() {
         input_->PollEvents();
         if (cpu_->Run() == false) break;
         //gpu_->Render();
+        //screen->Draw();
 
         frame_end = SDL_GetTicks();
         must_delay = (1000 / FPSNEED) - (frame_end - frame_start);

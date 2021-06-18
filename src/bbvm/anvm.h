@@ -9,10 +9,10 @@
 #define DEFAULTBIN "test.bin"
 
 #include "cpu.h"
-#include "Screen.h"
+#include "screen.h"
 #include "Input.h"
 #include "gpu.h"
-#include "Storage.h"
+#include "storage.h"
 #include "ErrorLog.h"
 
 // ------ Environment --------

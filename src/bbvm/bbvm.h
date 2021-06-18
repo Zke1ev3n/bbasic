@@ -7,9 +7,9 @@
 
 #include "cpu.h"
 #include "gpu.h"
-#include "Screen.h"
+#include "screen.h"
 #include "Input.h"
-#include "Storage.h"
+#include "storage.h"
 
 //默认的小机分辨率
 const int SCREEN_WIDTH = 240;

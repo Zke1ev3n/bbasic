@@ -10,11 +10,11 @@ add_executable(bbvm
         bbvm.cc
         cpu.cc
         gpu.cc
-        InPort.cpp
+        inport.cc
         input.cc
-        OutPort.cpp
-        Screen.cpp
-        Storage.cpp
+        outport.cc
+        screen.cc
+        storage.c
         String.cpp
         utils.cpp
         )
