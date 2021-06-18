@@ -11,7 +11,7 @@ add_executable(bbvm
         Cpu.cpp
         Gpu.cpp
         InPort.cpp
-        Input.cpp
+        input.cc
         OutPort.cpp
         Screen.cpp
         Storage.cpp

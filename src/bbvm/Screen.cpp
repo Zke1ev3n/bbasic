@@ -11,7 +11,6 @@
 #include "anvm.h"
 #include "utils.h"
 
-#define FPSNEED 24
 #define DEBUG_LAYER 0
 
 Screen::Screen(int width, int height)
@@ -41,8 +40,6 @@ Screen::Screen(int width, int height)
 #endif
 		SetScreenSize(width, height);
 
-        key_states = SDL_GetKeyboardState(NULL);
-
 		this->TextColor = SDL_MapRGB(this->ScreenSurface->format, 0xFF, 0xFF, 0xFF);
 		this->BackgroundColor = SDL_MapRGB(this->ScreenSurface->format, 0x00, 0x00, 0x00);
 	}
@@ -51,7 +48,6 @@ Screen::Screen(int width, int height)
 //TODO 感觉不太对？这里的帧数控制
 void Screen::Refresh(Rect *RefRect)
 {
-	Uint32 StartTime = SDL_GetTicks();
 	static SDL_mutex *mutex;
 	if (mutex == NULL)
 		mutex = SDL_CreateMutex();
@@ -71,10 +67,6 @@ void Screen::Refresh(Rect *RefRect)
 		_rect.h = _r.h * Multi;
 		SDL_BlitScaled(this->ScreenSurface, &_r, this->buffer, &_rect);
 
-		Uint32 EndTime = SDL_GetTicks();
-		Uint32 MustDelay = (1000 / FPSNEED) - (EndTime - StartTime);
-		if (MustDelay > 10)
-			SDL_Delay(MustDelay);
 #if DEBUG_LAYER == 1
 		DrawDebugLayer(this->buffer, 1000.0f / (SDL_GetTicks() - StartTime));
 #endif // DEBUG_LAYER

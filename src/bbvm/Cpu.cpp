@@ -93,10 +93,9 @@ void Cpu::CoreCrash(const char *fmt, ...)
 	vError(fmt, ap);
 	va_end(ap);
 	CoreDump();
-	this->PowerOn = false;
 }
 
-int Cpu::Run(void* _vmem)
+int Cpu::Init(void* _vmem)
 {
 	this->vmem = (unsigned char *)_vmem;
 	this->rp = this->rf = 0;
@@ -222,7 +221,7 @@ unsigned int Cpu::Pop()
 	return GetData(REG_EX, RS);
 }
 
-bool Cpu::RunUnit()
+bool Cpu::Run()
 {
 	unsigned char Cmd = ((*(vmem + this->rp)) & 0xF0) >> 4;
 	unsigned char Addr = 0, AddrSec = 0, Flag = 0, DataType = 0, CalType = 0;

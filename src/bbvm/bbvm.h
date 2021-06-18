@@ -19,6 +19,9 @@ const int SCREEN_HEIGHT = 320;
 //默认的小机最大内存
 #define MEMSIZE (2*1024*1024)
 
+//默认帧数
+#define FPSNEED 24
+
 class BBVM{
 private:
     bool power_ = false;
@@ -26,9 +29,10 @@ private:
     Cpu *cpu_;
     Screen *scn_;
     unsigned char *vmem_;
-    Keyboard *keybd_;
+    Input *input_;
     Gpu *gpu_;
     Storage *storage_;
+
 
 public:
     int Start();

@@ -3,6 +3,7 @@
 #include "Input.h"
 #include <string.h>
 #include <ctype.h>
+#include <SDL2/SDL.h>
 
 #define SDLK_RETURN '\r'
 #define SDLK_ESCAPE '\033'
@@ -11,15 +12,22 @@
 #define Keypress() (SDL2Input::KeyPress())
 #define WaitKey(OnlyKeyboard) (SDL2Input::WaitKey((OnlyKeyboard)))
 
-Keyboard::Keyboard()
+Input::Input()
+{
+    key_states = SDL_GetKeyboardState(NULL);
+}
+
+Input::~Input()
 {
 }
 
-Keyboard::~Keyboard()
-{
+void Input::PollEvents() {
+    SDL_Event event;
+    SDL_PollEvent(&event);
+
 }
 
-int Keyboard::InputNewline(Point CurInput, int ScnWidth, int CharWidth)
+int Input::InputNewline(Point CurInput, int ScnWidth, int CharWidth)
 {
 	int FreeChar = ((ScnWidth - CurInput.x + 1) - CharWidth) / CharWidth + 1;
 	this->InputBuffer->push_back(new Line);
@@ -28,7 +36,7 @@ int Keyboard::InputNewline(Point CurInput, int ScnWidth, int CharWidth)
 	return FreeChar;
 }
 
-unsigned char *Keyboard::GetKeyString()
+unsigned char *Input::GetKeyString()
 {
 	this->InputBuffer = new vector<Line*>();
 	bool Quit = false;
@@ -102,17 +110,17 @@ unsigned char *Keyboard::GetKeyString()
 	return (unsigned char *)strdup(buf.c_str());
 }
 
-unsigned char *Keyboard::GetString()
+unsigned char *Input::GetString()
 {
 	return GetKeyString();
 }
 
-unsigned int Keyboard::GetInteger()
+unsigned int Input::GetInteger()
 {
 	return atoi((char *)GetKeyString());
 }
 
-float Keyboard::GetFloat()
+float Input::GetFloat()
 {
 	return atof((char *)GetKeyString());
 }

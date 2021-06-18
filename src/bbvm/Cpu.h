@@ -13,7 +13,6 @@ private:
 	void CoreDump();
 	bool GetFlag(unsigned char Flag);
 	void PutFlag(unsigned char Flag);
-	bool RunUnit();
 	void CoreCrash(const char *fmt, ...);
 
 	unsigned int GetReg(unsigned int Reg);
@@ -35,7 +34,7 @@ public:
 	Cpu();
 	~Cpu();
 
-	bool PowerOn;
 	unsigned int StateBase;
-	int Run(void *Args);
+	int Init(void *Args);
+    bool Run();
 };

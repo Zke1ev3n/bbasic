@@ -1,6 +1,7 @@
 //
 // Created by liangyulin on 2021/6/18.
 //
+#include <SDL2/SDL.h>
 
 #include "bbvm.h"
 #include "utils.h"
@@ -29,13 +30,14 @@ int BBVM::Start() {
     Utils::Log("OK!\nGPU...");
     gpu_ = new Gpu();
     Utils::Log("OK!\nKeyboard...");
-    keybd_ = new Keyboard();
+    input_ = new Input();
     Utils::Log("OK!\nStorage...");
     storage_ = new Storage();
     Utils::Log("OK!\nBooting...\n");
 //    cpu_->StateBase = binlen;
 //
 //    cpu_->Run(vmem);
+
     power_ = true;
 
     return 0;
@@ -44,13 +46,24 @@ int BBVM::Start() {
 void BBVM::Run() {
 
     //cpu_->StateBase = binlen;
-    cpu_->Run(vmem_);
+    //TODO 内存和CPU分离，参考其他模拟器设计
+    cpu_->Init(vmem_);
+    Uint32 frame_start, frame_end;
+    Uint32 must_delay;
+
     while (power_ == true)
     {
-        if (cpu_->RunUnit() == false)
-        {
-            this->power_ = false;
-        }
+        frame_start = SDL_GetTicks();
+        //接收事件
+        input_->PollEvents();
+        if (cpu_->Run() == false) break;
+        //gpu_->Render();
+
+        frame_end = SDL_GetTicks();
+        must_delay = (1000 / FPSNEED) - (frame_end - frame_start);
+        if (must_delay > 10)
+            SDL_Delay(must_delay);
+
     }
     scn_->NewLine();
 }
@@ -58,7 +71,7 @@ void BBVM::Run() {
 int BBVM::Exit() {
     scn_->Display("bbvm exit");
 
-    delete keybd_;
+    delete input_;
     delete cpu_;
     delete gpu_;
     delete storage_;

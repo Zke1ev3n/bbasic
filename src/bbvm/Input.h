@@ -9,15 +9,22 @@ public:
 	string LineText;
 };
 
-class Keyboard
+class Input
 {
 private:
+    //键盘状态
+    const uint8_t *key_states;
+
 	unsigned char *GetKeyString();
 	vector<Line*> *InputBuffer;
 	int InputNewline(Point Ptr, int ScnWidth, int CharWidth);
+
 public:
-	Keyboard();
-	~Keyboard();
+	Input();
+	~Input();
+
+	void PollEvents();
+
 
 	unsigned int GetInteger();
 	unsigned char *GetString();

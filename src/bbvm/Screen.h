@@ -36,8 +36,6 @@ private:
     bool Transparent;
     Uint32 TextColor, BackgroundColor;
     Point OutputPosition;
-    //TODO SDL_KEY_MAX
-    const uint8_t *key_states;
 
     void __set_font(const char *FontFile, const int Size);
     Rect ShowText(SDL_Surface *Text, int x, int y, int width, int height, SDL_Surface *Dest);
