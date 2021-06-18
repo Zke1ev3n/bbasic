@@ -4,7 +4,7 @@
 #include <SDL2/SDL_error.h>
 #include <SDL2/SDL_surface.h>
 #include "anvm.h"
-#include "Gpu.h"
+#include "gpu.h"
 #include "utils.h"
 
 #define TRANS_COLOR_END(C) ((((C) & 0xFF) << 16) | ((C) & 0xFF00) | (((C) & 0xFF0000) >> 16))

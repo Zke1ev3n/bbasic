@@ -124,3 +124,31 @@ float Input::GetFloat()
 {
 	return atof((char *)GetKeyString());
 }
+
+
+bool Input::KeyPressed(int key) {
+    //TODO 优化？
+    if(SDL_QuitRequested()){
+        exit(0);
+    }
+
+    switch (key) {
+        case 38:
+            key = SDL_SCANCODE_UP;
+            break;
+        case 40:
+            key = SDL_SCANCODE_DOWN;
+            break;
+        case 37:
+            key = SDL_SCANCODE_LEFT;
+            break;
+        case 39:
+            key = SDL_SCANCODE_RIGHT;
+            break;
+        default:
+            key = SDL_GetScancodeFromKey(key);
+            break;
+    }
+
+    return key_states[key];
+}

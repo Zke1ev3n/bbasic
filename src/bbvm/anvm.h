@@ -8,10 +8,10 @@
 #define VERSION "BBVM v0.0.1"
 #define DEFAULTBIN "test.bin"
 
-#include "Cpu.h"
+#include "cpu.h"
 #include "Screen.h"
 #include "Input.h"
-#include "Gpu.h"
+#include "gpu.h"
 #include "Storage.h"
 #include "ErrorLog.h"
 

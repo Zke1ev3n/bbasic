@@ -2,7 +2,7 @@
 #include <sys/time.h>
 #include <unistd.h>
 #include "anvm.h"
-#include "Cpu.h"
+#include "cpu.h"
 
 static union _conv
 {

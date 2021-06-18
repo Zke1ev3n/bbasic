@@ -5,7 +5,7 @@
 #include <sys/time.h>
 
 #include "anvm.h"
-#include "Cpu.h"
+#include "cpu.h"
 #include "CoreConst.h"
 
 static union _conv

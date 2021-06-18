@@ -25,8 +25,10 @@ public:
 
 	void PollEvents();
 
-
 	unsigned int GetInteger();
 	unsigned char *GetString();
 	float GetFloat();
+
+    bool KeyPressed(int key);
+
 };

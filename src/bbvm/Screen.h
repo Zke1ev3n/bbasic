@@ -68,7 +68,6 @@ public:
     int GetFontWidth();
     int GetFontHeigth();
     SDL_Window *GetMainWindow();
-    bool KeyPressed(int key);
 };
 
 class SDL2Function

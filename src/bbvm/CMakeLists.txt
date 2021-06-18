@@ -8,8 +8,8 @@ link_directories(/usr/local/lib)
 add_executable(bbvm
         main.cc
         bbvm.cc
-        Cpu.cpp
-        Gpu.cpp
+        cpu.cc
+        gpu.cc
         InPort.cpp
         input.cc
         OutPort.cpp

@@ -5,8 +5,8 @@
 #ifndef BBASIC_BBVM_H
 #define BBASIC_BBVM_H
 
-#include "Cpu.h"
-#include "Gpu.h"
+#include "cpu.h"
+#include "gpu.h"
 #include "Screen.h"
 #include "Input.h"
 #include "Storage.h"

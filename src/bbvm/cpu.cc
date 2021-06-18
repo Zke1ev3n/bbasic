@@ -1,6 +1,10 @@
 #include "anvm.h"
 #include "CoreConst.h"
 
+
+//默认的小机最大内存
+#define MEMSIZE (2*1024*1024)
+
 static union _conv
 {
 	unsigned int i;
