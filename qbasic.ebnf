@@ -1,0 +1,236 @@
+%ignore /[ \t\f]+/
+program: _nl? _part*
+_part: (_line | toplevel_block) _nl
+_nl: _NEWLINE+
+?toplevel_block: type_block
+_line: [label | lineno] _stmt_group
+_stmt_group: stmt (":" stmt)*
+           |
+label: ID ":"
+lineno: NUMERIC_LITERAL
+?stmt: call_stmt
+     | case_stmt
+     | cls_stmt
+     | color_stmt
+     | const_stmt
+     | declare_stmt
+     | def_seg_stmt
+     | deftype_stmt
+     | dim_stmt
+     | do_stmt
+     | else_stmt
+     | elseif_stmt
+     | end_stmt
+     | end_block_stmt
+     | exit_stmt
+     | for_stmt
+     | function_stmt
+     | gosub_stmt
+     | goto_stmt
+     | if_stmt
+     | input_stmt
+     | let_stmt
+     | loop_stmt
+     | next_stmt
+     | poke_stmt
+     | print_stmt
+     | randomize_stmt
+     | rem_stmt
+     | return_stmt
+     | select_stmt
+     | sub_stmt
+     | view_print_stmt
+     | wend_stmt
+     | while_stmt
+for_stmt: FOR_KW ID "=" expr TO_KW expr step_phrase
+step_phrase: [STEP_KW expr]
+next_stmt: NEXT_KW [ID]
+do_stmt: DO_KW [(WHILE_KW | UNTIL_KW) expr]
+loop_stmt: LOOP_KW [(WHILE_KW | UNTIL_KW) expr]
+sub_stmt: SUB_KW ID parameter_list [STATIC_KW]
+parameter_list: "(" parameter_definition ("," parameter_definition)* ")"
+              |
+parameter_definition: ID lpar_rpar [AS_KW typename]
+lpar_rpar: [LPAR RPAR]
+typename: INTEGER_KW
+        | LONG_KW
+        | SINGLE_KW
+        | DOUBLE_KW
+        | STRING_KW
+        | ID
+function_stmt: FUNCTION_KW ID parameter_list [STATIC_KW]
+// Unlike other blocks like FOR, DO, IF, SUB and FUNCTION, so far we
+// haven't been able to make this into separate TYPE/END TYPE
+// statements so that colon separation would work with it, so we'll let
+// it stay. So far I haven't seen many TYPE blocks written as one-liners
+// so hopefully not a big deal for now.
+//
+// The reason this is more difficult than the other blocks is that it
+// doesn't contain normal statements.
+type_block: TYPE_KW ID _nl (parameter_definition COMMENT_QUOTE? _nl)* END_KW TYPE_KW
+call_stmt: lvalue argument_list
+         | CALL_KW ID ["(" argument_list ")"]
+argument_list: expr ("," expr)*
+             |
+cls_stmt: CLS_KW
+!color_stmt: COLOR_KW
+           | COLOR_KW expr ["," expr]
+           | COLOR_KW "," expr
+const_stmt: CONST_KW ID "=" expr
+declare_stmt: DECLARE_KW (SUB_KW | FUNCTION_KW) ID (decl_param_list | "(" ")" )
+decl_param_list: "(" decl_param_def ("," decl_param_def)* ")"
+               |
+decl_param_def: ID lpar_rpar [AS_KW (typename | ANY_KW)]
+def_seg_stmt: DEF_KW SEG_KW ["=" expr]
+deftype_stmt: (DEFINT_KW | DEFLNG_KW | DEFSNG_KW | DEFDBL_KW | DEFSTR_KW) letter_range ("," letter_range)*
+// we're using ID here instead of single letters because it was
+// conflicting with ID. so we'll check for single letters in the
+// compiler.
+letter_range: ID ["-" ID]
+dim_stmt: DIM_KW shared_opt var_decl ("," var_decl)*
+shared_opt: SHARED_KW?
+var_decl: ID dimensions [AS_KW typename]
+dimensions: "(" dimension ("," dimension)* ")"
+          |
+dimension: expr [TO_KW expr]
+end_stmt: END_CMD
+exit_stmt: EXIT_KW (SUB_KW | FUNCTION_KW | FOR_KW | DO_KW | WHILE_KW)
+gosub_stmt: GOSUB_KW (ID | NUMERIC_LITERAL)
+goto_stmt: GOTO_KW (ID | NUMERIC_LITERAL)
+if_stmt: IF_KW expr THEN_KW [stmt (":" stmt)* else_clause_opt]
+else_clause_opt: [ELSE_KW stmt (":" stmt)*]
+else_stmt: ELSE_KW
+elseif_stmt: ELSEIF_KW expr THEN_KW
+end_block_stmt: END_KW (IF_KW | SUB_KW | FUNCTION_KW | SELECT_KW)
+input_stmt: INPUT_KW SEMICOLON? input_prompt_phrase lvalue ("," lvalue)*
+input_prompt_phrase: [STRING_LITERAL (SEMICOLON | COMMA)]
+let_stmt: LET_KW? lvalue "=" expr
+poke_stmt: POKE_KW expr "," expr
+print_stmt: PRINT_KW (expr _print_sep)* expr
+          | PRINT_KW expr [_print_sep]
+          | PRINT_KW USING_KW expr (";" expr)*  -> print_using_stmt
+_print_sep: SEMICOLON
+          | COMMA
+randomize_stmt: RANDOMIZE_KW expr
+rem_stmt: COMMENT_REM
+return_stmt: RETURN_KW
+select_stmt: SELECT_KW CASE_KW expr
+case_stmt: CASE_KW case_expr ("," case_expr)*
+         | CASE_KW ELSE_KW    -> case_else_stmt
+!case_expr: expr
+          | IS_KW ("<" | ">" | "=" | "<=" | ">=" | "=<" | "=>" | "<>") expr
+view_print_stmt: VIEW_KW PRINT_KW [expr TO_KW expr]
+while_stmt: WHILE_KW expr
+wend_stmt: WEND_KW
+?expr: imp_expr
+?imp_expr: eqv_expr
+         | expr IMP_KW eqv_expr
+?eqv_expr: xor_expr
+         | eqv_expr EQV_KW xor_expr
+?xor_expr: or_expr
+         | xor_expr XOR_KW or_expr
+?or_expr: and_expr
+        | or_expr OR_KW and_expr
+?and_expr: not_expr
+         | and_expr AND_KW not_expr
+?not_expr: compare_expr
+         | NOT_KW compare_expr
+?compare_expr: addsub_expr
+             | compare_expr "<" addsub_expr   -> expr_lt
+             | compare_expr ">" addsub_expr   -> expr_gt
+             | compare_expr "<=" addsub_expr  -> expr_le
+             | compare_expr ">=" addsub_expr  -> expr_ge
+             | compare_expr "=" addsub_expr   -> expr_eq
+             | compare_expr "<>" addsub_expr   -> expr_ne
+?addsub_expr: mod_expr
+            | addsub_expr "+" mod_expr  -> expr_add
+            | addsub_expr "-" mod_expr  -> expr_sub
+?mod_expr: muldiv_expr
+         | mod_expr MOD_KW muldiv_expr
+?muldiv_expr: unary_expr
+            | muldiv_expr "*" unary_expr  -> expr_mul
+            | muldiv_expr "/" unary_expr  -> expr_div
+?unary_expr: value
+           | "-" expr      -> negation
+           | "(" expr ")"
+value: NUMERIC_LITERAL
+     | STRING_LITERAL
+     | lvalue
+lvalue: lv_base lv_suffix
+lv_base: ID [LPAR argument_list RPAR]
+lv_suffix: ("." ID)*
+_NEWLINE: "\n"
+        | "\r\n"
+        | "\r"
+        | ":"
+SEMICOLON: ";"
+COMMA: ","
+LPAR: "("
+RPAR: ")"
+ID: /[a-z_][a-z0-9]*[!#%&$]?/i
+INT_LITERAL: /\d+/
+NUMERIC_LITERAL: /\d+(\.\d*)?[!#%&]?/i | /(\d*)\.\d+[!#%&]?/i | /&h[\da-f]+/i
+STRING_LITERAL: /"[^"]*"/
+AND_KW: "and"i
+ANY_KW: "any"i
+AS_KW: "as"i
+CALL_KW: "call"i
+CASE_KW: "case"i
+CLS_KW: "cls"i
+COLOR_KW: "color"i
+CONST_KW: "const"i
+DECLARE_KW: "declare"i
+DEF_KW: "def"i
+DEFDBL_KW: "defdbl"i
+DEFINT_KW: "defint"i
+DEFLNG_KW: "deflng"i
+DEFSNG_KW: "defsng"i
+DEFSTR_KW: "defstr"i
+DIM_KW: "dim"i
+DO_KW: "do"i
+DOUBLE_KW: "double"i
+ELSE_KW: "else"i
+ELSEIF_KW: "elseif"i
+END_KW: "end"i
+EQV_KW: "eqv"i
+EXIT_KW: "exit"i
+FOR_KW: "for"i
+FUNCTION_KW: "function"i
+GOSUB_KW: "gosub"i
+GOTO_KW: "goto"i
+IF_KW: "if"i
+IMP_KW: "imp"i
+INPUT_KW: "input"i
+INTEGER_KW: "integer"i
+IS_KW: "is"i
+LET_KW: "let"i
+LONG_KW: "long"i
+LOOP_KW: "loop"i
+MOD_KW: "mod"i
+NEXT_KW: "next"i
+NOT_KW: "not"i
+OR_KW: "or"i
+POKE_KW: "poke"i
+PRINT_KW: "print"i
+RANDOMIZE_KW: "randomize"i
+RETURN_KW: "return"i
+SEG_KW: "seg"i
+SELECT_KW: "select"i
+SHARED_KW: "shared"i
+SINGLE_KW: "single"i
+STATIC_KW: "static"i
+STEP_KW: "step"i
+STRING_KW: "string"i
+SUB_KW: "sub"i
+THEN_KW: "then"i
+TO_KW: "to"i
+TYPE_KW: "type"i
+UNTIL_KW: "until"i
+USING_KW: "using"i
+VIEW_KW: "view"i
+WEND_KW: "wend"i
+WHILE_KW: "while"i
+XOR_KW: "xor"i
+COMMENT_QUOTE: /'[^\n]*/
+COMMENT_REM: /rem /i /[^\n]/i*
+%declare END_CMD

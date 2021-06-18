@@ -1,0 +1,76 @@
+//TODO Label
+<Program> ::= <Lines> EOF
+
+<Integer>     ::= [-]?{digit}+
+<Type>        ::= [$%!#]
+<NewLine>     ::= [CR, LF]+ | [CR]+
+<Sub ID>      ::= {Letter}+({Letter}?{digit}?{Symbols}?)*
+<Typed ID>    ::= <SUB ID><Type>
+
+<ID>          ::= <SUB ID> | <Typed ID>
+
+
+
+<Lines>       ::= <Line> <Lines>
+                | <Line>
+
+<Line>        ::= <Integer> <Statements> <NewLine>
+                | <Statements> <NewLine>
+
+<Statements>  ::= <Statement> ':' <Statements>
+                | <Statement>
+
+<Statement>   ::= <IF Statement>
+               | <VariableDeclaration>
+
+<VariableDeclaration> ::= DIM <ID List>
+
+<ID List> ::= <ID> , <ID List>
+            | <ID>
+
+<IF Statement> ::= IF <Expression> THEN <Statement>
+                    | IF <Expression> THEN <NewLine> <Lines> <END IF>
+                    | IF <Expression> THEN <NewLine> <Lines> ELSE <Lines> <END IF>
+
+<END IF>      ::= END IF | ':' END IF
+
+<Expression>  ::= <And Exp> OR <Expression> 
+                | <And Exp> 
+
+<And Exp>     ::= <Not Exp> AND <And Exp> 
+                | <Not Exp> 
+ 
+<Not Exp>     ::= NOT <Compare Exp> 
+                | <Compare Exp> 
+
+<Compare Exp> ::= <Add Exp> '='  <Compare Exp> 
+                | <Add Exp> '<>' <Compare Exp> 
+                | <Add Exp> '><' <Compare Exp> 
+                | <Add Exp> '>'  <Compare Exp> 
+                | <Add Exp> '>=' <Compare Exp> 
+                | <Add Exp> '<'  <Compare Exp> 
+                | <Add Exp> '<=' <Compare Exp> 
+                | <Add Exp> 
+
+<Add Exp>     ::= <Mult Exp> '+' <Add Exp> 
+                | <Mult Exp> '-' <Add Exp> 
+                | <Mult Exp> 
+
+<Mult Exp>    ::= <Negate Exp> '*' <Mult Exp> 
+                | <Negate Exp> '/' <Mult Exp> 
+                | <Negate Exp> 
+
+<Negate Exp>  ::= '-' <Power Exp> 
+                | <Power Exp> 
+
+<Power Exp>   ::= <Power Exp> '^' <Value> 
+                | <Value> 
+
+<Value>       ::= '(' <Expression> ')'
+                | ID 
+                | ID '(' <Expression List> ')'
+                | <Constant> 
+
+<Constant> ::= Integer 
+             | String 
+             | Real 

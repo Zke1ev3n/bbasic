@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="bbasic"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;CMake Files\src\;CMake Files\src\bbvm\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="bbvm">
+				<Option output="/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/src/bbvm/bbvm" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/src/bbvm"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/12.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/src/bbvm/Makefile&quot;  VERBOSE=1 bbvm"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/src/bbvm/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/src/bbvm/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/src/bbvm/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="bbvm/fast">
+				<Option output="/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/src/bbvm/bbvm" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/src/bbvm"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/12.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/src/bbvm/Makefile&quot;  VERBOSE=1 bbvm/fast"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/src/bbvm/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/src/bbvm/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/src/bbvm/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbvm/Cpu.cpp">
+			<Option target="bbvm"/>
+		</Unit>
+		<Unit filename="/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbvm/Cpu.h">
+			<Option target="bbvm"/>
+		</Unit>
+		<Unit filename="/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbvm/Gpu.cpp">
+			<Option target="bbvm"/>
+		</Unit>
+		<Unit filename="/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbvm/Gpu.h">
+			<Option target="bbvm"/>
+		</Unit>
+		<Unit filename="/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbvm/InPort.cpp">
+			<Option target="bbvm"/>
+		</Unit>
+		<Unit filename="/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbvm/Input.cpp">
+			<Option target="bbvm"/>
+		</Unit>
+		<Unit filename="/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbvm/Input.h">
+			<Option target="bbvm"/>
+		</Unit>
+		<Unit filename="/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbvm/OutPort.cpp">
+			<Option target="bbvm"/>
+		</Unit>
+		<Unit filename="/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbvm/Screen.cpp">
+			<Option target="bbvm"/>
+		</Unit>
+		<Unit filename="/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbvm/Screen.h">
+			<Option target="bbvm"/>
+		</Unit>
+		<Unit filename="/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbvm/Storage.cpp">
+			<Option target="bbvm"/>
+		</Unit>
+		<Unit filename="/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbvm/Storage.h">
+			<Option target="bbvm"/>
+		</Unit>
+		<Unit filename="/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbvm/String.cpp">
+			<Option target="bbvm"/>
+		</Unit>
+		<Unit filename="/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbvm/String.h">
+			<Option target="bbvm"/>
+		</Unit>
+		<Unit filename="/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbvm/bbvm.cc">
+			<Option target="bbvm"/>
+		</Unit>
+		<Unit filename="/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbvm/bbvm.h">
+			<Option target="bbvm"/>
+		</Unit>
+		<Unit filename="/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbvm/main.cc">
+			<Option target="bbvm"/>
+		</Unit>
+		<Unit filename="/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbvm/utils.cpp">
+			<Option target="bbvm"/>
+		</Unit>
+		<Unit filename="/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbvm/utils.h">
+			<Option target="bbvm"/>
+		</Unit>
+		<Unit filename="/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbvm/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\src\bbvm\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>
