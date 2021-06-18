@@ -1,7 +1,6 @@
 #include <cstdlib>
 #include <string.h>
-#include "anvm.h"
-#include "String.h"
+#include "string_manager.h"
 
 #define INDEX (-(Handle + 1))
 

@@ -1,6 +1,9 @@
 #include "bbvm.h"
 #include "utils.h"
 
+#define VERSION "BBVM v0.0.1"
+#define DEFAULTBIN "test.bin"
+
 int main(int argc, char **argv)
 {
 

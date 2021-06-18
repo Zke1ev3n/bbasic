@@ -5,8 +5,7 @@
 #include <sys/time.h>
 
 #include "anvm.h"
-#include "cpu.h"
-#include "CoreConst.h"
+#include "bbvm.h"
 
 static union _conv
 {
@@ -14,7 +13,7 @@ static union _conv
 	float f;
 } conv;
 
-unsigned int Cpu::InPort(unsigned int Port)
+unsigned int BBVM::InPort(unsigned int Port)
 {
 	switch(Port)
 	{

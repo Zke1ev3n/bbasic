@@ -4,7 +4,7 @@
 #include <SDL2/SDL_error.h>
 #include <SDL2/SDL_surface.h>
 #include "anvm.h"
-#include "gpu.h"
+#include "render.h"
 #include "utils.h"
 
 #define TRANS_COLOR_END(C) ((((C) & 0xFF) << 16) | ((C) & 0xFF00) | (((C) & 0xFF0000) >> 16))
@@ -15,7 +15,7 @@
 	} }
 #define MIN(A,B) (((A)<=(B))?(A):(B))
 
-Gpu::Gpu()
+Render::Render()
 {
 	for (int i = 0; i < 9; i++)
 	{
@@ -28,19 +28,19 @@ Gpu::Gpu()
 	SetPenColor(-1, 0xFFFFFF);
 }
 
-Gpu::~Gpu()
+Render::~Render()
 {
 	for (int i = 0; i < 10; i++)
 		if (this->DrawRenderer[i] != NULL)
 			SDL2Function::DestroyRenderer(this->DrawRenderer[i]);
 }
 
-SDL_Surface *Gpu::CreateSurface(int width, int height)
+SDL_Surface *Render::CreateSurface(int width, int height)
 {
 	return SDL2Function::CreateRGBSurface(0, width, height);
 }
 
-int Gpu::AllocSurface()
+int Render::AllocSurface()
 {
 	for (int i = 0; i < 9; i++)
 	{
@@ -56,7 +56,7 @@ int Gpu::AllocSurface()
 	return -1;
 }
 
-void Gpu::FreeSurface(int index)
+void Render::FreeSurface(int index)
 {
 	if (index >= 0 && index < 9)
 	{
@@ -65,7 +65,7 @@ void Gpu::FreeSurface(int index)
 	}
 }
 
-int Gpu::RequestResourceHandle()
+int Render::RequestResourceHandle()
 {
 	int i = 0;
 	for(map<int, SDL_Surface*>::iterator it = this->ResPool.begin(); it != this->ResPool.end(); it++, i++)
@@ -79,7 +79,7 @@ int Gpu::RequestResourceHandle()
 	return i;
 }
 
-int Gpu::LoadPicture(const char *FileName, unsigned int index)
+int Render::LoadPicture(const char *FileName, unsigned int index)
 {
     //replace
     const char* utf8_filename = Utils::GB2312toUTF8(FileName);
@@ -111,14 +111,14 @@ int Gpu::LoadPicture(const char *FileName, unsigned int index)
     int depth = 32;
     int pitch = 2*width;
     SDL_Surface *res = SDL_CreateRGBSurfaceWithFormatFrom(data, width, height, depth, pitch, SDL_PIXELFORMAT_RGB565);
-    Log(SDL_GetError());
+    Utils::Log(SDL_GetError());
 	int i = RequestResourceHandle();
 	this->ResPool[i] = res;
 	//Log("载入lib: 图片高宽为：%d, %d\n", height, width);
 	return i;
 }
 
-void Gpu::FreePicture(int Handle)
+void Render::FreePicture(int Handle)
 {
 	SDL_Surface *ptr = this->ResPool[Handle];
 	if (ptr != NULL)
@@ -128,12 +128,12 @@ void Gpu::FreePicture(int Handle)
 	}
 }
 
-SDL_Surface *Gpu::GetSurface(int handle)
+SDL_Surface *Render::GetSurface(int handle)
 {
 	return (handle == -1)? scn->GetScreenSurface() : this->SurfacePool[handle];
 }
 
-void Gpu::DrawPicture(int page, int pic, int dx, int dy, int w, int h, int x, int y, int mode)
+void Render::DrawPicture(int page, int pic, int dx, int dy, int w, int h, int x, int y, int mode)
 {
 	if (this->ResPool.find(pic)->second == NULL || (page < -1 || page > 8))
 	{
@@ -151,7 +151,7 @@ void Gpu::DrawPicture(int page, int pic, int dx, int dy, int w, int h, int x, in
 
 }
 
-void Gpu::CloneSurface(int SrcSurfaceHandle, int DestSurfaceHandle, int x, int y)
+void Render::CloneSurface(int SrcSurfaceHandle, int DestSurfaceHandle, int x, int y)
 {
 	SDL_Surface *SrcSurface = GetSurface(SrcSurfaceHandle), *DestSurface = GetSurface(DestSurfaceHandle);
 //	Rect CloneRect;
@@ -193,7 +193,7 @@ void Gpu::CloneSurface(int SrcSurfaceHandle, int DestSurfaceHandle, int x, int y
 
 }
 
-void Gpu::CloneSurface(int x, int y, int width, int height, int cx, int cy, int DestSurfaceHandle, int SrcSurfaceHandle)
+void Render::CloneSurface(int x, int y, int width, int height, int cx, int cy, int DestSurfaceHandle, int SrcSurfaceHandle)
 {
     SDL_Surface *SrcSurface = GetSurface(SrcSurfaceHandle), *DestSurface = GetSurface(DestSurfaceHandle);
     Rect SrcRect, CloneRect;
@@ -206,7 +206,7 @@ void Gpu::CloneSurface(int x, int y, int width, int height, int cx, int cy, int 
         scn->Refresh();
 }
 
-void Gpu::FillSurface(int SurfaceHandle, int x, int y, int w, int h, int color)
+void Render::FillSurface(int SurfaceHandle, int x, int y, int w, int h, int color)
 {
 	Rect DrawRect;
 	DrawRect.x = x; DrawRect.y = y; DrawRect.w = w; DrawRect.h = h;
@@ -215,18 +215,18 @@ void Gpu::FillSurface(int SurfaceHandle, int x, int y, int w, int h, int color)
 	WILL_REFRESH(x, y, w, h);
 }
 
-Uint32 Gpu::__get_pixel(SDL_Surface *Surface, int x, int y)
+Uint32 Render::__get_pixel(SDL_Surface *Surface, int x, int y)
 {
 	Uint32 pixel = *((Uint32*)SDL2Function::GetSurfacePixels(Surface) + y * SDL2Function::GetSurfaceWidth(Surface) + x);
 	return TRANS_COLOR_END(pixel);
 }
 
-void Gpu::__put_pixel(SDL_Surface *Surface, int x, int y, Uint32 pixel)
+void Render::__put_pixel(SDL_Surface *Surface, int x, int y, Uint32 pixel)
 {
 	*((Uint32*)SDL2Function::GetSurfacePixels(Surface) + y * SDL2Function::GetSurfaceWidth(Surface) + x) = TRANS_COLOR_END(pixel);
 }
 
-void Gpu::WritePixel(int SurfaceHandle, int x, int y, int color)
+void Render::WritePixel(int SurfaceHandle, int x, int y, int color)
 {
 	SDL_Surface *OptSurface = GetSurface(SurfaceHandle);
 	if (SDL2Function::MustLock(OptSurface) && SDL2Function::LockSurface(OptSurface) < 0)
@@ -242,7 +242,7 @@ void Gpu::WritePixel(int SurfaceHandle, int x, int y, int color)
 	WILL_REFRESH(x - 1, y - 1, 3, 3);
 }
 
-unsigned int Gpu::ReadPixel(int SurfaceHandle, int x, int y)
+unsigned int Render::ReadPixel(int SurfaceHandle, int x, int y)
 {
 	unsigned int ColorValue = 0;
 	SDL_Surface *OptSurface = GetSurface(SurfaceHandle);
@@ -259,7 +259,7 @@ unsigned int Gpu::ReadPixel(int SurfaceHandle, int x, int y)
 	return ColorValue;
 }
 
-int Gpu::GetPictureWidth(int SurfaceHandle)
+int Render::GetPictureWidth(int SurfaceHandle)
 {
 	if (this->ResPool.find(SurfaceHandle)->second == NULL)
 		return 0;
@@ -267,7 +267,7 @@ int Gpu::GetPictureWidth(int SurfaceHandle)
 		return SDL2Function::GetSurfaceWidth(this->ResPool[SurfaceHandle]);
 }
 
-int Gpu::GetPictureHeigth(int SurfaceHandle)
+int Render::GetPictureHeigth(int SurfaceHandle)
 {
 	if (this->ResPool.find(SurfaceHandle)->second == NULL)
 		return 0;
@@ -275,7 +275,7 @@ int Gpu::GetPictureHeigth(int SurfaceHandle)
 		return SDL2Function::GetSurfaceHeight(this->ResPool[SurfaceHandle]);
 }
 
-void Gpu::SetPenColor(int SurfaceHandle, int Color)
+void Render::SetPenColor(int SurfaceHandle, int Color)
 {
 	int _handle = SurfaceHandle + 1;
 	if (_handle < 0 || _handle > 10)
@@ -291,7 +291,7 @@ void Gpu::SetPenColor(int SurfaceHandle, int Color)
 	this->DrawRenderer[_handle] = _renderer;
 }
 
-void Gpu::MovePen(int SurfaceHandle, int x, int y)
+void Render::MovePen(int SurfaceHandle, int x, int y)
 {
 	int _handle = SurfaceHandle + 1;
 	if (_handle < 0 || _handle > 10)
@@ -300,7 +300,7 @@ void Gpu::MovePen(int SurfaceHandle, int x, int y)
 	this->StartDrawPoint[_handle].y = y;
 }
 
-void Gpu::DrawLine(int SurfaceHandle, int x, int y)
+void Render::DrawLine(int SurfaceHandle, int x, int y)
 {
 	int _handle = SurfaceHandle + 1;
 	if (_handle < 0 || _handle > 10)
@@ -313,7 +313,7 @@ void Gpu::DrawLine(int SurfaceHandle, int x, int y)
 	WILL_REFRESH(MIN(x, _x), MIN(y, _y), abs(x - 1 - _x), abs(y - _y));
 }
 
-void Gpu::DrawRectangle(int SurfaceHandle, int x1, int y1, int x2, int y2)
+void Render::DrawRectangle(int SurfaceHandle, int x1, int y1, int x2, int y2)
 {
 	int _handle = SurfaceHandle + 1;
 	if (_handle < 0 || _handle > 10)
@@ -325,7 +325,7 @@ void Gpu::DrawRectangle(int SurfaceHandle, int x1, int y1, int x2, int y2)
 	WILL_REFRESH(MIN(x1, x2), MIN(y1, y2), abs(x2 - x1), abs(y2 - y1));
 }
 
-void Gpu::__plot_circle_points(SDL_Surface *Surface, int xc, int yc, int x, int y, Uint32 c)
+void Render::__plot_circle_points(SDL_Surface *Surface, int xc, int yc, int x, int y, Uint32 c)
 {
 	__put_pixel(Surface, xc + x, yc + y, c);
 	__put_pixel(Surface, xc - x, yc + y, c);
@@ -337,7 +337,7 @@ void Gpu::__plot_circle_points(SDL_Surface *Surface, int xc, int yc, int x, int 
 	__put_pixel(Surface, xc - y, yc - x, c);
 }
 
-void Gpu::__bresenham_circle(SDL_Surface *Surface, int xc, int yc, int radius, Uint32 c)
+void Render::__bresenham_circle(SDL_Surface *Surface, int xc, int yc, int radius, Uint32 c)
 {
 	int x = 0, y = radius, p = 3 - 2 * radius;
 	while(x < y)
@@ -355,7 +355,7 @@ void Gpu::__bresenham_circle(SDL_Surface *Surface, int xc, int yc, int radius, U
 		__plot_circle_points(Surface, xc, yc, x, y, c);
 }
 
-void Gpu::DrawCircle(int SurfaceHandle, int x, int y, int r)
+void Render::DrawCircle(int SurfaceHandle, int x, int y, int r)
 {
 	int _handle = SurfaceHandle + 1;
 	if (_handle < 0 || _handle > 10)

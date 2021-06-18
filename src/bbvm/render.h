@@ -2,7 +2,7 @@
 #include <map>
 using namespace std;
 
-class Gpu
+class Render
 {
 private:
 	SDL_Surface *SurfacePool[9];
@@ -17,8 +17,8 @@ private:
 	void __plot_circle_points(SDL_Surface *Surface, int xc, int yc, int x, int y, Uint32 c);
 	void __bresenham_circle(SDL_Surface *Surface, int xc, int yc, int radius, Uint32 c);
 public:
-	Gpu();
-	~Gpu();
+	Render();
+	~Render();
 	int AllocSurface();
 	void FreeSurface(int index);
 	int LoadPicture(const char *FileName, unsigned int index);
