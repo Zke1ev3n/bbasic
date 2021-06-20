@@ -99,7 +99,12 @@ private:
     void OutPort(unsigned int Port, unsigned int Argu);
 
     //虚拟机扩展接口
+    vector<Line*> *input_buffer_;
     unsigned char* GetKeyString();
+    int InputNewline(Point ptr, int screen_width, int char_width);
+    unsigned char* GetString();
+    float GetFloat();
+    unsigned int GetInteger();
 
 
 public:

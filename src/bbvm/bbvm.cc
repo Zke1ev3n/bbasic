@@ -45,9 +45,6 @@ void BBVM::Run() {
         //接收事件
         input_->PollEvents();
         if (Exec() == false) break;
-        //渲染
-        render_->Renderer();
-        //screen->Draw();
 
         frame_end = SDL_GetTicks();
         must_delay = (1000 / FPSNEED) - (frame_end - frame_start);
@@ -63,7 +60,7 @@ int BBVM::Exit() {
     delete this->StrMan;
 
     delete input_;
-    delete render_;
+    delete renderer_;
     delete storage_;
     delete scn_;
 }

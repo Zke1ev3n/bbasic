@@ -39,13 +39,13 @@ void BBVM::OutPort(unsigned int Port, unsigned int Argu)
 		scn_->Display(conv.f);
 		break;
 	case 10:		// input int
-		this->r3 = input_->GetInteger();
+		this->r3 = GetInteger();
 		break;
 	case 11:		// input string
-		this->StrMan->PutString(this->r3, input_->GetString());
+		this->StrMan->PutString(this->r3, GetString());
 		break;
 	case 12:		// input float
-		conv.f = input_->GetFloat();
+		conv.f = GetFloat();
 		this->r3 = conv.i;
 		break;
 	case 13:		// get data as integer
@@ -241,17 +241,26 @@ void BBVM::OutPort(unsigned int Port, unsigned int Argu)
 }
 
 
+int BBVM::InputNewline(Point ptr, int screen_width, int char_width){
+    int free_char = ((screen_width - ptr.x + 1) - char_width) / char_width + 1;
+    this->input_buffer_->push_back(new Line);
+    this->input_buffer_->back()->PrintPosition = ptr;
+    this->input_buffer_->back()->LineText = "";
+    return free_char;
+}
+
+
 //从键盘输入字符串
 unsigned char* BBVM::GetKeyString()
 {
-    //this->InputBuffer = new vector<Line*>();
-    auto input_buffer = new vector<Line*>();
+    this->input_buffer_ = new vector<Line*>();
     bool quit = false;
     int screen_width, screen_height;
     int char_width = scn_->GetFontWidth();
     scn_->GetScreenSize(&screen_width, &screen_height);
     int FreeChar = InputNewline(scn_->GetDispPosition(), screen_width, screen_height);
     while (quit == false) {
+        //TODO
         //unsigned char Key = WaitKey(true);
         unsigned char key = input_->GetKeycode();
         if (key == KEYCODE_ENTER) {
@@ -265,14 +274,14 @@ unsigned char* BBVM::GetKeyString()
 //            this->InputBuffer->clear();
 //            FreeChar = InputNewline(scn->GetDispPosition(), ScnWidth, CharWidth);
         } else if (key == KEYCODE_BACKTRACE) {
-            Line *line_ptr = input_buffer->back();
+            Line *line_ptr = this->input_buffer_->back();
             if (line_ptr->LineText.length() == 0)
             {
-                if (input_buffer->size() >= 2)
+                if (this->input_buffer_->size() >= 2)
                 {
                     delete line_ptr;
-                    input_buffer->pop_back();
-                    line_ptr = input_buffer->back();
+                    this->input_buffer_->pop_back();
+                    line_ptr = this->input_buffer_->back();
                     FreeChar = 0;
                 }
             }
@@ -284,7 +293,7 @@ unsigned char* BBVM::GetKeyString()
                 Point ptmp;
                 ptmp.x = ptmp.y = 0;
                 FreeChar = InputNewline(ptmp, screen_width, char_width);
-                line_ptr = input_buffer->back();
+                line_ptr = this->input_buffer_->back();
                 dx = dy = 0;
             } else {
                 dx = line_ptr->PrintPosition.x + len * char_width;
@@ -303,17 +312,31 @@ unsigned char* BBVM::GetKeyString()
                                         screen_width,
                                         char_width);
             }
-            input_buffer->back()->LineText.append(1, key);
+            this->input_buffer_->back()->LineText.append(1, key);
             FreeChar--;
             scn_->Display((char)key);
         }
     }
     string buf;
-    for (vector<Line*>::iterator it = input_buffer->begin(); it != input_buffer->end(); it++) {
-        buf.append((*it)->LineText);
-        delete *it;
+    for (auto & it : *this->input_buffer_) {
+        buf.append(it->LineText);
+        delete it;
     }
-    delete input_buffer;
+    delete this->input_buffer_;
     scn_->NewLine();
     return (unsigned char *)strdup(buf.c_str());
+}
+
+unsigned char* BBVM::GetString() {
+    return GetKeyString();
+}
+
+unsigned int BBVM::GetInteger()
+{
+    return atoi((char *)GetKeyString());
+}
+
+float BBVM::GetFloat()
+{
+    return atof((char *)GetKeyString());
 }

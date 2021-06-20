@@ -8,9 +8,6 @@
 #define SDLK_ESCAPE '\033'
 #define SDLK_BACKSPACE '\b'
 
-#define Keypress() (SDL2Input::KeyPress())
-#define WaitKey(OnlyKeyboard) (SDL2Input::WaitKey((OnlyKeyboard)))
-
 input::input()
 {
     key_states = SDL_GetKeyboardState(NULL);
@@ -26,35 +23,9 @@ void input::PollEvents() {
 
 }
 
-int input::InputNewline(Point CurInput, int ScnWidth, int CharWidth)
-{
-	int FreeChar = ((ScnWidth - CurInput.x + 1) - CharWidth) / CharWidth + 1;
-	this->InputBuffer->push_back(new Line);
-	this->InputBuffer->back()->PrintPosition = CurInput;
-	this->InputBuffer->back()->LineText = "";
-	return FreeChar;
-}
-
-unsigned char *input::GetString()
-{
-	return GetKeyString();
-}
-
-unsigned int input::GetInteger()
-{
-	return atoi((char *)GetKeyString());
-}
-
-float input::GetFloat()
-{
-	return atof((char *)GetKeyString());
-}
-
+//这里不需要监听到何时按下和抬起
+//https://stackoverflow.com/questions/56435371/using-sdl-pollevent-vs-sdl-pumpevents
 bool input::KeyPressed(int key) {
-    //TODO 优化？
-    if(SDL_QuitRequested()){
-        exit(0);
-    }
 
     switch (key) {
         case 38:
@@ -75,4 +46,44 @@ bool input::KeyPressed(int key) {
     }
 
     return key_states[key];
+}
+
+void input::ShownKeyboard()
+{
+    if (SDL_HasScreenKeyboardSupport() == SDL_TRUE)
+        SDL_StartTextInput();
+}
+
+void input::HiddenKeyboard()
+{
+    if (SDL_HasScreenKeyboardSupport() == SDL_TRUE)
+        SDL_StopTextInput();
+}
+
+//TODO 优化
+int input::WaitKey(bool OnlyKeyboard)
+{
+    SDL_Event event;
+    while(true) {
+        SDL2Input::ShownKeyboard();
+        if (SDL_WaitEvent(&event) != 0) {
+            //if (event.type == SDL_KEYDOWN && SDL_IsTextInputActive() == SDL_FALSE) {
+            if (event.type == SDL_KEYDOWN) {
+                int kc = __escape_charactor(event.key.keysym.mod, event.key.keysym.sym);
+                if (kc != 0)
+                    return kc;
+            } else if (event.type == SDL_MOUSEBUTTONDOWN && OnlyKeyboard == false) {
+                int x, y;
+                SDL_GetMouseState(&x, &y);
+                return ((y * 65536) + x) | 0x80000000;
+            } else if (event.type == SDL_QUIT) {
+                exit(0);
+            }
+//			else if (event.type == SDL_TEXTINPUT) {
+//				int kc = __escape_charactor(event.key.keysym.mod, event.text.text[0]);
+//				if (kc != 0)
+//					return kc;
+//			}
+        }
+    }
 }

@@ -24,21 +24,16 @@ private:
     //键盘状态
     const Uint8* key_states;
 
-	unsigned char *GetKeyString();
-	vector<Line*> *InputBuffer;
-	int InputNewline(Point Ptr, int ScnWidth, int CharWidth);
-
+    void ShownKeyboard();
+    void HiddenKeyboard();
 public:
 	input();
 	~input();
 
 	void PollEvents();
 
-	unsigned int GetInteger();
-	unsigned char *GetString();
-	float GetFloat();
-
     bool KeyPressed(int key);
+    int WaitKey(bool OnlyKeyboard);
     unsigned char GetKeycode();
 
 };
