@@ -6,7 +6,6 @@
 #include "bbvm.h"
 #include "utils.h"
 
-
 int BBVM::Init() {
 
     scn_ = new Screen(SCREEN_WIDTH, SCREEN_HEIGHT);
@@ -19,11 +18,11 @@ int BBVM::Init() {
     }
     memset(vmem_, '\0', MEMSIZE);
 
-    render_ = new Render();
-    input_ = new Input();
+    renderer_ = new Renderer();
+    input_ = new input();
     storage_ = new Storage();
 
-    power_ = true;
+    status_ = true;
 
     return 0;
 }
@@ -40,20 +39,20 @@ void BBVM::Run() {
     Uint32 frame_start, frame_end;
     Uint32 must_delay;
 
-    while (power_ == true)
+    while (status_ == true)
     {
         frame_start = SDL_GetTicks();
         //接收事件
         input_->PollEvents();
-        if (cpu_->Run() == false) break;
-        //gpu_->Render();
+        if (Exec() == false) break;
+        //渲染
+        render_->Renderer();
         //screen->Draw();
 
         frame_end = SDL_GetTicks();
         must_delay = (1000 / FPSNEED) - (frame_end - frame_start);
         if (must_delay > 10)
             SDL_Delay(must_delay);
-
     }
     scn_->NewLine();
 }
@@ -64,7 +63,6 @@ int BBVM::Exit() {
     delete this->StrMan;
 
     delete input_;
-    delete cpu_;
     delete render_;
     delete storage_;
     delete scn_;
@@ -116,7 +114,7 @@ static union _conv
 } conv;
 
 const unsigned int CmdLengthMap[] = {1, 10, 5, 5, 10, 10, 5, 6, 5, 1, 10, 10, 0, 0, 0, 1};
-const char *CmdName[] = {"noop", "ld", "push", "pop", "in", "out", "jmp", "jpc", "call", "ret", "cmp", "cal", "", "", "", "exit"};
+const char *OpCode[] = {"noop", "ld", "push", "pop", "in", "out", "jmp", "jpc", "call", "ret", "cmp", "cal", "", "", "", "exit"};
 const unsigned int TypeSize[] = {4, 2, 1, 4, 4};
 
 BBVM::BBVM()
@@ -303,7 +301,7 @@ unsigned int BBVM::Pop()
     return GetData(REG_EX, RS);
 }
 
-bool BBVM::Run()
+bool BBVM::Exec()
 {
     unsigned char Cmd = ((*(vmem_ + this->rp)) & 0xF0) >> 4;
     unsigned char Addr = 0, AddrSec = 0, Flag = 0, DataType = 0, CalType = 0;

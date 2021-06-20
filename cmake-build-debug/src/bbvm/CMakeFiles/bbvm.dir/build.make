@@ -102,154 +102,139 @@ src/bbvm/CMakeFiles/bbvm.dir/bbvm.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/bbvm.dir/bbvm.cc.s"
 	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/src/bbvm && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbvm/bbvm.cc -o CMakeFiles/bbvm.dir/bbvm.cc.s
 
-src/bbvm/CMakeFiles/bbvm.dir/Cpu.cpp.o: src/bbvm/CMakeFiles/bbvm.dir/flags.make
-src/bbvm/CMakeFiles/bbvm.dir/Cpu.cpp.o: ../src/bbvm/Cpu.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object src/bbvm/CMakeFiles/bbvm.dir/Cpu.cpp.o"
-	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/src/bbvm && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/bbvm.dir/Cpu.cpp.o -c /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbvm/Cpu.cpp
+src/bbvm/CMakeFiles/bbvm.dir/renderer.cc.o: src/bbvm/CMakeFiles/bbvm.dir/flags.make
+src/bbvm/CMakeFiles/bbvm.dir/renderer.cc.o: ../src/bbvm/renderer.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object src/bbvm/CMakeFiles/bbvm.dir/renderer.cc.o"
+	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/src/bbvm && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/bbvm.dir/renderer.cc.o -c /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbvm/renderer.cc
 
-src/bbvm/CMakeFiles/bbvm.dir/Cpu.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/bbvm.dir/Cpu.cpp.i"
-	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/src/bbvm && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbvm/Cpu.cpp > CMakeFiles/bbvm.dir/Cpu.cpp.i
+src/bbvm/CMakeFiles/bbvm.dir/renderer.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/bbvm.dir/renderer.cc.i"
+	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/src/bbvm && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbvm/renderer.cc > CMakeFiles/bbvm.dir/renderer.cc.i
 
-src/bbvm/CMakeFiles/bbvm.dir/Cpu.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/bbvm.dir/Cpu.cpp.s"
-	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/src/bbvm && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbvm/Cpu.cpp -o CMakeFiles/bbvm.dir/Cpu.cpp.s
+src/bbvm/CMakeFiles/bbvm.dir/renderer.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/bbvm.dir/renderer.cc.s"
+	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/src/bbvm && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbvm/renderer.cc -o CMakeFiles/bbvm.dir/renderer.cc.s
 
-src/bbvm/CMakeFiles/bbvm.dir/Gpu.cpp.o: src/bbvm/CMakeFiles/bbvm.dir/flags.make
-src/bbvm/CMakeFiles/bbvm.dir/Gpu.cpp.o: ../src/bbvm/Gpu.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object src/bbvm/CMakeFiles/bbvm.dir/Gpu.cpp.o"
-	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/src/bbvm && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/bbvm.dir/Gpu.cpp.o -c /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbvm/Gpu.cpp
+src/bbvm/CMakeFiles/bbvm.dir/inport.cc.o: src/bbvm/CMakeFiles/bbvm.dir/flags.make
+src/bbvm/CMakeFiles/bbvm.dir/inport.cc.o: ../src/bbvm/inport.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object src/bbvm/CMakeFiles/bbvm.dir/inport.cc.o"
+	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/src/bbvm && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/bbvm.dir/inport.cc.o -c /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbvm/inport.cc
 
-src/bbvm/CMakeFiles/bbvm.dir/Gpu.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/bbvm.dir/Gpu.cpp.i"
-	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/src/bbvm && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbvm/Gpu.cpp > CMakeFiles/bbvm.dir/Gpu.cpp.i
+src/bbvm/CMakeFiles/bbvm.dir/inport.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/bbvm.dir/inport.cc.i"
+	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/src/bbvm && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbvm/inport.cc > CMakeFiles/bbvm.dir/inport.cc.i
 
-src/bbvm/CMakeFiles/bbvm.dir/Gpu.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/bbvm.dir/Gpu.cpp.s"
-	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/src/bbvm && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbvm/Gpu.cpp -o CMakeFiles/bbvm.dir/Gpu.cpp.s
+src/bbvm/CMakeFiles/bbvm.dir/inport.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/bbvm.dir/inport.cc.s"
+	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/src/bbvm && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbvm/inport.cc -o CMakeFiles/bbvm.dir/inport.cc.s
 
-src/bbvm/CMakeFiles/bbvm.dir/InPort.cpp.o: src/bbvm/CMakeFiles/bbvm.dir/flags.make
-src/bbvm/CMakeFiles/bbvm.dir/InPort.cpp.o: ../src/bbvm/InPort.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object src/bbvm/CMakeFiles/bbvm.dir/InPort.cpp.o"
-	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/src/bbvm && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/bbvm.dir/InPort.cpp.o -c /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbvm/InPort.cpp
+src/bbvm/CMakeFiles/bbvm.dir/input.cc.o: src/bbvm/CMakeFiles/bbvm.dir/flags.make
+src/bbvm/CMakeFiles/bbvm.dir/input.cc.o: ../src/bbvm/input.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object src/bbvm/CMakeFiles/bbvm.dir/input.cc.o"
+	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/src/bbvm && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/bbvm.dir/input.cc.o -c /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbvm/input.cc
 
-src/bbvm/CMakeFiles/bbvm.dir/InPort.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/bbvm.dir/InPort.cpp.i"
-	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/src/bbvm && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbvm/InPort.cpp > CMakeFiles/bbvm.dir/InPort.cpp.i
+src/bbvm/CMakeFiles/bbvm.dir/input.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/bbvm.dir/input.cc.i"
+	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/src/bbvm && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbvm/input.cc > CMakeFiles/bbvm.dir/input.cc.i
 
-src/bbvm/CMakeFiles/bbvm.dir/InPort.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/bbvm.dir/InPort.cpp.s"
-	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/src/bbvm && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbvm/InPort.cpp -o CMakeFiles/bbvm.dir/InPort.cpp.s
+src/bbvm/CMakeFiles/bbvm.dir/input.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/bbvm.dir/input.cc.s"
+	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/src/bbvm && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbvm/input.cc -o CMakeFiles/bbvm.dir/input.cc.s
 
-src/bbvm/CMakeFiles/bbvm.dir/Input.cpp.o: src/bbvm/CMakeFiles/bbvm.dir/flags.make
-src/bbvm/CMakeFiles/bbvm.dir/Input.cpp.o: ../src/bbvm/Input.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object src/bbvm/CMakeFiles/bbvm.dir/Input.cpp.o"
-	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/src/bbvm && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/bbvm.dir/Input.cpp.o -c /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbvm/Input.cpp
+src/bbvm/CMakeFiles/bbvm.dir/outport.cc.o: src/bbvm/CMakeFiles/bbvm.dir/flags.make
+src/bbvm/CMakeFiles/bbvm.dir/outport.cc.o: ../src/bbvm/outport.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object src/bbvm/CMakeFiles/bbvm.dir/outport.cc.o"
+	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/src/bbvm && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/bbvm.dir/outport.cc.o -c /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbvm/outport.cc
 
-src/bbvm/CMakeFiles/bbvm.dir/Input.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/bbvm.dir/Input.cpp.i"
-	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/src/bbvm && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbvm/Input.cpp > CMakeFiles/bbvm.dir/Input.cpp.i
+src/bbvm/CMakeFiles/bbvm.dir/outport.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/bbvm.dir/outport.cc.i"
+	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/src/bbvm && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbvm/outport.cc > CMakeFiles/bbvm.dir/outport.cc.i
 
-src/bbvm/CMakeFiles/bbvm.dir/Input.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/bbvm.dir/Input.cpp.s"
-	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/src/bbvm && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbvm/Input.cpp -o CMakeFiles/bbvm.dir/Input.cpp.s
+src/bbvm/CMakeFiles/bbvm.dir/outport.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/bbvm.dir/outport.cc.s"
+	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/src/bbvm && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbvm/outport.cc -o CMakeFiles/bbvm.dir/outport.cc.s
 
-src/bbvm/CMakeFiles/bbvm.dir/OutPort.cpp.o: src/bbvm/CMakeFiles/bbvm.dir/flags.make
-src/bbvm/CMakeFiles/bbvm.dir/OutPort.cpp.o: ../src/bbvm/OutPort.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object src/bbvm/CMakeFiles/bbvm.dir/OutPort.cpp.o"
-	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/src/bbvm && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/bbvm.dir/OutPort.cpp.o -c /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbvm/OutPort.cpp
+src/bbvm/CMakeFiles/bbvm.dir/screen.cc.o: src/bbvm/CMakeFiles/bbvm.dir/flags.make
+src/bbvm/CMakeFiles/bbvm.dir/screen.cc.o: ../src/bbvm/screen.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object src/bbvm/CMakeFiles/bbvm.dir/screen.cc.o"
+	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/src/bbvm && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/bbvm.dir/screen.cc.o -c /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbvm/screen.cc
 
-src/bbvm/CMakeFiles/bbvm.dir/OutPort.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/bbvm.dir/OutPort.cpp.i"
-	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/src/bbvm && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbvm/OutPort.cpp > CMakeFiles/bbvm.dir/OutPort.cpp.i
+src/bbvm/CMakeFiles/bbvm.dir/screen.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/bbvm.dir/screen.cc.i"
+	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/src/bbvm && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbvm/screen.cc > CMakeFiles/bbvm.dir/screen.cc.i
 
-src/bbvm/CMakeFiles/bbvm.dir/OutPort.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/bbvm.dir/OutPort.cpp.s"
-	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/src/bbvm && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbvm/OutPort.cpp -o CMakeFiles/bbvm.dir/OutPort.cpp.s
+src/bbvm/CMakeFiles/bbvm.dir/screen.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/bbvm.dir/screen.cc.s"
+	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/src/bbvm && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbvm/screen.cc -o CMakeFiles/bbvm.dir/screen.cc.s
 
-src/bbvm/CMakeFiles/bbvm.dir/Screen.cpp.o: src/bbvm/CMakeFiles/bbvm.dir/flags.make
-src/bbvm/CMakeFiles/bbvm.dir/Screen.cpp.o: ../src/bbvm/Screen.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object src/bbvm/CMakeFiles/bbvm.dir/Screen.cpp.o"
-	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/src/bbvm && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/bbvm.dir/Screen.cpp.o -c /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbvm/Screen.cpp
+src/bbvm/CMakeFiles/bbvm.dir/storage.c.o: src/bbvm/CMakeFiles/bbvm.dir/flags.make
+src/bbvm/CMakeFiles/bbvm.dir/storage.c.o: ../src/bbvm/storage.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object src/bbvm/CMakeFiles/bbvm.dir/storage.c.o"
+	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/src/bbvm && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/bbvm.dir/storage.c.o -c /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbvm/storage.c
 
-src/bbvm/CMakeFiles/bbvm.dir/Screen.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/bbvm.dir/Screen.cpp.i"
-	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/src/bbvm && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbvm/Screen.cpp > CMakeFiles/bbvm.dir/Screen.cpp.i
+src/bbvm/CMakeFiles/bbvm.dir/storage.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/bbvm.dir/storage.c.i"
+	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/src/bbvm && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbvm/storage.c > CMakeFiles/bbvm.dir/storage.c.i
 
-src/bbvm/CMakeFiles/bbvm.dir/Screen.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/bbvm.dir/Screen.cpp.s"
-	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/src/bbvm && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbvm/Screen.cpp -o CMakeFiles/bbvm.dir/Screen.cpp.s
+src/bbvm/CMakeFiles/bbvm.dir/storage.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/bbvm.dir/storage.c.s"
+	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/src/bbvm && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbvm/storage.c -o CMakeFiles/bbvm.dir/storage.c.s
 
-src/bbvm/CMakeFiles/bbvm.dir/Storage.cpp.o: src/bbvm/CMakeFiles/bbvm.dir/flags.make
-src/bbvm/CMakeFiles/bbvm.dir/Storage.cpp.o: ../src/bbvm/Storage.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object src/bbvm/CMakeFiles/bbvm.dir/Storage.cpp.o"
-	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/src/bbvm && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/bbvm.dir/Storage.cpp.o -c /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbvm/Storage.cpp
+src/bbvm/CMakeFiles/bbvm.dir/string_manager.cc.o: src/bbvm/CMakeFiles/bbvm.dir/flags.make
+src/bbvm/CMakeFiles/bbvm.dir/string_manager.cc.o: ../src/bbvm/string_manager.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object src/bbvm/CMakeFiles/bbvm.dir/string_manager.cc.o"
+	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/src/bbvm && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/bbvm.dir/string_manager.cc.o -c /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbvm/string_manager.cc
 
-src/bbvm/CMakeFiles/bbvm.dir/Storage.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/bbvm.dir/Storage.cpp.i"
-	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/src/bbvm && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbvm/Storage.cpp > CMakeFiles/bbvm.dir/Storage.cpp.i
+src/bbvm/CMakeFiles/bbvm.dir/string_manager.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/bbvm.dir/string_manager.cc.i"
+	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/src/bbvm && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbvm/string_manager.cc > CMakeFiles/bbvm.dir/string_manager.cc.i
 
-src/bbvm/CMakeFiles/bbvm.dir/Storage.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/bbvm.dir/Storage.cpp.s"
-	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/src/bbvm && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbvm/Storage.cpp -o CMakeFiles/bbvm.dir/Storage.cpp.s
+src/bbvm/CMakeFiles/bbvm.dir/string_manager.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/bbvm.dir/string_manager.cc.s"
+	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/src/bbvm && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbvm/string_manager.cc -o CMakeFiles/bbvm.dir/string_manager.cc.s
 
-src/bbvm/CMakeFiles/bbvm.dir/String.cpp.o: src/bbvm/CMakeFiles/bbvm.dir/flags.make
-src/bbvm/CMakeFiles/bbvm.dir/String.cpp.o: ../src/bbvm/String.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object src/bbvm/CMakeFiles/bbvm.dir/String.cpp.o"
-	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/src/bbvm && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/bbvm.dir/String.cpp.o -c /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbvm/String.cpp
+src/bbvm/CMakeFiles/bbvm.dir/utils.cc.o: src/bbvm/CMakeFiles/bbvm.dir/flags.make
+src/bbvm/CMakeFiles/bbvm.dir/utils.cc.o: ../src/bbvm/utils.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object src/bbvm/CMakeFiles/bbvm.dir/utils.cc.o"
+	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/src/bbvm && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/bbvm.dir/utils.cc.o -c /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbvm/utils.cc
 
-src/bbvm/CMakeFiles/bbvm.dir/String.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/bbvm.dir/String.cpp.i"
-	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/src/bbvm && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbvm/String.cpp > CMakeFiles/bbvm.dir/String.cpp.i
+src/bbvm/CMakeFiles/bbvm.dir/utils.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/bbvm.dir/utils.cc.i"
+	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/src/bbvm && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbvm/utils.cc > CMakeFiles/bbvm.dir/utils.cc.i
 
-src/bbvm/CMakeFiles/bbvm.dir/String.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/bbvm.dir/String.cpp.s"
-	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/src/bbvm && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbvm/String.cpp -o CMakeFiles/bbvm.dir/String.cpp.s
-
-src/bbvm/CMakeFiles/bbvm.dir/utils.cpp.o: src/bbvm/CMakeFiles/bbvm.dir/flags.make
-src/bbvm/CMakeFiles/bbvm.dir/utils.cpp.o: ../src/bbvm/utils.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object src/bbvm/CMakeFiles/bbvm.dir/utils.cpp.o"
-	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/src/bbvm && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/bbvm.dir/utils.cpp.o -c /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbvm/utils.cpp
-
-src/bbvm/CMakeFiles/bbvm.dir/utils.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/bbvm.dir/utils.cpp.i"
-	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/src/bbvm && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbvm/utils.cpp > CMakeFiles/bbvm.dir/utils.cpp.i
-
-src/bbvm/CMakeFiles/bbvm.dir/utils.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/bbvm.dir/utils.cpp.s"
-	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/src/bbvm && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbvm/utils.cpp -o CMakeFiles/bbvm.dir/utils.cpp.s
+src/bbvm/CMakeFiles/bbvm.dir/utils.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/bbvm.dir/utils.cc.s"
+	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/src/bbvm && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbvm/utils.cc -o CMakeFiles/bbvm.dir/utils.cc.s
 
 # Object files for target bbvm
 bbvm_OBJECTS = \
 "CMakeFiles/bbvm.dir/main.cc.o" \
 "CMakeFiles/bbvm.dir/bbvm.cc.o" \
-"CMakeFiles/bbvm.dir/Cpu.cpp.o" \
-"CMakeFiles/bbvm.dir/Gpu.cpp.o" \
-"CMakeFiles/bbvm.dir/InPort.cpp.o" \
-"CMakeFiles/bbvm.dir/Input.cpp.o" \
-"CMakeFiles/bbvm.dir/OutPort.cpp.o" \
-"CMakeFiles/bbvm.dir/Screen.cpp.o" \
-"CMakeFiles/bbvm.dir/Storage.cpp.o" \
-"CMakeFiles/bbvm.dir/String.cpp.o" \
-"CMakeFiles/bbvm.dir/utils.cpp.o"
+"CMakeFiles/bbvm.dir/renderer.cc.o" \
+"CMakeFiles/bbvm.dir/inport.cc.o" \
+"CMakeFiles/bbvm.dir/input.cc.o" \
+"CMakeFiles/bbvm.dir/outport.cc.o" \
+"CMakeFiles/bbvm.dir/screen.cc.o" \
+"CMakeFiles/bbvm.dir/storage.c.o" \
+"CMakeFiles/bbvm.dir/string_manager.cc.o" \
+"CMakeFiles/bbvm.dir/utils.cc.o"
 
 # External object files for target bbvm
 bbvm_EXTERNAL_OBJECTS =
 
 src/bbvm/bbvm: src/bbvm/CMakeFiles/bbvm.dir/main.cc.o
 src/bbvm/bbvm: src/bbvm/CMakeFiles/bbvm.dir/bbvm.cc.o
-src/bbvm/bbvm: src/bbvm/CMakeFiles/bbvm.dir/Cpu.cpp.o
-src/bbvm/bbvm: src/bbvm/CMakeFiles/bbvm.dir/Gpu.cpp.o
-src/bbvm/bbvm: src/bbvm/CMakeFiles/bbvm.dir/InPort.cpp.o
-src/bbvm/bbvm: src/bbvm/CMakeFiles/bbvm.dir/Input.cpp.o
-src/bbvm/bbvm: src/bbvm/CMakeFiles/bbvm.dir/OutPort.cpp.o
-src/bbvm/bbvm: src/bbvm/CMakeFiles/bbvm.dir/Screen.cpp.o
-src/bbvm/bbvm: src/bbvm/CMakeFiles/bbvm.dir/Storage.cpp.o
-src/bbvm/bbvm: src/bbvm/CMakeFiles/bbvm.dir/String.cpp.o
-src/bbvm/bbvm: src/bbvm/CMakeFiles/bbvm.dir/utils.cpp.o
+src/bbvm/bbvm: src/bbvm/CMakeFiles/bbvm.dir/renderer.cc.o
+src/bbvm/bbvm: src/bbvm/CMakeFiles/bbvm.dir/inport.cc.o
+src/bbvm/bbvm: src/bbvm/CMakeFiles/bbvm.dir/input.cc.o
+src/bbvm/bbvm: src/bbvm/CMakeFiles/bbvm.dir/outport.cc.o
+src/bbvm/bbvm: src/bbvm/CMakeFiles/bbvm.dir/screen.cc.o
+src/bbvm/bbvm: src/bbvm/CMakeFiles/bbvm.dir/storage.c.o
+src/bbvm/bbvm: src/bbvm/CMakeFiles/bbvm.dir/string_manager.cc.o
+src/bbvm/bbvm: src/bbvm/CMakeFiles/bbvm.dir/utils.cc.o
 src/bbvm/bbvm: src/bbvm/CMakeFiles/bbvm.dir/build.make
 src/bbvm/bbvm: src/bbvm/CMakeFiles/bbvm.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Linking CXX executable bbvm"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Linking CXX executable bbvm"
 	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/src/bbvm && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/bbvm.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

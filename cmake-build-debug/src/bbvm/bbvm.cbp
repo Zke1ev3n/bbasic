@@ -60,58 +60,52 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbvm/Cpu.cpp">
-			<Option target="bbvm"/>
-		</Unit>
-		<Unit filename="/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbvm/Cpu.h">
-			<Option target="bbvm"/>
-		</Unit>
-		<Unit filename="/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbvm/Gpu.cpp">
-			<Option target="bbvm"/>
-		</Unit>
-		<Unit filename="/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbvm/Gpu.h">
-			<Option target="bbvm"/>
-		</Unit>
-		<Unit filename="/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbvm/InPort.cpp">
-			<Option target="bbvm"/>
-		</Unit>
-		<Unit filename="/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbvm/Input.cpp">
-			<Option target="bbvm"/>
-		</Unit>
-		<Unit filename="/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbvm/Input.h">
-			<Option target="bbvm"/>
-		</Unit>
-		<Unit filename="/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbvm/OutPort.cpp">
-			<Option target="bbvm"/>
-		</Unit>
-		<Unit filename="/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbvm/Screen.cpp">
-			<Option target="bbvm"/>
-		</Unit>
-		<Unit filename="/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbvm/Screen.h">
-			<Option target="bbvm"/>
-		</Unit>
-		<Unit filename="/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbvm/Storage.cpp">
-			<Option target="bbvm"/>
-		</Unit>
-		<Unit filename="/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbvm/Storage.h">
-			<Option target="bbvm"/>
-		</Unit>
-		<Unit filename="/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbvm/String.cpp">
-			<Option target="bbvm"/>
-		</Unit>
-		<Unit filename="/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbvm/String.h">
-			<Option target="bbvm"/>
-		</Unit>
 		<Unit filename="/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbvm/bbvm.cc">
 			<Option target="bbvm"/>
 		</Unit>
 		<Unit filename="/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbvm/bbvm.h">
 			<Option target="bbvm"/>
 		</Unit>
+		<Unit filename="/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbvm/inport.cc">
+			<Option target="bbvm"/>
+		</Unit>
+		<Unit filename="/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbvm/input.cc">
+			<Option target="bbvm"/>
+		</Unit>
+		<Unit filename="/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbvm/input.h">
+			<Option target="bbvm"/>
+		</Unit>
 		<Unit filename="/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbvm/main.cc">
 			<Option target="bbvm"/>
 		</Unit>
-		<Unit filename="/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbvm/utils.cpp">
+		<Unit filename="/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbvm/outport.cc">
+			<Option target="bbvm"/>
+		</Unit>
+		<Unit filename="/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbvm/renderer.cc">
+			<Option target="bbvm"/>
+		</Unit>
+		<Unit filename="/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbvm/renderer.h">
+			<Option target="bbvm"/>
+		</Unit>
+		<Unit filename="/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbvm/screen.cc">
+			<Option target="bbvm"/>
+		</Unit>
+		<Unit filename="/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbvm/screen.h">
+			<Option target="bbvm"/>
+		</Unit>
+		<Unit filename="/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbvm/storage.c">
+			<Option target="bbvm"/>
+		</Unit>
+		<Unit filename="/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbvm/storage.h">
+			<Option target="bbvm"/>
+		</Unit>
+		<Unit filename="/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbvm/string_manager.cc">
+			<Option target="bbvm"/>
+		</Unit>
+		<Unit filename="/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbvm/string_manager.h">
+			<Option target="bbvm"/>
+		</Unit>
+		<Unit filename="/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbvm/utils.cc">
 			<Option target="bbvm"/>
 		</Unit>
 		<Unit filename="/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbvm/utils.h">

@@ -1,20 +1,19 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/bbvm.dir/Cpu.cpp.o"
-  "CMakeFiles/bbvm.dir/Gpu.cpp.o"
-  "CMakeFiles/bbvm.dir/InPort.cpp.o"
-  "CMakeFiles/bbvm.dir/Input.cpp.o"
-  "CMakeFiles/bbvm.dir/OutPort.cpp.o"
-  "CMakeFiles/bbvm.dir/Screen.cpp.o"
-  "CMakeFiles/bbvm.dir/Storage.cpp.o"
-  "CMakeFiles/bbvm.dir/String.cpp.o"
   "CMakeFiles/bbvm.dir/bbvm.cc.o"
+  "CMakeFiles/bbvm.dir/inport.cc.o"
+  "CMakeFiles/bbvm.dir/input.cc.o"
   "CMakeFiles/bbvm.dir/main.cc.o"
-  "CMakeFiles/bbvm.dir/utils.cpp.o"
+  "CMakeFiles/bbvm.dir/outport.cc.o"
+  "CMakeFiles/bbvm.dir/renderer.cc.o"
+  "CMakeFiles/bbvm.dir/screen.cc.o"
+  "CMakeFiles/bbvm.dir/storage.c.o"
+  "CMakeFiles/bbvm.dir/string_manager.cc.o"
+  "CMakeFiles/bbvm.dir/utils.cc.o"
   "bbvm"
   "bbvm.pdb"
 )
 
 # Per-language clean rules from dependency scanning.
-foreach(lang CXX)
+foreach(lang C CXX)
   include(CMakeFiles/bbvm.dir/cmake_clean_${lang}.cmake OPTIONAL)
 endforeach()

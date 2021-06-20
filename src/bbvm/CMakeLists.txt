@@ -8,14 +8,14 @@ link_directories(/usr/local/lib)
 add_executable(bbvm
         main.cc
         bbvm.cc
-        render.cc
+        renderer.cc
         inport.cc
         input.cc
         outport.cc
         screen.cc
         storage.c
         string_manager.cc
-        utils.cpp
+        utils.cc
         )
 
 target_link_libraries(

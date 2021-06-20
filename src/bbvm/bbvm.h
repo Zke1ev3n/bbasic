@@ -5,9 +5,9 @@
 #ifndef BBASIC_BBVM_H
 #define BBASIC_BBVM_H
 
-#include "render.h"
+#include "renderer.h"
 #include "screen.h"
-#include "Input.h"
+#include "input.h"
 #include "storage.h"
 #include "string_manager.h"
 
@@ -69,14 +69,15 @@ private:
     //???
     unsigned int StateBase;
 private:
-    bool power_ = false;
+    bool status_ = false;
     int bin_version_;
     Screen *scn_;
-    Input *input_;
-    Render *render_;
+    input *input_;
+    Renderer *renderer_;
     Storage *storage_;
 
-    //VM
+    //虚拟机指令
+    bool Exec();
     void CoreDump();
     bool GetFlag(unsigned char Flag);
     void PutFlag(unsigned char Flag);
@@ -97,10 +98,14 @@ private:
     unsigned int InPort(unsigned int Port);
     void OutPort(unsigned int Port, unsigned int Argu);
 
+    //虚拟机扩展接口
+    unsigned char* GetKeyString();
+
 
 public:
-    int Start();
+    int Init();
     void Run();
+
     int Exit();
     int LoadBinFile(const char* filepath);
     BBVM();

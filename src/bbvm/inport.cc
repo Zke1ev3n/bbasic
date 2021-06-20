@@ -4,7 +4,6 @@
 #include <stdlib.h>
 #include <sys/time.h>
 
-#include "anvm.h"
 #include "bbvm.h"
 
 static union _conv

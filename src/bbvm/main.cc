@@ -13,8 +13,8 @@ int main(int argc, char **argv)
     }
 
     BBVM* bbvm = new BBVM();
-    if(bbvm->Start() == -1){
-        Utils::Error("bbvm start failed.\n");
+    if(bbvm->Init() == -1){
+        Utils::Error("bbvm init failed.\n");
         return -1;
     }
     if(bbvm->LoadBinFile(argv[1]) == -1){

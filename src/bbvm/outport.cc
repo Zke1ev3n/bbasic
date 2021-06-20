@@ -67,40 +67,40 @@ void BBVM::OutPort(unsigned int Port, unsigned int Argu)
 		scn_->SetScreenSize(this->r2, this->r3);
 		break;
 	case 17:		// allocate a surface
-		this->r3 = render_->AllocSurface();
+		this->r3 = renderer_->AllocSurface();
 		break;
 	case 18:		// free a surface
-		render_->FreeSurface(this->r3);
+		renderer_->FreeSurface(this->r3);
 		break;
 	case 19:		// load picture
-		this->r3 = (unsigned int)render_->LoadPicture((char *)this->StrMan->GetString(this->r3), this->r2);
+		this->r3 = (unsigned int)renderer_->LoadPicture((char *)this->StrMan->GetString(this->r3), this->r2);
 		break;
 	case 20:		// copy rectange
-		render_->DrawPicture(
+		renderer_->DrawPicture(
 						GetMem(this->r3 + 32), GetMem(this->r3 + 28), GetMem(this->r3 + 24),
 						GetMem(this->r3 + 20), GetMem(this->r3 + 16), GetMem(this->r3 + 12),
 						GetMem(this->r3 + 8), GetMem(this->r3 + 4), GetMem(this->r3));
 		break;
 	case 21:		// show surface
-		render_->CloneSurface(this->r3, -1);
+		renderer_->CloneSurface(this->r3, -1);
 		break;
 	case 22:		// clone surface
-		render_->CloneSurface(this->r3, this->r2);
+		renderer_->CloneSurface(this->r3, this->r2);
 		break;
 	case 23:		// fill surface
-		render_->FillSurface(
+		renderer_->FillSurface(
 						GetMem(this->r3 + 20), GetMem(this->r3 + 16), GetMem(this->r3 + 12),
 						GetMem(this->r3 + 8), GetMem(this->r3 + 4), GetMem(this->r3));
 		break;
 	case 24:		// write pixel
-		render_->WritePixel(GetMem(this->r3 + 12), GetMem(this->r3 + 8),
+		renderer_->WritePixel(GetMem(this->r3 + 12), GetMem(this->r3 + 8),
 						GetMem(this->r3 + 4), GetMem(this->r3));
 		break;
 	case 25:		// read pixel
-		this->r3 = render_->ReadPixel(GetMem(this->r3 + 8), GetMem(this->r3 + 4), GetMem(this->r3));
+		this->r3 = renderer_->ReadPixel(GetMem(this->r3 + 8), GetMem(this->r3 + 4), GetMem(this->r3));
 		break;
 	case 26:		// free picture
-		render_->FreePicture(this->r3);
+		renderer_->FreePicture(this->r3);
 		break;
 	case 27:		// delay
 		scn_->Delay(this->r3);
@@ -134,16 +134,16 @@ void BBVM::OutPort(unsigned int Port, unsigned int Argu)
 		this->r3 = SDL2Input::WaitKey();
 		break;
 	case 40:		// get picture width
-		this->r3 = render_->GetPictureWidth(this->r3);
+		this->r3 = renderer_->GetPictureWidth(this->r3);
 		break;
 	case 41:		// get picture heigth
-		this->r3 = render_->GetPictureHeigth(this->r3);
+		this->r3 = renderer_->GetPictureHeigth(this->r3);
 		break;
 	case 42:		// set locate as pixel
 		scn_->SetDispPosition(this->r2, this->r3);
 		break;
 	case 43:		// clone a part of surface
-		render_->CloneSurface(
+		renderer_->CloneSurface(
 							GetMem(this->r3), GetMem(this->r3 + 4),
 							GetMem(this->r3 + 12), GetMem(this->r3 + 8));
 		break;
@@ -210,32 +210,110 @@ void BBVM::OutPort(unsigned int Port, unsigned int Argu)
 		storage_->MovePosition(this->r2, this->r3);
 		break;
 	case 64:		// set pen
-		render_->SetPenColor(GetMem(this->r3 + 12), GetMem(this->r3));
+		renderer_->SetPenColor(GetMem(this->r3 + 12), GetMem(this->r3));
 		break;
 	case 65:		// set brush
 		break;
 	case 66:		// move pen
-		render_->MovePen(this->r1, this->r2, this->r3);
+		renderer_->MovePen(this->r1, this->r2, this->r3);
 		break;
 	case 67:		// draw line
-		render_->DrawLine(this->r1, this->r2, this->r3);
+		renderer_->DrawLine(this->r1, this->r2, this->r3);
 		break;
 	case 68:		// draw rectange
-		render_->DrawRectangle(GetMem(this->r3 + 16),
+		renderer_->DrawRectangle(GetMem(this->r3 + 16),
 							GetMem(this->r3 + 12), GetMem(this->r3 + 8),
 							GetMem(this->r3 + 4), GetMem(this->r3));
 		break;
 	case 69:		// draw circle
-		render_->DrawCircle(
+		renderer_->DrawCircle(
 						GetMem(this->r3 + 12), GetMem(this->r3 + 8),
 							GetMem(this->r3 + 4), GetMem(this->r3));
 		break;
 	case 80:		// vm test - useless
 	    //复制部分画布扩展
 	    //TODO 扩展
-        render_->CloneSurface(
+        renderer_->CloneSurface(
                 GetMem(this->r3 + 28), GetMem(this->r3 + 24),
                 GetMem(this->r3 + 20), GetMem(this->r3 + 16), GetMem(this->r3 + 12), GetMem(this->r3 + 8), GetMem(this->r3 + 4), GetMem(this->r3));
 		break;
     }
+}
+
+
+//从键盘输入字符串
+unsigned char* BBVM::GetKeyString()
+{
+    //this->InputBuffer = new vector<Line*>();
+    auto input_buffer = new vector<Line*>();
+    bool quit = false;
+    int screen_width, screen_height;
+    int char_width = scn_->GetFontWidth();
+    scn_->GetScreenSize(&screen_width, &screen_height);
+    int FreeChar = InputNewline(scn_->GetDispPosition(), screen_width, screen_height);
+    while (quit == false) {
+        //unsigned char Key = WaitKey(true);
+        unsigned char key = input_->GetKeycode();
+        if (key == KEYCODE_ENTER) {
+            quit = true;
+//        } else if (key == SDLK_ESCAPE) {
+//            scn->NewLine();
+//            scn->Display("reinput:");
+//            for (unsigned int i = 0; i < this->InputBuffer->size(); i++) {
+//                delete this->InputBuffer->at(i);
+//            }
+//            this->InputBuffer->clear();
+//            FreeChar = InputNewline(scn->GetDispPosition(), ScnWidth, CharWidth);
+        } else if (key == KEYCODE_BACKTRACE) {
+            Line *line_ptr = input_buffer->back();
+            if (line_ptr->LineText.length() == 0)
+            {
+                if (input_buffer->size() >= 2)
+                {
+                    delete line_ptr;
+                    input_buffer->pop_back();
+                    line_ptr = input_buffer->back();
+                    FreeChar = 0;
+                }
+            }
+            int len = line_ptr->LineText.length(), dx = 0, dy = 0;
+            if (len > 0) {
+                line_ptr->LineText.erase(--len, 1);
+            }
+            if (scn_->GetDispPosition().y <= 0 && line_ptr->PrintPosition.y > 0) {
+                Point ptmp;
+                ptmp.x = ptmp.y = 0;
+                FreeChar = InputNewline(ptmp, screen_width, char_width);
+                line_ptr = input_buffer->back();
+                dx = dy = 0;
+            } else {
+                dx = line_ptr->PrintPosition.x + len * char_width;
+                dy = line_ptr->PrintPosition.y;
+                FreeChar++;
+            }
+            scn_->Display(" ", dx, dy);
+            scn_->SetDispPosition(dx, dy);
+        } else if (isprint(key) == 0) {
+            continue ;
+        } else {
+            if (FreeChar == 0)
+            {
+                scn_->NewLine();
+                FreeChar = InputNewline(scn_->GetDispPosition(),
+                                        screen_width,
+                                        char_width);
+            }
+            input_buffer->back()->LineText.append(1, key);
+            FreeChar--;
+            scn_->Display((char)key);
+        }
+    }
+    string buf;
+    for (vector<Line*>::iterator it = input_buffer->begin(); it != input_buffer->end(); it++) {
+        buf.append((*it)->LineText);
+        delete *it;
+    }
+    delete input_buffer;
+    scn_->NewLine();
+    return (unsigned char *)strdup(buf.c_str());
 }

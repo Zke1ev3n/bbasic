@@ -1,0 +1,36 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbvm/storage.c
+stdio.h
+-
+string
+-
+string.h
+-
+unistd.h
+-
+storage.h
+/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbvm/storage.h
+utils.h
+/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbvm/utils.h
+
+/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbvm/storage.h
+map
+-
+
+/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbvm/utils.h
+stdio.h
+-
+stdlib.h
+-
+stdarg.h
+-
+string.h
+-
+

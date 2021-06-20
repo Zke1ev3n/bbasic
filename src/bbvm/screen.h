@@ -68,6 +68,7 @@ public:
     int GetFontWidth();
     int GetFontHeigth();
     SDL_Window *GetMainWindow();
+
 };
 
 class SDL2Function

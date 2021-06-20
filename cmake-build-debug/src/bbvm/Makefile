@@ -144,222 +144,6 @@ bbvm/fast:
 	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/bbvm/CMakeFiles/bbvm.dir/build.make src/bbvm/CMakeFiles/bbvm.dir/build
 .PHONY : bbvm/fast
 
-Cpu.o: Cpu.cpp.o
-
-.PHONY : Cpu.o
-
-# target to build an object file
-Cpu.cpp.o:
-	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/bbvm/CMakeFiles/bbvm.dir/build.make src/bbvm/CMakeFiles/bbvm.dir/Cpu.cpp.o
-.PHONY : Cpu.cpp.o
-
-Cpu.i: Cpu.cpp.i
-
-.PHONY : Cpu.i
-
-# target to preprocess a source file
-Cpu.cpp.i:
-	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/bbvm/CMakeFiles/bbvm.dir/build.make src/bbvm/CMakeFiles/bbvm.dir/Cpu.cpp.i
-.PHONY : Cpu.cpp.i
-
-Cpu.s: Cpu.cpp.s
-
-.PHONY : Cpu.s
-
-# target to generate assembly for a file
-Cpu.cpp.s:
-	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/bbvm/CMakeFiles/bbvm.dir/build.make src/bbvm/CMakeFiles/bbvm.dir/Cpu.cpp.s
-.PHONY : Cpu.cpp.s
-
-Gpu.o: Gpu.cpp.o
-
-.PHONY : Gpu.o
-
-# target to build an object file
-Gpu.cpp.o:
-	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/bbvm/CMakeFiles/bbvm.dir/build.make src/bbvm/CMakeFiles/bbvm.dir/Gpu.cpp.o
-.PHONY : Gpu.cpp.o
-
-Gpu.i: Gpu.cpp.i
-
-.PHONY : Gpu.i
-
-# target to preprocess a source file
-Gpu.cpp.i:
-	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/bbvm/CMakeFiles/bbvm.dir/build.make src/bbvm/CMakeFiles/bbvm.dir/Gpu.cpp.i
-.PHONY : Gpu.cpp.i
-
-Gpu.s: Gpu.cpp.s
-
-.PHONY : Gpu.s
-
-# target to generate assembly for a file
-Gpu.cpp.s:
-	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/bbvm/CMakeFiles/bbvm.dir/build.make src/bbvm/CMakeFiles/bbvm.dir/Gpu.cpp.s
-.PHONY : Gpu.cpp.s
-
-InPort.o: InPort.cpp.o
-
-.PHONY : InPort.o
-
-# target to build an object file
-InPort.cpp.o:
-	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/bbvm/CMakeFiles/bbvm.dir/build.make src/bbvm/CMakeFiles/bbvm.dir/InPort.cpp.o
-.PHONY : InPort.cpp.o
-
-InPort.i: InPort.cpp.i
-
-.PHONY : InPort.i
-
-# target to preprocess a source file
-InPort.cpp.i:
-	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/bbvm/CMakeFiles/bbvm.dir/build.make src/bbvm/CMakeFiles/bbvm.dir/InPort.cpp.i
-.PHONY : InPort.cpp.i
-
-InPort.s: InPort.cpp.s
-
-.PHONY : InPort.s
-
-# target to generate assembly for a file
-InPort.cpp.s:
-	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/bbvm/CMakeFiles/bbvm.dir/build.make src/bbvm/CMakeFiles/bbvm.dir/InPort.cpp.s
-.PHONY : InPort.cpp.s
-
-Input.o: Input.cpp.o
-
-.PHONY : Input.o
-
-# target to build an object file
-Input.cpp.o:
-	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/bbvm/CMakeFiles/bbvm.dir/build.make src/bbvm/CMakeFiles/bbvm.dir/Input.cpp.o
-.PHONY : Input.cpp.o
-
-Input.i: Input.cpp.i
-
-.PHONY : Input.i
-
-# target to preprocess a source file
-Input.cpp.i:
-	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/bbvm/CMakeFiles/bbvm.dir/build.make src/bbvm/CMakeFiles/bbvm.dir/Input.cpp.i
-.PHONY : Input.cpp.i
-
-Input.s: Input.cpp.s
-
-.PHONY : Input.s
-
-# target to generate assembly for a file
-Input.cpp.s:
-	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/bbvm/CMakeFiles/bbvm.dir/build.make src/bbvm/CMakeFiles/bbvm.dir/Input.cpp.s
-.PHONY : Input.cpp.s
-
-OutPort.o: OutPort.cpp.o
-
-.PHONY : OutPort.o
-
-# target to build an object file
-OutPort.cpp.o:
-	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/bbvm/CMakeFiles/bbvm.dir/build.make src/bbvm/CMakeFiles/bbvm.dir/OutPort.cpp.o
-.PHONY : OutPort.cpp.o
-
-OutPort.i: OutPort.cpp.i
-
-.PHONY : OutPort.i
-
-# target to preprocess a source file
-OutPort.cpp.i:
-	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/bbvm/CMakeFiles/bbvm.dir/build.make src/bbvm/CMakeFiles/bbvm.dir/OutPort.cpp.i
-.PHONY : OutPort.cpp.i
-
-OutPort.s: OutPort.cpp.s
-
-.PHONY : OutPort.s
-
-# target to generate assembly for a file
-OutPort.cpp.s:
-	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/bbvm/CMakeFiles/bbvm.dir/build.make src/bbvm/CMakeFiles/bbvm.dir/OutPort.cpp.s
-.PHONY : OutPort.cpp.s
-
-Screen.o: Screen.cpp.o
-
-.PHONY : Screen.o
-
-# target to build an object file
-Screen.cpp.o:
-	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/bbvm/CMakeFiles/bbvm.dir/build.make src/bbvm/CMakeFiles/bbvm.dir/Screen.cpp.o
-.PHONY : Screen.cpp.o
-
-Screen.i: Screen.cpp.i
-
-.PHONY : Screen.i
-
-# target to preprocess a source file
-Screen.cpp.i:
-	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/bbvm/CMakeFiles/bbvm.dir/build.make src/bbvm/CMakeFiles/bbvm.dir/Screen.cpp.i
-.PHONY : Screen.cpp.i
-
-Screen.s: Screen.cpp.s
-
-.PHONY : Screen.s
-
-# target to generate assembly for a file
-Screen.cpp.s:
-	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/bbvm/CMakeFiles/bbvm.dir/build.make src/bbvm/CMakeFiles/bbvm.dir/Screen.cpp.s
-.PHONY : Screen.cpp.s
-
-Storage.o: Storage.cpp.o
-
-.PHONY : Storage.o
-
-# target to build an object file
-Storage.cpp.o:
-	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/bbvm/CMakeFiles/bbvm.dir/build.make src/bbvm/CMakeFiles/bbvm.dir/Storage.cpp.o
-.PHONY : Storage.cpp.o
-
-Storage.i: Storage.cpp.i
-
-.PHONY : Storage.i
-
-# target to preprocess a source file
-Storage.cpp.i:
-	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/bbvm/CMakeFiles/bbvm.dir/build.make src/bbvm/CMakeFiles/bbvm.dir/Storage.cpp.i
-.PHONY : Storage.cpp.i
-
-Storage.s: Storage.cpp.s
-
-.PHONY : Storage.s
-
-# target to generate assembly for a file
-Storage.cpp.s:
-	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/bbvm/CMakeFiles/bbvm.dir/build.make src/bbvm/CMakeFiles/bbvm.dir/Storage.cpp.s
-.PHONY : Storage.cpp.s
-
-String.o: String.cpp.o
-
-.PHONY : String.o
-
-# target to build an object file
-String.cpp.o:
-	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/bbvm/CMakeFiles/bbvm.dir/build.make src/bbvm/CMakeFiles/bbvm.dir/String.cpp.o
-.PHONY : String.cpp.o
-
-String.i: String.cpp.i
-
-.PHONY : String.i
-
-# target to preprocess a source file
-String.cpp.i:
-	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/bbvm/CMakeFiles/bbvm.dir/build.make src/bbvm/CMakeFiles/bbvm.dir/String.cpp.i
-.PHONY : String.cpp.i
-
-String.s: String.cpp.s
-
-.PHONY : String.s
-
-# target to generate assembly for a file
-String.cpp.s:
-	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/bbvm/CMakeFiles/bbvm.dir/build.make src/bbvm/CMakeFiles/bbvm.dir/String.cpp.s
-.PHONY : String.cpp.s
-
 bbvm.o: bbvm.cc.o
 
 .PHONY : bbvm.o
@@ -386,6 +170,60 @@ bbvm.s: bbvm.cc.s
 bbvm.cc.s:
 	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/bbvm/CMakeFiles/bbvm.dir/build.make src/bbvm/CMakeFiles/bbvm.dir/bbvm.cc.s
 .PHONY : bbvm.cc.s
+
+inport.o: inport.cc.o
+
+.PHONY : inport.o
+
+# target to build an object file
+inport.cc.o:
+	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/bbvm/CMakeFiles/bbvm.dir/build.make src/bbvm/CMakeFiles/bbvm.dir/inport.cc.o
+.PHONY : inport.cc.o
+
+inport.i: inport.cc.i
+
+.PHONY : inport.i
+
+# target to preprocess a source file
+inport.cc.i:
+	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/bbvm/CMakeFiles/bbvm.dir/build.make src/bbvm/CMakeFiles/bbvm.dir/inport.cc.i
+.PHONY : inport.cc.i
+
+inport.s: inport.cc.s
+
+.PHONY : inport.s
+
+# target to generate assembly for a file
+inport.cc.s:
+	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/bbvm/CMakeFiles/bbvm.dir/build.make src/bbvm/CMakeFiles/bbvm.dir/inport.cc.s
+.PHONY : inport.cc.s
+
+input.o: input.cc.o
+
+.PHONY : input.o
+
+# target to build an object file
+input.cc.o:
+	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/bbvm/CMakeFiles/bbvm.dir/build.make src/bbvm/CMakeFiles/bbvm.dir/input.cc.o
+.PHONY : input.cc.o
+
+input.i: input.cc.i
+
+.PHONY : input.i
+
+# target to preprocess a source file
+input.cc.i:
+	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/bbvm/CMakeFiles/bbvm.dir/build.make src/bbvm/CMakeFiles/bbvm.dir/input.cc.i
+.PHONY : input.cc.i
+
+input.s: input.cc.s
+
+.PHONY : input.s
+
+# target to generate assembly for a file
+input.cc.s:
+	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/bbvm/CMakeFiles/bbvm.dir/build.make src/bbvm/CMakeFiles/bbvm.dir/input.cc.s
+.PHONY : input.cc.s
 
 main.o: main.cc.o
 
@@ -414,32 +252,167 @@ main.cc.s:
 	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/bbvm/CMakeFiles/bbvm.dir/build.make src/bbvm/CMakeFiles/bbvm.dir/main.cc.s
 .PHONY : main.cc.s
 
-utils.o: utils.cpp.o
+outport.o: outport.cc.o
+
+.PHONY : outport.o
+
+# target to build an object file
+outport.cc.o:
+	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/bbvm/CMakeFiles/bbvm.dir/build.make src/bbvm/CMakeFiles/bbvm.dir/outport.cc.o
+.PHONY : outport.cc.o
+
+outport.i: outport.cc.i
+
+.PHONY : outport.i
+
+# target to preprocess a source file
+outport.cc.i:
+	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/bbvm/CMakeFiles/bbvm.dir/build.make src/bbvm/CMakeFiles/bbvm.dir/outport.cc.i
+.PHONY : outport.cc.i
+
+outport.s: outport.cc.s
+
+.PHONY : outport.s
+
+# target to generate assembly for a file
+outport.cc.s:
+	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/bbvm/CMakeFiles/bbvm.dir/build.make src/bbvm/CMakeFiles/bbvm.dir/outport.cc.s
+.PHONY : outport.cc.s
+
+renderer.o: renderer.cc.o
+
+.PHONY : renderer.o
+
+# target to build an object file
+renderer.cc.o:
+	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/bbvm/CMakeFiles/bbvm.dir/build.make src/bbvm/CMakeFiles/bbvm.dir/renderer.cc.o
+.PHONY : renderer.cc.o
+
+renderer.i: renderer.cc.i
+
+.PHONY : renderer.i
+
+# target to preprocess a source file
+renderer.cc.i:
+	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/bbvm/CMakeFiles/bbvm.dir/build.make src/bbvm/CMakeFiles/bbvm.dir/renderer.cc.i
+.PHONY : renderer.cc.i
+
+renderer.s: renderer.cc.s
+
+.PHONY : renderer.s
+
+# target to generate assembly for a file
+renderer.cc.s:
+	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/bbvm/CMakeFiles/bbvm.dir/build.make src/bbvm/CMakeFiles/bbvm.dir/renderer.cc.s
+.PHONY : renderer.cc.s
+
+screen.o: screen.cc.o
+
+.PHONY : screen.o
+
+# target to build an object file
+screen.cc.o:
+	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/bbvm/CMakeFiles/bbvm.dir/build.make src/bbvm/CMakeFiles/bbvm.dir/screen.cc.o
+.PHONY : screen.cc.o
+
+screen.i: screen.cc.i
+
+.PHONY : screen.i
+
+# target to preprocess a source file
+screen.cc.i:
+	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/bbvm/CMakeFiles/bbvm.dir/build.make src/bbvm/CMakeFiles/bbvm.dir/screen.cc.i
+.PHONY : screen.cc.i
+
+screen.s: screen.cc.s
+
+.PHONY : screen.s
+
+# target to generate assembly for a file
+screen.cc.s:
+	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/bbvm/CMakeFiles/bbvm.dir/build.make src/bbvm/CMakeFiles/bbvm.dir/screen.cc.s
+.PHONY : screen.cc.s
+
+storage.o: storage.c.o
+
+.PHONY : storage.o
+
+# target to build an object file
+storage.c.o:
+	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/bbvm/CMakeFiles/bbvm.dir/build.make src/bbvm/CMakeFiles/bbvm.dir/storage.c.o
+.PHONY : storage.c.o
+
+storage.i: storage.c.i
+
+.PHONY : storage.i
+
+# target to preprocess a source file
+storage.c.i:
+	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/bbvm/CMakeFiles/bbvm.dir/build.make src/bbvm/CMakeFiles/bbvm.dir/storage.c.i
+.PHONY : storage.c.i
+
+storage.s: storage.c.s
+
+.PHONY : storage.s
+
+# target to generate assembly for a file
+storage.c.s:
+	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/bbvm/CMakeFiles/bbvm.dir/build.make src/bbvm/CMakeFiles/bbvm.dir/storage.c.s
+.PHONY : storage.c.s
+
+string_manager.o: string_manager.cc.o
+
+.PHONY : string_manager.o
+
+# target to build an object file
+string_manager.cc.o:
+	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/bbvm/CMakeFiles/bbvm.dir/build.make src/bbvm/CMakeFiles/bbvm.dir/string_manager.cc.o
+.PHONY : string_manager.cc.o
+
+string_manager.i: string_manager.cc.i
+
+.PHONY : string_manager.i
+
+# target to preprocess a source file
+string_manager.cc.i:
+	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/bbvm/CMakeFiles/bbvm.dir/build.make src/bbvm/CMakeFiles/bbvm.dir/string_manager.cc.i
+.PHONY : string_manager.cc.i
+
+string_manager.s: string_manager.cc.s
+
+.PHONY : string_manager.s
+
+# target to generate assembly for a file
+string_manager.cc.s:
+	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/bbvm/CMakeFiles/bbvm.dir/build.make src/bbvm/CMakeFiles/bbvm.dir/string_manager.cc.s
+.PHONY : string_manager.cc.s
+
+utils.o: utils.cc.o
 
 .PHONY : utils.o
 
 # target to build an object file
-utils.cpp.o:
-	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/bbvm/CMakeFiles/bbvm.dir/build.make src/bbvm/CMakeFiles/bbvm.dir/utils.cpp.o
-.PHONY : utils.cpp.o
+utils.cc.o:
+	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/bbvm/CMakeFiles/bbvm.dir/build.make src/bbvm/CMakeFiles/bbvm.dir/utils.cc.o
+.PHONY : utils.cc.o
 
-utils.i: utils.cpp.i
+utils.i: utils.cc.i
 
 .PHONY : utils.i
 
 # target to preprocess a source file
-utils.cpp.i:
-	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/bbvm/CMakeFiles/bbvm.dir/build.make src/bbvm/CMakeFiles/bbvm.dir/utils.cpp.i
-.PHONY : utils.cpp.i
+utils.cc.i:
+	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/bbvm/CMakeFiles/bbvm.dir/build.make src/bbvm/CMakeFiles/bbvm.dir/utils.cc.i
+.PHONY : utils.cc.i
 
-utils.s: utils.cpp.s
+utils.s: utils.cc.s
 
 .PHONY : utils.s
 
 # target to generate assembly for a file
-utils.cpp.s:
-	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/bbvm/CMakeFiles/bbvm.dir/build.make src/bbvm/CMakeFiles/bbvm.dir/utils.cpp.s
-.PHONY : utils.cpp.s
+utils.cc.s:
+	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/bbvm/CMakeFiles/bbvm.dir/build.make src/bbvm/CMakeFiles/bbvm.dir/utils.cc.s
+.PHONY : utils.cc.s
 
 # Help Target
 help:
@@ -450,36 +423,33 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... bbvm"
-	@echo "... Cpu.o"
-	@echo "... Cpu.i"
-	@echo "... Cpu.s"
-	@echo "... Gpu.o"
-	@echo "... Gpu.i"
-	@echo "... Gpu.s"
-	@echo "... InPort.o"
-	@echo "... InPort.i"
-	@echo "... InPort.s"
-	@echo "... Input.o"
-	@echo "... Input.i"
-	@echo "... Input.s"
-	@echo "... OutPort.o"
-	@echo "... OutPort.i"
-	@echo "... OutPort.s"
-	@echo "... Screen.o"
-	@echo "... Screen.i"
-	@echo "... Screen.s"
-	@echo "... Storage.o"
-	@echo "... Storage.i"
-	@echo "... Storage.s"
-	@echo "... String.o"
-	@echo "... String.i"
-	@echo "... String.s"
 	@echo "... bbvm.o"
 	@echo "... bbvm.i"
 	@echo "... bbvm.s"
+	@echo "... inport.o"
+	@echo "... inport.i"
+	@echo "... inport.s"
+	@echo "... input.o"
+	@echo "... input.i"
+	@echo "... input.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... outport.o"
+	@echo "... outport.i"
+	@echo "... outport.s"
+	@echo "... renderer.o"
+	@echo "... renderer.i"
+	@echo "... renderer.s"
+	@echo "... screen.o"
+	@echo "... screen.i"
+	@echo "... screen.s"
+	@echo "... storage.o"
+	@echo "... storage.i"
+	@echo "... storage.s"
+	@echo "... string_manager.o"
+	@echo "... string_manager.i"
+	@echo "... string_manager.s"
 	@echo "... utils.o"
 	@echo "... utils.i"
 	@echo "... utils.s"

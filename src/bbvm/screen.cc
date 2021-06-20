@@ -8,7 +8,7 @@
 #include <SDL2/SDL_thread.h>
 #include <SDL2/SDL_ttf.h>
 #include <SDL2/SDL_mouse.h>
-#include "anvm.h"
+#include "screen.h"
 #include "utils.h"
 
 #define DEBUG_LAYER 0
