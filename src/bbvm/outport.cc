@@ -131,7 +131,7 @@ void BBVM::OutPort(unsigned int Port, unsigned int Argu)
 		scn_->SetFont(this->r3);
 		break;
 	case 39:		// wait key
-		this->r3 = SDL2Input::WaitKey();
+		this->r3 = input_->WaitKey();
 		break;
 	case 40:		// get picture width
 		this->r3 = renderer_->GetPictureWidth(this->r3);
@@ -261,8 +261,8 @@ unsigned char* BBVM::GetKeyString()
     int FreeChar = InputNewline(scn_->GetDispPosition(), screen_width, screen_height);
     while (quit == false) {
         //TODO
-        //unsigned char Key = WaitKey(true);
-        unsigned char key = input_->GetKeycode();
+        unsigned char key = input_->WaitKey(true);
+        //unsigned char key = input_->GetKeycode();
         if (key == KEYCODE_ENTER) {
             quit = true;
 //        } else if (key == SDLK_ESCAPE) {

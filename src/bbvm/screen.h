@@ -1,5 +1,7 @@
 #pragma once
 
+#include "config.h"
+
 typedef struct Point
 {
 	int x;
@@ -103,12 +105,3 @@ public:
 	static int RenderDrawRect(SDL_Renderer *renderer, const Rect *rect);
 };
 
-class SDL2Input
-{
-public:
-	static inline int __escape_charactor(int keymod, int key);
-	static unsigned char KeyPress();
-	static int WaitKey(bool OnlyKeyboard = false);
-	static void ShownKeyboard();
-	static void HiddenKeyboard();
-};

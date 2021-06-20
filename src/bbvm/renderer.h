@@ -1,5 +1,10 @@
 #pragma once
 #include <map>
+#include <SDL2/SDL.h>
+#include <SDL2/SDL_error.h>
+#include <SDL2/SDL_surface.h>
+#include "screen.h"
+
 using namespace std;
 
 class Renderer
@@ -36,5 +41,4 @@ public:
 	void DrawLine(int Handle, int x, int y);
 	void DrawRectangle(int Handle, int x1, int y1, int x2, int y2);
 	void DrawCircle(int Handle, int x, int y, int r);
-
 };

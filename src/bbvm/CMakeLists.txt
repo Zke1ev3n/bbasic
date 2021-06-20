@@ -16,7 +16,7 @@ add_executable(bbvm
         storage.c
         string_manager.cc
         utils.cc
-        )
+        config.h)
 
 target_link_libraries(
         bbvm

@@ -5,22 +5,12 @@
 #ifndef BBASIC_BBVM_H
 #define BBASIC_BBVM_H
 
+#include "config.h"
 #include "renderer.h"
 #include "screen.h"
 #include "input.h"
 #include "storage.h"
 #include "string_manager.h"
-
-//默认的小机分辨率
-const int SCREEN_WIDTH = 240;
-const int SCREEN_HEIGHT = 320;
-
-
-//默认的小机最大内存
-#define MEMSIZE (2*1024*1024)
-
-//默认帧数
-#define FPSNEED 24
 
 #define Z	1
 #define B	2

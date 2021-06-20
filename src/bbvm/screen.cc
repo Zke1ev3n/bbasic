@@ -24,13 +24,13 @@ Screen::Screen(int width, int height)
 	this->MainWnd = SDL_CreateWindow(VERSION, SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, width, height, SDL_WINDOW_SHOWN);
 	if(this->MainWnd == NULL)
 	{
-		Error("Window could not be created! SDL_Error: %s\n", SDL_GetError());
+		Utils::Error("Window could not be created! SDL_Error: %s\n", SDL_GetError());
 		SDL_Quit();
 		return ;
 	}
 	if (TTF_Init() == -1)
 	{
-		Error("Initialize ttf failure");
+		Utils::Error("Initialize ttf failure");
 	} else {
 		SetFont(0);
 #if defined(__linux__) || defined(__APPLE__)
@@ -87,7 +87,7 @@ void Screen::SetScreenSize(unsigned int width, unsigned int height)
 
 Screen::~Screen()
 {
-	SDL2Input::HiddenKeyboard();
+	//SDL2Input::HiddenKeyboard();
     //Destroy window
 	SDL_DestroyWindow(this->MainWnd);
 	//Quit SDL subsystems
@@ -127,7 +127,7 @@ void Screen::__set_font(const char *FontFile, const int Size)
 		this->FontFile = strdup(FontFile);
 	this->Font = TTF_OpenFont(this->FontFile, Size);
 	if(this->Font == NULL) {
-		Error("font open failure %s\n", SDL_GetError());
+		Utils::Error("font open failure %s\n", SDL_GetError());
 	}
 	TTF_SizeText((TTF_Font*)this->Font, " ", &this->FontWidth, &this->FontHeigth);
 }
@@ -510,39 +510,3 @@ int SDL2Draw::BlitSurfaceWithColorKey(SDL_Surface *src, const Rect *srcrect, SDL
 	SDL_SetColorKey(src, SDL_FALSE, ColorKey);
 	return __ret_value;
 }
-
-// ---- SDL2Input ----
-
-inline bool _isalpha(int c)
-{
-	c = c % 0xFF;
-	return (c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z');
-}
-
-//TODO 优化
-inline int SDL2Input::__escape_charactor(int keymod, int key)
-{
-	if (key == SDLK_CAPSLOCK)
-		return 0;
-	if(key == SDLK_UP){
-	    return 38;
-	}
-    if(key == SDLK_DOWN){
-        return 40;
-    }
-    if(key == SDLK_LEFT){
-        return 37;
-    }
-    if(key == SDLK_RIGHT){
-        return 39;
-    }
-	if ((keymod & KMOD_CAPS) != 0 && _isalpha(key))
-		if ((keymod & KMOD_SHIFT) == 0)
-			return key + 'A' - 'a';
-		else
-			return key;
-	else
-		return key;
-}
-
-

@@ -86,6 +86,9 @@
 		<Unit filename="/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbvm/bbvm.h">
 			<Option target="bbvm"/>
 		</Unit>
+		<Unit filename="/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbvm/config.h">
+			<Option target="bbvm"/>
+		</Unit>
 		<Unit filename="/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbvm/inport.cc">
 			<Option target="bbvm"/>
 		</Unit>

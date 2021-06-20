@@ -60,12 +60,45 @@ void input::HiddenKeyboard()
         SDL_StopTextInput();
 }
 
+inline bool _isalpha(int c)
+{
+    c = c % 0xFF;
+    return (c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z');
+}
+
 //TODO 优化
+inline int input::__escape_charactor(int keymod, int key)
+{
+    if (key == SDLK_CAPSLOCK)
+        return 0;
+    if(key == SDLK_UP){
+        return 38;
+    }
+    if(key == SDLK_DOWN){
+        return 40;
+    }
+    if(key == SDLK_LEFT){
+        return 37;
+    }
+    if(key == SDLK_RIGHT){
+        return 39;
+    }
+    if ((keymod & KMOD_CAPS) != 0 && _isalpha(key))
+        if ((keymod & KMOD_SHIFT) == 0)
+            return key + 'A' - 'a';
+        else
+            return key;
+    else
+        return key;
+}
+
+
+//TODO 会阻塞主线程
 int input::WaitKey(bool OnlyKeyboard)
 {
     SDL_Event event;
     while(true) {
-        SDL2Input::ShownKeyboard();
+        ShownKeyboard();
         if (SDL_WaitEvent(&event) != 0) {
             //if (event.type == SDL_KEYDOWN && SDL_IsTextInputActive() == SDL_FALSE) {
             if (event.type == SDL_KEYDOWN) {

@@ -1,8 +1,6 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <math.h>
-#include <SDL2/SDL_error.h>
-#include <SDL2/SDL_surface.h>
 #include "renderer.h"
 #include "utils.h"
 
@@ -30,8 +28,8 @@ Renderer::Renderer()
 Renderer::~Renderer()
 {
 	for (int i = 0; i < 10; i++)
-		if (this->DrawRendererer[i] != NULL)
-			SDL2Function::DestroyRendererer(this->DrawRenderer[i]);
+		if (this->DrawRenderer[i] != NULL)
+			SDL2Function::DestroyRenderer(this->DrawRenderer[i]);
 }
 
 SDL_Surface *Renderer::CreateSurface(int width, int height)
@@ -160,6 +158,7 @@ void Renderer::CloneSurface(int SrcSurfaceHandle, int DestSurfaceHandle, int x, 
 //
 //	if (DestSurfaceHandle == -1)
 //		scn->Refresh();
+    //TODO 这里优化
     int wid = 240;
     int hgt = 320;
     int cx = 0, cy = 0;
@@ -279,15 +278,15 @@ void Renderer::SetPenColor(int SurfaceHandle, int Color)
 	int _handle = SurfaceHandle + 1;
 	if (_handle < 0 || _handle > 10)
 		return ;
-	SDL_Rendererer *_renderer = SDL2Function::CreateSoftwareRendererer(GetSurface(SurfaceHandle));
-	SDL2Function::SetRendererDrawColor(_renderer,
+	SDL_Renderer *_renderer = SDL2Function::CreateSoftwareRenderer(GetSurface(SurfaceHandle));
+	SDL2Function::SetRenderDrawColor(_renderer,
 							(Color & 0xFF),
 							(Color & 0xFF00) >> 8,
 							(Color & 0xFF0000) >> 16,
 							255);
-	if (this->DrawRendererer[_handle] != NULL)
-		SDL2Function::DestroyRendererer(this->DrawRendererer[_handle]);
-	this->DrawRendererer[_handle] = _renderer;
+	if (this->DrawRenderer[_handle] != NULL)
+		SDL2Function::DestroyRenderer(this->DrawRenderer[_handle]);
+	this->DrawRenderer[_handle] = _renderer;
 }
 
 void Renderer::MovePen(int SurfaceHandle, int x, int y)
@@ -305,8 +304,8 @@ void Renderer::DrawLine(int SurfaceHandle, int x, int y)
 	if (_handle < 0 || _handle > 10)
 		return ;
 	int _x = this->StartDrawPoint[_handle].x, _y = this->StartDrawPoint[_handle].y;
-	SDL2Draw::RendererDrawLine(this->DrawRendererer[_handle], _x, _y, x - 1, y);
-	SDL2Draw::RendererPresent(this->DrawRendererer[_handle]);
+	SDL2Draw::RenderDrawLine(this->DrawRenderer[_handle], _x, _y, x - 1, y);
+	SDL2Draw::RenderPresent(this->DrawRenderer[_handle]);
 	this->StartDrawPoint[_handle].x = this->StartDrawPoint[_handle].y = 0;
 
 	WILL_REFRESH(MIN(x, _x), MIN(y, _y), abs(x - 1 - _x), abs(y - _y));
@@ -319,8 +318,8 @@ void Renderer::DrawRectangle(int SurfaceHandle, int x1, int y1, int x2, int y2)
 		return ;
 	Rect _rect;
 	_rect.x = x1, _rect.y = y1; _rect.w = x2 - x1 + 1; _rect.h = y2 - y1 + 1;
-	SDL2Draw::RendererDrawRect(this->DrawRendererer[_handle], &_rect);
-	SDL2Draw::RendererPresent(this->DrawRendererer[_handle]);
+	SDL2Draw::RenderDrawRect(this->DrawRenderer[_handle], &_rect);
+	SDL2Draw::RenderPresent(this->DrawRenderer[_handle]);
 	WILL_REFRESH(MIN(x1, x2), MIN(y1, y2), abs(x2 - x1), abs(y2 - y1));
 }
 
@@ -360,7 +359,7 @@ void Renderer::DrawCircle(int SurfaceHandle, int x, int y, int r)
 	if (_handle < 0 || _handle > 10)
 		return ;
 	Uint8 _a, _r, _g, _b;
-	SDL2Function::GetRendererDrawColor(this->DrawRender[_handle], &_r, &_g, &_b, &_a);
+	SDL2Function::GetRenderDrawColor(this->DrawRenderer[_handle], &_r, &_g, &_b, &_a);
 	Uint32 c = _r << 16 | _g << 8 | _b << 0;
 	__bresenham_circle(GetSurface(SurfaceHandle), x, y, r, c);
 
