@@ -35,7 +35,7 @@ public:
 	void PollEvents();
 
     bool KeyPressed(int key);
-    int WaitKey(bool OnlyKeyboard);
+    int WaitKey(bool OnlyKeyboard=false);
     unsigned char GetKeycode();
 
 };

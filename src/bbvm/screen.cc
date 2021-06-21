@@ -45,7 +45,6 @@ Screen::Screen(int width, int height)
 	}
 }
 
-//TODO 感觉不太对？这里的帧数控制
 void Screen::Refresh(Rect *RefRect)
 {
 	static SDL_mutex *mutex;

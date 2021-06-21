@@ -153,13 +153,14 @@ void BBVM::OutPort(unsigned int Port, unsigned int Argu)
 	case 45:		// get key charactor string
 		{
 			unsigned char tmp[2];
-			tmp[0] = SDL2Input::WaitKey();
+			tmp[0] = input_->WaitKey();
 			tmp[1] = '\0';
 			this->StrMan->PutString(this->r3, tmp);
 		}
 		break;
 	case 46:		// get key code
-		this->r3 = SDL2Input::WaitKey();
+	    //TODO get key code
+		this->r3 = input_->WaitKey();
 		break;
 	case 48:		// open file
 		storage_->OpenFile((char *)this->StrMan->GetString(this->r3), this->r1);

@@ -25,6 +25,7 @@ public:
 	Renderer();
 	~Renderer();
 	int AllocSurface();
+	int AllocSurface(int width, int height);
 	void FreeSurface(int index);
 	int LoadPicture(const char *FileName, unsigned int index);
 	void FreePicture(int Handle);
