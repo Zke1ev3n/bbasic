@@ -7,6 +7,7 @@
 
 using namespace std;
 
+//渲染器
 class Renderer
 {
 private:
@@ -14,6 +15,9 @@ private:
 	SDL_Renderer *DrawRenderer[10];
 	Point StartDrawPoint[10];
 	map<int, SDL_Surface*> ResPool;
+	//当前显示器的surface
+	SDL_Surface *screen_surface_;
+
 	SDL_Surface *CreateSurface(int width, int height);
 	int RequestResourceHandle();
 	SDL_Surface *GetSurface(int handle);
@@ -26,6 +30,7 @@ public:
 	~Renderer();
 	int AllocSurface();
 	int AllocSurface(int width, int height);
+    SDL_Surface *GetScreenSurface();
 	void FreeSurface(int index);
 	int LoadPicture(const char *FileName, unsigned int index);
 	void FreePicture(int Handle);

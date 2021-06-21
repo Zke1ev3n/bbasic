@@ -21,6 +21,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbvm/outport.cc" "/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/src/bbvm/CMakeFiles/bbvm.dir/outport.cc.o"
   "/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbvm/renderer.cc" "/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/src/bbvm/CMakeFiles/bbvm.dir/renderer.cc.o"
   "/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbvm/screen.cc" "/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/src/bbvm/CMakeFiles/bbvm.dir/screen.cc.o"
+  "/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbvm/sdl.cc" "/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/src/bbvm/CMakeFiles/bbvm.dir/sdl.cc.o"
   "/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbvm/string_manager.cc" "/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/src/bbvm/CMakeFiles/bbvm.dir/string_manager.cc.o"
   "/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbvm/utils.cc" "/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/src/bbvm/CMakeFiles/bbvm.dir/utils.cc.o"
   )

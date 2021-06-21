@@ -45,6 +45,39 @@ Screen::Screen(int width, int height)
 	}
 }
 
+
+Screen::Screen(int width, int height, SDL_Surface* screen_surface)
+{
+    SDL_Init(SDL_INIT_VIDEO | SDL_INIT_TIMER | SDL_INIT_EVENTS);
+    this->ScreenSurface = screen_surface;
+    this->buffer = NULL;
+    this->Transparent = false;
+    this->FontFile = NULL;
+
+    this->MainWnd = SDL_CreateWindow(VERSION, SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, width, height, SDL_WINDOW_SHOWN);
+    if(this->MainWnd == NULL)
+    {
+        Utils::Error("Window could not be created! SDL_Error: %s\n", SDL_GetError());
+        SDL_Quit();
+        return ;
+    }
+    if (TTF_Init() == -1)
+    {
+        Utils::Error("Initialize ttf failure");
+    } else {
+        SetFont(0);
+#if defined(__linux__) || defined(__APPLE__)
+        this->DebugFont = TTF_OpenFont("./resource/simkai.ttf", 12);
+#else
+        this->DebugFont = TTF_OpenFont("C:\\Windows\\Fonts\\CONSOLA.TTF", 12);
+#endif
+        SetScreenSize(width, height);
+
+        this->TextColor = SDL_MapRGB(this->ScreenSurface->format, 0xFF, 0xFF, 0xFF);
+        this->BackgroundColor = SDL_MapRGB(this->ScreenSurface->format, 0x00, 0x00, 0x00);
+    }
+}
+
 void Screen::Refresh(Rect *RefRect)
 {
 	static SDL_mutex *mutex;
@@ -205,7 +238,7 @@ void Screen::Display(const char *Text, int x, int y)
 			strncpy(t, Text + i, index);
 			t[index] = '\0';
 			i += index - 1;
-			char *text = GB2312toUTF8(t);
+			char *text = Utils::GB2312toUTF8(t);
 			free(t);
 			SDL_Surface *SDLText;
 			SDL_Color FrontColor;
@@ -241,45 +274,6 @@ void Screen::Display(const char Charactor, int x, int y)
 	buf[0] = Charactor; buf[1] = '\0';
 	Display(buf, x, y);
 	return ;
-}
-
-char *Screen::GB2312toUTF8(const char *GB2312str)
-{
-#if defined(__linux__) || defined(__APPLE__)
-	char *pIn = (char *)GB2312str;
-	size_t iMaxOutLen = sizeof(char) * strlen(pIn) * 3, iInLen = strlen(pIn);
-	char *pOut = (char *)malloc(iMaxOutLen);
-	memset(pOut, 0, iMaxOutLen);
-	char *pBuf = pOut;
-	size_t ret, iLeftLen = iMaxOutLen;
-	iconv_t cd;
-	cd = iconv_open("utf-8", "gb2312");
-	if (cd == (iconv_t) - 1)
-	{
-		return NULL;
-	}
-	size_t iSrcLen = iInLen;
-	ret = iconv(cd, &pIn, &iSrcLen, &pOut, &iLeftLen);
-	if (ret == (size_t) -1)
-	{
-		iconv_close(cd);
-		return NULL;
-	}
-	iconv_close(cd);
-	*pOut = '\0';
-	return pBuf;
-#else
-	int len = MultiByteToWideChar(CP_ACP, 0, GB2312str, -1, NULL, 0);
-	wchar_t* wstr = new wchar_t[len + 1];
-	memset(wstr, 0, len + 1);
-	MultiByteToWideChar(CP_ACP, 0, GB2312str, -1, wstr, len);
-	len = WideCharToMultiByte(CP_UTF8, 0, wstr, -1, NULL, 0, NULL, NULL);
-	char* str = new char[len + 1];
-	memset(str, 0, len + 1);
-	WideCharToMultiByte(CP_UTF8, 0, wstr, -1, str, len, NULL, NULL);
-	if(wstr) delete[] wstr;
-	return str;
-#endif
 }
 
 void Screen::CleanScreen()
@@ -356,156 +350,4 @@ int Screen::GetFontHeigth()
 SDL_Window *Screen::GetMainWindow()
 {
 	return this->MainWnd;
-}
-
-// ---- SDL2Function ----
-
-void SDL2Function::DestroyRenderer(SDL_Renderer *renderer)
-{
-	SDL_DestroyRenderer(renderer);
-}
-
-SDL_Surface *SDL2Function::CreateRGBSurface(Uint32 flags, int width, int height)
-{
-	return SDL_CreateRGBSurface(flags, width, height, 32, 0, 0, 0, 0);
-}
-
-SDL_PixelFormat *SDL2Function::GetFormat(SDL_Surface *surface)
-{
-	return surface->format;
-}
-
-Uint32 SDL2Function::MapRGB(const SDL_PixelFormat *format, Uint8 r, Uint8 g, Uint8 b)
-{
-	return SDL_MapRGB(format, r, g, b);
-}
-
-void SDL2Function::FreeSurface(SDL_Surface *surface)
-{
-	SDL_FreeSurface(surface);
-}
-
-SDL_Surface *SDL2Function::LoadBMP_RW(SDL_RWops *src, int freesrc)
-{
-	return SDL_LoadBMP_RW(src, freesrc);
-}
-
-SDL_RWops *SDL2Function::RWFromConstMem(const void *mem, int size)
-{
-	return SDL_RWFromConstMem(mem, size);
-}
-
-int SDL2Function::GetSurfaceWidth(SDL_Surface *surface)
-{
-	return surface->w;
-}
-
-int SDL2Function::GetSurfaceHeight(SDL_Surface *surface)
-{
-	return surface->h;
-}
-
-void *SDL2Function::GetSurfacePixels(SDL_Surface *surface)
-{
-	return surface->pixels;
-}
-
-bool SDL2Function::MustLock(SDL_Surface *surface)
-{
-	return MustLock(surface);
-}
-
-int SDL2Function::LockSurface(SDL_Surface *surface)
-{
-	return SDL_LockSurface(surface);
-}
-
-void SDL2Function::UnlockSurface(SDL_Surface *surface)
-{
-	SDL_UnlockSurface(surface);
-}
-
-SDL_Renderer *SDL2Function::CreateSoftwareRenderer(SDL_Surface * surface)
-{
-	return SDL_CreateSoftwareRenderer(surface);
-}
-
-int SDL2Function::SetRenderDrawColor(SDL_Renderer *renderer, Uint8 r, Uint8 g, Uint8 b, Uint8 a)
-{
-	return SDL_SetRenderDrawColor(renderer, r, g, b, a);
-}
-
-int SDL2Function::GetRenderDrawColor(SDL_Renderer *renderer, Uint8 *r, Uint8 *g, Uint8 *b, Uint8 *a)
-{
-	return SDL_GetRenderDrawColor(renderer, r, g, b, a);
-}
-
-int SDL2Function::GetAllowCharNum(const char *str)
-{
-	//int FreeChar = 0, len = strlen(str);
-	int FreeChar = 0;
-	int len = Utils::GetGB2312Count(str);
-	int fw = scn->GetFontWidth(), sw, sh, x = scn->GetDispPosition().x;
-	scn->GetScreenSize(&sw, &sh);
-	for (int i = 0; i < len && x <= sw && str[i] != '\n'; i++)
-	{
-		FreeChar++; x += fw;
-		if ((str[i - 1] & 0x80) != 0) { FreeChar++; i++; x += fw; }
-	}
-	return FreeChar;
-}
-
-// ---- SDL2Draw ----
-
-int SDL2Draw::FillRect(SDL_Surface *dst, const Rect *rect, Uint32 color)
-{
-	int retv;
-	if (rect != NULL)
-	{
-		SDL_Rect _rect;
-		_rect.x = rect->x; _rect.y = rect->y; _rect.w = rect->w; _rect.h = rect->h;
-		retv = SDL_FillRect(dst, &_rect, color);
-	} else {
-		retv = SDL_FillRect(dst, NULL, color);
-	}
-	return retv;
-}
-
-int SDL2Draw::RenderDrawLine(SDL_Renderer *renderer, int x1, int y1, int x2, int y2)
-{
-	int retv = SDL_RenderDrawLine(renderer, x1, y1, x2, y2);
-	return retv;
-}
-
-void SDL2Draw::RenderPresent(SDL_Renderer *renderer)
-{
-	SDL_RenderPresent(renderer);
-}
-
-int SDL2Draw::RenderDrawRect(SDL_Renderer *renderer, const Rect *rect)
-{
-	SDL_Rect _rect;
-	_rect.x = rect->x; _rect.y = rect->y; _rect.w = rect->w; _rect.h = rect->h;
-	return SDL_RenderDrawRect(renderer, &_rect);
-}
-
-int SDL2Draw::BlitSurfaceWithColorKey(SDL_Surface *src, const Rect *srcrect, SDL_Surface *dst, Rect *dstrect, Uint32 ColorKey)
-{
-	SDL_Rect __src_rect, __dest_rect;
-	int __ret_value;
-    //__src_rect.x = srcrect->x; __src_rect.y = srcrect->y; __src_rect.w = srcrect->w; __src_rect.h = srcrect->h;
-    //__src_rect.x = dstrect->x; __src_rect.y = dstrect->y; __src_rect.w = dstrect->w; __src_rect.h = dstrect->h;
-    if(srcrect != NULL) {
-        __src_rect.x = srcrect->x; __src_rect.y = srcrect->y; __src_rect.w = srcrect->w; __src_rect.h = srcrect->h;
-    }
-	__dest_rect.x = dstrect->x; __dest_rect.y = dstrect->y; __dest_rect.w = dstrect->w; __dest_rect.h = dstrect->h;
-	SDL_SetColorKey(src, SDL_TRUE, ColorKey);
-    if(srcrect != NULL) {
-        __ret_value = SDL_BlitSurface(src, &__src_rect, dst, &__dest_rect);
-    }else{
-        __ret_value = SDL_BlitSurface(src, NULL, dst, &__dest_rect);
-    }
-	//int __ret_value = SDL_BlitSurface(src, &__src_rect, dst, &__dest_rect);
-	SDL_SetColorKey(src, SDL_FALSE, ColorKey);
-	return __ret_value;
 }

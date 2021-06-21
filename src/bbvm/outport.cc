@@ -67,6 +67,7 @@ void BBVM::OutPort(unsigned int Port, unsigned int Argu)
 		scn_->SetScreenSize(this->r2, this->r3);
 		break;
 	case 17:		// allocate a surface
+	    //TODO
 		this->r3 = renderer_->AllocSurface();
 		break;
 	case 18:		// free a surface

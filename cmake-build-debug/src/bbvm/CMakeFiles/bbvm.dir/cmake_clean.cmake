@@ -6,6 +6,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/bbvm.dir/outport.cc.o"
   "CMakeFiles/bbvm.dir/renderer.cc.o"
   "CMakeFiles/bbvm.dir/screen.cc.o"
+  "CMakeFiles/bbvm.dir/sdl.cc.o"
   "CMakeFiles/bbvm.dir/storage.c.o"
   "CMakeFiles/bbvm.dir/string_manager.cc.o"
   "CMakeFiles/bbvm.dir/utils.cc.o"

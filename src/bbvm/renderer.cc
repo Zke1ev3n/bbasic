@@ -3,6 +3,7 @@
 #include <math.h>
 #include "renderer.h"
 #include "utils.h"
+#include "sdl.h"
 
 #define TRANS_COLOR_END(C) ((((C) & 0xFF) << 16) | ((C) & 0xFF00) | (((C) & 0xFF0000) >> 16))
 #define WILL_REFRESH(_x,_y,_w,_h) \
@@ -127,7 +128,8 @@ void Renderer::FreePicture(int Handle)
 
 SDL_Surface *Renderer::GetSurface(int handle)
 {
-	return (handle == -1)? scn->GetScreenSurface() : this->SurfacePool[handle];
+	//return (handle == -1)? scn->GetScreenSurface() : this->SurfacePool[handle];
+    return (handle == -1)? screen_surface_ : this->SurfacePool[handle];
 }
 
 void Renderer::DrawPicture(int page, int pic, int dx, int dy, int w, int h, int x, int y, int mode)
@@ -364,4 +366,9 @@ void Renderer::DrawCircle(int SurfaceHandle, int x, int y, int r)
 	__bresenham_circle(GetSurface(SurfaceHandle), x, y, r, c);
 
 	WILL_REFRESH(x - r - 1, y - r - 1, 2 * r + 1, 2 * r + 1);
+}
+
+SDL_Surface *Renderer::GetScreenSurface()
+{
+    return this->screen_surface_;
 }

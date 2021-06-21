@@ -8,7 +8,6 @@
 
 int BBVM::Init() {
 
-    scn_ = new Screen(SCREEN_WIDTH, SCREEN_HEIGHT);
     Utils::Log("Virtual Memory...");
     vmem_ = (unsigned char *)malloc(MEMSIZE);
     if (vmem_ == NULL)
@@ -21,6 +20,8 @@ int BBVM::Init() {
     renderer_ = new Renderer();
     input_ = new input();
     storage_ = new Storage();
+
+    scn_ = new Screen(SCREEN_WIDTH, SCREEN_HEIGHT, renderer_->GetScreenSurface());
 
     status_ = true;
 

@@ -86,9 +86,6 @@
 		<Unit filename="/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbvm/bbvm.h">
 			<Option target="bbvm"/>
 		</Unit>
-		<Unit filename="/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbvm/config.h">
-			<Option target="bbvm"/>
-		</Unit>
 		<Unit filename="/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbvm/inport.cc">
 			<Option target="bbvm"/>
 		</Unit>
@@ -114,6 +111,12 @@
 			<Option target="bbvm"/>
 		</Unit>
 		<Unit filename="/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbvm/screen.h">
+			<Option target="bbvm"/>
+		</Unit>
+		<Unit filename="/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbvm/sdl.cc">
+			<Option target="bbvm"/>
+		</Unit>
+		<Unit filename="/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbvm/sdl.h">
 			<Option target="bbvm"/>
 		</Unit>
 		<Unit filename="/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbvm/storage.c">

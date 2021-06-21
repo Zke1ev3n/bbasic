@@ -333,6 +333,33 @@ screen.cc.s:
 	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/bbvm/CMakeFiles/bbvm.dir/build.make src/bbvm/CMakeFiles/bbvm.dir/screen.cc.s
 .PHONY : screen.cc.s
 
+sdl.o: sdl.cc.o
+
+.PHONY : sdl.o
+
+# target to build an object file
+sdl.cc.o:
+	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/bbvm/CMakeFiles/bbvm.dir/build.make src/bbvm/CMakeFiles/bbvm.dir/sdl.cc.o
+.PHONY : sdl.cc.o
+
+sdl.i: sdl.cc.i
+
+.PHONY : sdl.i
+
+# target to preprocess a source file
+sdl.cc.i:
+	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/bbvm/CMakeFiles/bbvm.dir/build.make src/bbvm/CMakeFiles/bbvm.dir/sdl.cc.i
+.PHONY : sdl.cc.i
+
+sdl.s: sdl.cc.s
+
+.PHONY : sdl.s
+
+# target to generate assembly for a file
+sdl.cc.s:
+	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/bbvm/CMakeFiles/bbvm.dir/build.make src/bbvm/CMakeFiles/bbvm.dir/sdl.cc.s
+.PHONY : sdl.cc.s
+
 storage.o: storage.c.o
 
 .PHONY : storage.o
@@ -444,6 +471,9 @@ help:
 	@echo "... screen.o"
 	@echo "... screen.i"
 	@echo "... screen.s"
+	@echo "... sdl.o"
+	@echo "... sdl.i"
+	@echo "... sdl.s"
 	@echo "... storage.o"
 	@echo "... storage.i"
 	@echo "... storage.s"
