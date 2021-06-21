@@ -15,6 +15,7 @@
 
 Renderer::Renderer(Screen* scn)
 {
+    this->scn_ = scn;
 	for (int i = 0; i < 9; i++)
 	{
 		this->SurfacePool[i] = NULL;
@@ -24,7 +25,6 @@ Renderer::Renderer(Screen* scn)
 		this->DrawRenderer[i] = NULL;
 	}
 	SetPenColor(-1, 0xFFFFFF);
-	this->scn_ = scn;
 }
 
 Renderer::~Renderer()
@@ -47,6 +47,7 @@ int Renderer::AllocSurface()
 		{
 			int width, height;
 			scn_->GetScreenSize(&width, &height);
+            this->SurfacePool[i] = CreateSurface(width, height);
 			SDL2Draw::FillRect(this->SurfacePool[i], NULL, SDL2Function::MapRGB(SDL2Function::GetFormat(this->SurfacePool[i]),0x00, 0x00, 0x00));
 			return i;
 		}
@@ -134,6 +135,7 @@ SDL_Surface *Renderer::GetSurface(int handle)
 
 void Renderer::DrawPicture(int page, int pic, int dx, int dy, int w, int h, int x, int y, int mode)
 {
+    //SDL_Log("DrawPicture");
 	if (this->ResPool.find(pic)->second == NULL || (page < -1 || page > 8))
 	{
 		return ;

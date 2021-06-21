@@ -11,6 +11,8 @@
 #define KEYCODE_ENTER 13
 #define KEYCODE_BACKTRACE 8
 
+using namespace std;
+
 class Line
 {
 public:

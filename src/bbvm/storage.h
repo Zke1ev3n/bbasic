@@ -1,5 +1,7 @@
-#pragma once
+#ifndef BBASIC_STORAGE_H
+#define BBASIC_STORAGE_H
 #include <map>
+
 using namespace std;
 
 class Storage
@@ -19,3 +21,5 @@ public:
 	unsigned int GetPosition(const int Handle);
 	void MovePosition(const int Handle, const int Position);
 };
+
+#endif //BBASIC_STORAGE_H

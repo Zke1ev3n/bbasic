@@ -7,11 +7,9 @@
 #IncludeRegexTransform: 
 
 /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbvm/storage.c
-stdio.h
--
 string
 -
-string.h
+stdio.h
 -
 unistd.h
 -

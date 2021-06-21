@@ -360,32 +360,32 @@ sdl.cc.s:
 	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/bbvm/CMakeFiles/bbvm.dir/build.make src/bbvm/CMakeFiles/bbvm.dir/sdl.cc.s
 .PHONY : sdl.cc.s
 
-storage.o: storage.c.o
+storage.o: storage.cc.o
 
 .PHONY : storage.o
 
 # target to build an object file
-storage.c.o:
-	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/bbvm/CMakeFiles/bbvm.dir/build.make src/bbvm/CMakeFiles/bbvm.dir/storage.c.o
-.PHONY : storage.c.o
+storage.cc.o:
+	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/bbvm/CMakeFiles/bbvm.dir/build.make src/bbvm/CMakeFiles/bbvm.dir/storage.cc.o
+.PHONY : storage.cc.o
 
-storage.i: storage.c.i
+storage.i: storage.cc.i
 
 .PHONY : storage.i
 
 # target to preprocess a source file
-storage.c.i:
-	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/bbvm/CMakeFiles/bbvm.dir/build.make src/bbvm/CMakeFiles/bbvm.dir/storage.c.i
-.PHONY : storage.c.i
+storage.cc.i:
+	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/bbvm/CMakeFiles/bbvm.dir/build.make src/bbvm/CMakeFiles/bbvm.dir/storage.cc.i
+.PHONY : storage.cc.i
 
-storage.s: storage.c.s
+storage.s: storage.cc.s
 
 .PHONY : storage.s
 
 # target to generate assembly for a file
-storage.c.s:
-	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/bbvm/CMakeFiles/bbvm.dir/build.make src/bbvm/CMakeFiles/bbvm.dir/storage.c.s
-.PHONY : storage.c.s
+storage.cc.s:
+	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/bbvm/CMakeFiles/bbvm.dir/build.make src/bbvm/CMakeFiles/bbvm.dir/storage.cc.s
+.PHONY : storage.cc.s
 
 string_manager.o: string_manager.cc.o
 

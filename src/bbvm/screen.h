@@ -19,7 +19,6 @@ private:
     int FontWidth, FontHeigth;
     SDL_Window *MainWnd;
     SDL_Surface *ScreenSurface, *buffer;
-    SDL_Surface *screen_surface_;
     void *Font, *DebugFont;
     void *RefreshThread;
     char *FontFile;
@@ -51,6 +50,7 @@ public:
     void SetTransparent(bool value);
     Point GetDispPosition();
     void SetDispPosition(int x, int y);
+    //TODO 对外的接口不应该暴露
     SDL_Surface *GetScreenSurface();
     void SetTextLocation(int l, int r);
     void SetTextColor(Uint32 FrontColor, Uint32 BackColor);

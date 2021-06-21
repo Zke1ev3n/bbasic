@@ -18,14 +18,21 @@ input::~input()
 }
 
 void input::PollEvents() {
-    SDL_Event event;
-    SDL_PollEvent(&event);
-
+//    SDL_Event event;
+//    if(SDL_PollEvent(&event) != 0){
+//        if(event.type == SDL_QUIT){
+//            SDL_Log("SDL_QUIT");
+//            exit(0);
+//        }
+//    }
+    //SDL_PumpEvents();
 }
 
 //这里不需要监听到何时按下和抬起
 //https://stackoverflow.com/questions/56435371/using-sdl-pollevent-vs-sdl-pumpevents
 bool input::KeyPressed(int key) {
+
+    SDL_PumpEvents();
 
     switch (key) {
         case 38:
@@ -98,7 +105,7 @@ int input::WaitKey(bool OnlyKeyboard)
 {
     SDL_Event event;
     while(true) {
-        ShownKeyboard();
+        //ShownKeyboard();
         if (SDL_WaitEvent(&event) != 0) {
             //if (event.type == SDL_KEYDOWN && SDL_IsTextInputActive() == SDL_FALSE) {
             if (event.type == SDL_KEYDOWN) {

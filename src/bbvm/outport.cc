@@ -19,11 +19,11 @@ void BBVM::OutPort(unsigned int Port, unsigned int Argu)
 		scn_->NewLine();
 		break;
 	case 1:		// disp string + \n
-		scn_->Display((char *)this->StrMan->GetString(Argu));
+		scn_->Display((char *)this->GetIOString(Argu));
 		scn_->NewLine();
 		break;
 	case 2:		// disp string
-		scn_->Display((char *)this->StrMan->GetString(Argu));
+		scn_->Display((char *)this->GetIOString(Argu));
 		break;
 	case 3:		// disp integer
 		scn_->Display((int)Argu);
@@ -54,7 +54,7 @@ void BBVM::OutPort(unsigned int Port, unsigned int Argu)
 		break;
 	case 14:		// get data as string
 		{
-			unsigned char *tmp = this->StrMan->GetString(this->DataPtr);
+			unsigned char *tmp = this->GetIOString(this->DataPtr);
 			this->DataPtr += strlen((char *)tmp) + 1;
 			this->StrMan->PutString(this->r3, tmp);
 		}
@@ -74,7 +74,7 @@ void BBVM::OutPort(unsigned int Port, unsigned int Argu)
 		renderer_->FreeSurface(this->r3);
 		break;
 	case 19:		// load picture
-		this->r3 = (unsigned int)renderer_->LoadPicture((char *)this->StrMan->GetString(this->r3), this->r2);
+		this->r3 = (unsigned int)renderer_->LoadPicture((char *)this->GetIOString(this->r3), this->r2);
 		break;
 	case 20:		// copy rectange
 		renderer_->DrawPicture(
@@ -164,7 +164,7 @@ void BBVM::OutPort(unsigned int Port, unsigned int Argu)
 		this->r3 = input_->WaitKey();
 		break;
 	case 48:		// open file
-		storage_->OpenFile((char *)this->StrMan->GetString(this->r3), this->r1);
+		storage_->OpenFile((char *)this->GetIOString(this->r3), this->r1);
 		break;
 	case 49:		// close file
 		storage_->CloseFile(Argu);
@@ -195,7 +195,7 @@ void BBVM::OutPort(unsigned int Port, unsigned int Argu)
 			storage_->WriteFile_Int32(this->r1, this->r2, this->r3);
 			break;
 		case 18:
-			storage_->WriteFile_String(this->r1, this->r2, (char *)this->StrMan->GetString(this->r3));
+			storage_->WriteFile_String(this->r1, this->r2, (char *)this->GetIOString(this->r3));
 			break;
 		}
 		break;

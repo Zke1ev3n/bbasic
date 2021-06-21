@@ -11,7 +11,7 @@
 #include "screen.h"
 #include "utils.h"
 
-#define DEBUG_LAYER 0
+#define DEBUG_LAYER 1
 
 Screen::Screen(int width, int height)
 {
@@ -47,6 +47,7 @@ Screen::Screen(int width, int height)
 
 void Screen::Refresh(Rect *RefRect)
 {
+    Uint32 StartTime = SDL_GetTicks();
 	static SDL_mutex *mutex;
 	if (mutex == NULL)
 		mutex = SDL_CreateMutex();
@@ -65,7 +66,10 @@ void Screen::Refresh(Rect *RefRect)
 		_rect.w = _r.w * Multi;
 		_rect.h = _r.h * Multi;
 		SDL_BlitScaled(this->ScreenSurface, &_r, this->buffer, &_rect);
-
+        Uint32 EndTime = SDL_GetTicks();
+        Uint32 MustDelay = (1000 / FPSNEED) - (EndTime - StartTime);
+        if (MustDelay > 10)
+            SDL_Delay(MustDelay);
 #if DEBUG_LAYER == 1
 		DrawDebugLayer(this->buffer, 1000.0f / (SDL_GetTicks() - StartTime));
 #endif // DEBUG_LAYER

@@ -68,12 +68,7 @@ void StringManager::PutString(unsigned int Handle, const unsigned char *Str)
 
 unsigned char *StringManager::GetString(unsigned int Handle)
 {
-	if (EffectiveHandle((int)Handle) == true)
-	{
-		return (unsigned char *)(this->StringPool[INDEX]->c_str());
-	} else {
-		return (unsigned char *)vmem + Handle;
-	}
+    return (unsigned char *)this->StringPool[INDEX]->c_str();
 }
 
 string *StringManager::QuoteString(unsigned int Handle)

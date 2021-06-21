@@ -167,18 +167,18 @@ src/bbvm/CMakeFiles/bbvm.dir/screen.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/bbvm.dir/screen.cc.s"
 	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/src/bbvm && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbvm/screen.cc -o CMakeFiles/bbvm.dir/screen.cc.s
 
-src/bbvm/CMakeFiles/bbvm.dir/storage.c.o: src/bbvm/CMakeFiles/bbvm.dir/flags.make
-src/bbvm/CMakeFiles/bbvm.dir/storage.c.o: ../src/bbvm/storage.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object src/bbvm/CMakeFiles/bbvm.dir/storage.c.o"
-	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/src/bbvm && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/bbvm.dir/storage.c.o -c /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbvm/storage.c
+src/bbvm/CMakeFiles/bbvm.dir/storage.cc.o: src/bbvm/CMakeFiles/bbvm.dir/flags.make
+src/bbvm/CMakeFiles/bbvm.dir/storage.cc.o: ../src/bbvm/storage.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object src/bbvm/CMakeFiles/bbvm.dir/storage.cc.o"
+	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/src/bbvm && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/bbvm.dir/storage.cc.o -c /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbvm/storage.cc
 
-src/bbvm/CMakeFiles/bbvm.dir/storage.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/bbvm.dir/storage.c.i"
-	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/src/bbvm && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbvm/storage.c > CMakeFiles/bbvm.dir/storage.c.i
+src/bbvm/CMakeFiles/bbvm.dir/storage.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/bbvm.dir/storage.cc.i"
+	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/src/bbvm && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbvm/storage.cc > CMakeFiles/bbvm.dir/storage.cc.i
 
-src/bbvm/CMakeFiles/bbvm.dir/storage.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/bbvm.dir/storage.c.s"
-	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/src/bbvm && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbvm/storage.c -o CMakeFiles/bbvm.dir/storage.c.s
+src/bbvm/CMakeFiles/bbvm.dir/storage.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/bbvm.dir/storage.cc.s"
+	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/src/bbvm && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbvm/storage.cc -o CMakeFiles/bbvm.dir/storage.cc.s
 
 src/bbvm/CMakeFiles/bbvm.dir/string_manager.cc.o: src/bbvm/CMakeFiles/bbvm.dir/flags.make
 src/bbvm/CMakeFiles/bbvm.dir/string_manager.cc.o: ../src/bbvm/string_manager.cc
@@ -228,7 +228,7 @@ bbvm_OBJECTS = \
 "CMakeFiles/bbvm.dir/input.cc.o" \
 "CMakeFiles/bbvm.dir/outport.cc.o" \
 "CMakeFiles/bbvm.dir/screen.cc.o" \
-"CMakeFiles/bbvm.dir/storage.c.o" \
+"CMakeFiles/bbvm.dir/storage.cc.o" \
 "CMakeFiles/bbvm.dir/string_manager.cc.o" \
 "CMakeFiles/bbvm.dir/utils.cc.o" \
 "CMakeFiles/bbvm.dir/sdl.cc.o"
@@ -243,7 +243,7 @@ src/bbvm/bbvm: src/bbvm/CMakeFiles/bbvm.dir/inport.cc.o
 src/bbvm/bbvm: src/bbvm/CMakeFiles/bbvm.dir/input.cc.o
 src/bbvm/bbvm: src/bbvm/CMakeFiles/bbvm.dir/outport.cc.o
 src/bbvm/bbvm: src/bbvm/CMakeFiles/bbvm.dir/screen.cc.o
-src/bbvm/bbvm: src/bbvm/CMakeFiles/bbvm.dir/storage.c.o
+src/bbvm/bbvm: src/bbvm/CMakeFiles/bbvm.dir/storage.cc.o
 src/bbvm/bbvm: src/bbvm/CMakeFiles/bbvm.dir/string_manager.cc.o
 src/bbvm/bbvm: src/bbvm/CMakeFiles/bbvm.dir/utils.cc.o
 src/bbvm/bbvm: src/bbvm/CMakeFiles/bbvm.dir/sdl.cc.o

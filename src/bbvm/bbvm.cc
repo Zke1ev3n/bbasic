@@ -36,26 +36,16 @@ void BBVM::Run() {
     this->rb = StateBase;
     this->rs = this->rb + 1000;
 
-    //StateBase = binlen;
-    Uint32 frame_start, frame_end;
-    Uint32 must_delay;
-
     while (status_ == true)
     {
-        frame_start = SDL_GetTicks();
         //接收事件
         input_->PollEvents();
-        if (Exec() == false) break;
-
-        frame_end = SDL_GetTicks();
-        must_delay = (1000 / FPSNEED) - (frame_end - frame_start);
-        if (must_delay > 10)
-            SDL_Delay(must_delay);
+        if (Exec() == false) status_ = false;
     }
     scn_->NewLine();
 }
 
-int BBVM::Exit() {
+void BBVM::Exit() {
     scn_->Display("bbvm exit");
 
     delete this->StrMan;
@@ -81,6 +71,7 @@ int BBVM::LoadBinFile(const char *filepath) {
 
     fseek(fp, 0, SEEK_END);
     int size = ftell(fp);
+    fseek(fp, 0, SEEK_SET);
 
     fread(header, 16, 1, fp);
     //校验
@@ -97,6 +88,8 @@ int BBVM::LoadBinFile(const char *filepath) {
     {
         return -1;
     }
+
+    StateBase = size;
 
     //加载文件
     fread(vmem_, size, 1, fp);
@@ -192,6 +185,7 @@ void BBVM::CoreCrash(const char *fmt, ...)
     Utils::vError(fmt, ap);
     va_end(ap);
     CoreDump();
+    exit(0);
 }
 
 unsigned int BBVM::GetReg(unsigned int Reg)
@@ -456,4 +450,13 @@ bool BBVM::Exec()
             return false;
     }
     return true;
+}
+
+unsigned char* BBVM::GetIOString(int handle){
+    if (StrMan->EffectiveHandle((int)handle) == true)
+    {
+        return StrMan->GetString(handle);
+    } else {
+        return (unsigned char *)vmem_ + handle;
+    }
 }

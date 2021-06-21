@@ -95,13 +95,13 @@ private:
     unsigned char* GetString();
     float GetFloat();
     unsigned int GetInteger();
-
+    unsigned char* GetIOString(int handle);
 
 public:
     int Init();
     void Run();
 
-    int Exit();
+    void Exit();
     int LoadBinFile(const char* filepath);
     BBVM();
     ~BBVM();

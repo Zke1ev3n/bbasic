@@ -34,10 +34,10 @@ unsigned int BBVM::InPort(unsigned int Port)
 		}
 		return this->r3;
 	case 5:		// copy string
-		this->StrMan->PutString(this->r3, this->StrMan->GetString(this->r2));
+		this->StrMan->PutString(this->r3, this->GetIOString(this->r2));
 		return this->r3;
 	case 6:		// append string
-		this->StrMan->QuoteString(this->r3)->append((char *)this->StrMan->GetString(this->r2));
+		this->StrMan->QuoteString(this->r3)->append((char *)this->GetIOString(this->r2));
 		return this->r3;
 	case 7:		// get length
 		return this->StrMan->StringLength(this->r3);
@@ -54,13 +54,13 @@ unsigned int BBVM::InPort(unsigned int Port)
 		}
 		return this->r3;
 	case 11:		// string -> float
-		conv.f = (float)atof((char *)this->StrMan->GetString(this->r3));
+		conv.f = (float)atof((char *)this->GetIOString(this->r3));
 		return conv.i;
 	case 12:		// string[index]
-		return this->StrMan->GetString(this->r3)[this->r2];
+		return this->GetIOString(this->r3)[this->r2];
 	case 13:		// string[index] = ch
 		{
-			unsigned char *buf = this->StrMan->GetString(this->r3);
+			unsigned char *buf = this->GetIOString(this->r3);
 			if (this->r2 < strlen((char *)buf))
 			{
 				buf[this->r2] = this->r1 & 0xFF;
@@ -122,9 +122,9 @@ unsigned int BBVM::InPort(unsigned int Port)
 		}
 		return this->r3;
 	case 33:		// string -> int
-		return atoi((char *)this->StrMan->GetString(this->r3));
+		return atoi((char *)this->GetIOString(this->r3));
 	case 34:		// string[0]
-		return this->StrMan->GetString(this->r3)[0];
+		return this->GetIOString(this->r3)[0];
 	case 35:		// left
 		this->StrMan->PutString(this->r3, this->StrMan->StringLeft(this->r2, this->r1));
 		return this->r3;

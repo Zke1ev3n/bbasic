@@ -13,7 +13,7 @@ add_executable(bbvm
         input.cc
         outport.cc
         screen.cc
-        storage.c
+        storage.cc
         string_manager.cc
         utils.cc
         sdl.cc)
