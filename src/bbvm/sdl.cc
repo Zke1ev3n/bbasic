@@ -84,21 +84,6 @@ int SDL2Function::GetRenderDrawColor(SDL_Renderer *renderer, Uint8 *r, Uint8 *g,
     return SDL_GetRenderDrawColor(renderer, r, g, b, a);
 }
 
-int SDL2Function::GetAllowCharNum(const char *str)
-{
-    //int FreeChar = 0, len = strlen(str);
-    int FreeChar = 0;
-    int len = Utils::GetGB2312Count(str);
-    int fw = scn->GetFontWidth(), sw, sh, x = scn->GetDispPosition().x;
-    scn->GetScreenSize(&sw, &sh);
-    for (int i = 0; i < len && x <= sw && str[i] != '\n'; i++)
-    {
-        FreeChar++; x += fw;
-        if ((str[i - 1] & 0x80) != 0) { FreeChar++; i++; x += fw; }
-    }
-    return FreeChar;
-}
-
 // ---- SDL2Draw ----
 
 int SDL2Draw::FillRect(SDL_Surface *dst, const Rect *rect, Uint32 color)

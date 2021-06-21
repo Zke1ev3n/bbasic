@@ -9,11 +9,11 @@
 #define WILL_REFRESH(_x,_y,_w,_h) \
 	{ if (SurfaceHandle == -1) { \
 		Rect _rr; _rr.x = (_x); _rr.y = (_y); _rr.w = (_w); _rr.h = (_h); \
-		scn->Refresh(&_rr); \
+		scn_->Refresh(&_rr); \
 	} }
 #define MIN(A,B) (((A)<=(B))?(A):(B))
 
-Renderer::Renderer()
+Renderer::Renderer(Screen* scn)
 {
 	for (int i = 0; i < 9; i++)
 	{
@@ -24,6 +24,7 @@ Renderer::Renderer()
 		this->DrawRenderer[i] = NULL;
 	}
 	SetPenColor(-1, 0xFFFFFF);
+	this->scn_ = scn;
 }
 
 Renderer::~Renderer()
@@ -38,15 +39,14 @@ SDL_Surface *Renderer::CreateSurface(int width, int height)
 	return SDL2Function::CreateRGBSurface(0, width, height);
 }
 
-int Renderer::AllocSurface(int width, int height)
+int Renderer::AllocSurface()
 {
 	for (int i = 0; i < 9; i++)
 	{
 		if (this->SurfacePool[i] == NULL)
 		{
-			//int width, height;
-			//scn->GetScreenSize(&width, &height);
-			this->SurfacePool[i] = CreateSurface(width, height);
+			int width, height;
+			scn_->GetScreenSize(&width, &height);
 			SDL2Draw::FillRect(this->SurfacePool[i], NULL, SDL2Function::MapRGB(SDL2Function::GetFormat(this->SurfacePool[i]),0x00, 0x00, 0x00));
 			return i;
 		}
@@ -129,7 +129,7 @@ void Renderer::FreePicture(int Handle)
 SDL_Surface *Renderer::GetSurface(int handle)
 {
 	//return (handle == -1)? scn->GetScreenSurface() : this->SurfacePool[handle];
-    return (handle == -1)? screen_surface_ : this->SurfacePool[handle];
+    return (handle == -1)? scn_->GetScreenSurface() : this->SurfacePool[handle];
 }
 
 void Renderer::DrawPicture(int page, int pic, int dx, int dy, int w, int h, int x, int y, int mode)
@@ -189,7 +189,7 @@ void Renderer::CloneSurface(int SrcSurfaceHandle, int DestSurfaceHandle, int x, 
 	SDL2Draw::BlitSurfaceWithColorKey(SrcSurface, &SrcRect, DestSurface, &DstRect, SDL2Function::MapRGB(SDL2Function::GetFormat(SrcSurface), 0xFF, 0x00, 0xFF));
 
 	if (DestSurfaceHandle == -1)
-		scn->Refresh();
+		scn_->Refresh();
 
 }
 
@@ -203,7 +203,7 @@ void Renderer::CloneSurface(int x, int y, int width, int height, int cx, int cy,
     SDL2Draw::BlitSurfaceWithColorKey(SrcSurface, &SrcRect, DestSurface, &CloneRect, SDL2Function::MapRGB(SDL2Function::GetFormat(SrcSurface), 0xFF, 0x00, 0xFF));
 
     if (DestSurfaceHandle == -1)
-        scn->Refresh();
+        scn_->Refresh();
 }
 
 void Renderer::FillSurface(int SurfaceHandle, int x, int y, int w, int h, int color)
@@ -366,9 +366,4 @@ void Renderer::DrawCircle(int SurfaceHandle, int x, int y, int r)
 	__bresenham_circle(GetSurface(SurfaceHandle), x, y, r, c);
 
 	WILL_REFRESH(x - r - 1, y - r - 1, 2 * r + 1, 2 * r + 1);
-}
-
-SDL_Surface *Renderer::GetScreenSurface()
-{
-    return this->screen_surface_;
 }

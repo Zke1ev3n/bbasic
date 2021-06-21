@@ -45,39 +45,6 @@ Screen::Screen(int width, int height)
 	}
 }
 
-
-Screen::Screen(int width, int height, SDL_Surface* screen_surface)
-{
-    SDL_Init(SDL_INIT_VIDEO | SDL_INIT_TIMER | SDL_INIT_EVENTS);
-    this->ScreenSurface = screen_surface;
-    this->buffer = NULL;
-    this->Transparent = false;
-    this->FontFile = NULL;
-
-    this->MainWnd = SDL_CreateWindow(VERSION, SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, width, height, SDL_WINDOW_SHOWN);
-    if(this->MainWnd == NULL)
-    {
-        Utils::Error("Window could not be created! SDL_Error: %s\n", SDL_GetError());
-        SDL_Quit();
-        return ;
-    }
-    if (TTF_Init() == -1)
-    {
-        Utils::Error("Initialize ttf failure");
-    } else {
-        SetFont(0);
-#if defined(__linux__) || defined(__APPLE__)
-        this->DebugFont = TTF_OpenFont("./resource/simkai.ttf", 12);
-#else
-        this->DebugFont = TTF_OpenFont("C:\\Windows\\Fonts\\CONSOLA.TTF", 12);
-#endif
-        SetScreenSize(width, height);
-
-        this->TextColor = SDL_MapRGB(this->ScreenSurface->format, 0xFF, 0xFF, 0xFF);
-        this->BackgroundColor = SDL_MapRGB(this->ScreenSurface->format, 0x00, 0x00, 0x00);
-    }
-}
-
 void Screen::Refresh(Rect *RefRect)
 {
 	static SDL_mutex *mutex;
@@ -232,7 +199,7 @@ void Screen::Display(const char *Text, int x, int y)
 			CheckPosition();
 		} else {
 		    //TODO BUG
-			int len = SDL2Function::GetAllowCharNum(Text);
+			int len = GetAllowCharNum(Text);
 			int index = Utils::GetGB2312Index(Text, len);
 			char *t = (char*)malloc(index + 1);
 			strncpy(t, Text + i, index);
@@ -350,4 +317,19 @@ int Screen::GetFontHeigth()
 SDL_Window *Screen::GetMainWindow()
 {
 	return this->MainWnd;
+}
+
+int Screen::GetAllowCharNum(const char *str)
+{
+    //int FreeChar = 0, len = strlen(str);
+    int FreeChar = 0;
+    int len = Utils::GetGB2312Count(str);
+    int fw = GetFontWidth(), sw, sh, x = GetDispPosition().x;
+    GetScreenSize(&sw, &sh);
+    for (int i = 0; i < len && x <= sw && str[i] != '\n'; i++)
+    {
+        FreeChar++; x += fw;
+        if ((str[i - 1] & 0x80) != 0) { FreeChar++; i++; x += fw; }
+    }
+    return FreeChar;
 }

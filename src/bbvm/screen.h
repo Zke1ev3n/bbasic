@@ -31,10 +31,10 @@ private:
     Rect ShowText(SDL_Surface *Text, int x, int y, int width, int height, SDL_Surface *Dest);
     bool IsUTF8(const void *Str, long Size);
     void CheckPosition();
+    int GetAllowCharNum(const char *str);
     void DrawDebugLayer(SDL_Surface *dst, float FPS);
 public:
     Screen(int width, int height);
-    Screen(int width, int height, SDL_Surface* screen_surface);
     ~Screen();
 
     void StartRefreshThread();

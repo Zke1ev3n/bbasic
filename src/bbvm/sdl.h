@@ -41,7 +41,6 @@ public:
     static SDL_Renderer *CreateSoftwareRenderer(SDL_Surface *surface);
     static int SetRenderDrawColor(SDL_Renderer *renderer, Uint8 r, Uint8 g, Uint8 b, Uint8 a);
     static int GetRenderDrawColor(SDL_Renderer *renderer, Uint8 *r, Uint8 *g, Uint8 *b, Uint8 *a);
-    static int GetAllowCharNum(const char *str);
 };
 
 class SDL2Draw

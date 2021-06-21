@@ -15,9 +15,8 @@ private:
 	SDL_Renderer *DrawRenderer[10];
 	Point StartDrawPoint[10];
 	map<int, SDL_Surface*> ResPool;
-	//当前显示器的surface
-	SDL_Surface *screen_surface_;
 
+	Screen* scn_;
 	SDL_Surface *CreateSurface(int width, int height);
 	int RequestResourceHandle();
 	SDL_Surface *GetSurface(int handle);
@@ -26,11 +25,9 @@ private:
 	void __plot_circle_points(SDL_Surface *Surface, int xc, int yc, int x, int y, Uint32 c);
 	void __bresenham_circle(SDL_Surface *Surface, int xc, int yc, int radius, Uint32 c);
 public:
-	Renderer();
+	Renderer(Screen* scn);
 	~Renderer();
 	int AllocSurface();
-	int AllocSurface(int width, int height);
-    SDL_Surface *GetScreenSurface();
 	void FreeSurface(int index);
 	int LoadPicture(const char *FileName, unsigned int index);
 	void FreePicture(int Handle);

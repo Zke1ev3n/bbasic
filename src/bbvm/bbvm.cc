@@ -8,6 +8,7 @@
 
 int BBVM::Init() {
 
+    scn_ = new Screen(SCREEN_WIDTH, SCREEN_HEIGHT);
     Utils::Log("Virtual Memory...");
     vmem_ = (unsigned char *)malloc(MEMSIZE);
     if (vmem_ == NULL)
@@ -17,11 +18,10 @@ int BBVM::Init() {
     }
     memset(vmem_, '\0', MEMSIZE);
 
-    renderer_ = new Renderer();
+    //TODO 这里暂时未找到更好的渲染器和显示器同步的方法，直接传实例了
+    renderer_ = new Renderer(scn_);
     input_ = new input();
     storage_ = new Storage();
-
-    scn_ = new Screen(SCREEN_WIDTH, SCREEN_HEIGHT, renderer_->GetScreenSurface());
 
     status_ = true;
 
