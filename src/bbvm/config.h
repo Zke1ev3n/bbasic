@@ -16,7 +16,7 @@ const int SCREEN_HEIGHT = 320;
 //默认帧数
 #define FPSNEED 24
 
-#define VERSION "BBVM v0.0.1"
+#define VERSION "BBVM v0.1.0"
 #define DEFAULTBIN "test.bin"
 
 #endif //BBASIC_CONFIG_H

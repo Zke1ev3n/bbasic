@@ -3,34 +3,34 @@
 #include <string.h>
 #include <ctype.h>
 #include <SDL2/SDL.h>
+#include <thread>
 
 #define SDLK_RETURN '\r'
 #define SDLK_ESCAPE '\033'
 #define SDLK_BACKSPACE '\b'
 
-input::input()
+Input::Input()
 {
     key_states = SDL_GetKeyboardState(NULL);
 }
 
-input::~input()
+Input::~Input()
 {
 }
 
-void input::PollEvents() {
-//    SDL_Event event;
-//    if(SDL_PollEvent(&event) != 0){
-//        if(event.type == SDL_QUIT){
-//            SDL_Log("SDL_QUIT");
-//            exit(0);
-//        }
-//    }
-    //SDL_PumpEvents();
+void Input::HandleEvents() {
+
+    SDL_Event event1;
+    SDL_PollEvent(&event1);
+    if(event1.type == SDL_QUIT){
+        SDL_Log("SDL_QUIT");
+        exit(0);
+    }
 }
 
 //这里不需要监听到何时按下和抬起
 //https://stackoverflow.com/questions/56435371/using-sdl-pollevent-vs-sdl-pumpevents
-bool input::KeyPressed(int key) {
+bool Input::KeyPressed(int key) {
 
     SDL_PumpEvents();
 
@@ -55,13 +55,13 @@ bool input::KeyPressed(int key) {
     return key_states[key];
 }
 
-void input::ShownKeyboard()
+void Input::ShownKeyboard()
 {
     if (SDL_HasScreenKeyboardSupport() == SDL_TRUE)
         SDL_StartTextInput();
 }
 
-void input::HiddenKeyboard()
+void Input::HiddenKeyboard()
 {
     if (SDL_HasScreenKeyboardSupport() == SDL_TRUE)
         SDL_StopTextInput();
@@ -74,7 +74,7 @@ inline bool _isalpha(int c)
 }
 
 //TODO 优化
-inline int input::__escape_charactor(int keymod, int key)
+inline int Input::__escape_charactor(int keymod, int key)
 {
     if (key == SDLK_CAPSLOCK)
         return 0;
@@ -101,9 +101,9 @@ inline int input::__escape_charactor(int keymod, int key)
 
 
 //TODO 会阻塞主线程
-int input::WaitKey(bool OnlyKeyboard)
+int Input::WaitKey(bool OnlyKeyboard)
 {
-    SDL_Event event;
+    //SDL_Event event;
     while(true) {
         //ShownKeyboard();
         if (SDL_WaitEvent(&event) != 0) {

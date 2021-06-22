@@ -62,7 +62,7 @@ private:
     bool status_ = false;
     int bin_version_;
     Screen *scn_;
-    input *input_;
+    Input *input_;
     Renderer *renderer_;
     Storage *storage_;
 
@@ -100,7 +100,6 @@ private:
 public:
     int Init();
     void Run();
-
     void Exit();
     int LoadBinFile(const char* filepath);
     BBVM();

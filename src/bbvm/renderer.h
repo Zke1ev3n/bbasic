@@ -15,7 +15,6 @@ private:
 	SDL_Renderer *DrawRenderer[10];
 	Point StartDrawPoint[10];
 	map<int, SDL_Surface*> ResPool;
-
 	Screen* scn_;
 	SDL_Surface *CreateSurface(int width, int height);
 	int RequestResourceHandle();

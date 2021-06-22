@@ -2,6 +2,7 @@
 // Created by liangyulin on 2021/6/18.
 //
 #include <SDL2/SDL.h>
+#include <thread>
 
 #include "bbvm.h"
 #include "utils.h"
@@ -20,7 +21,7 @@ int BBVM::Init() {
 
     //TODO 这里暂时未找到更好的渲染器和显示器同步的方法，直接传实例了
     renderer_ = new Renderer(scn_);
-    input_ = new input();
+    input_ = new Input();
     storage_ = new Storage();
 
     status_ = true;
@@ -36,12 +37,13 @@ void BBVM::Run() {
     this->rb = StateBase;
     this->rs = this->rb + 1000;
 
+    //消息循环
     while (status_ == true)
     {
-        //接收事件
-        input_->PollEvents();
         if (Exec() == false) status_ = false;
     }
+
+
     scn_->NewLine();
 }
 

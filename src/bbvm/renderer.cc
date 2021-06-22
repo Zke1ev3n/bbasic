@@ -1,6 +1,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <math.h>
+#include <sys/time.h>
 #include "renderer.h"
 #include "utils.h"
 #include "sdl.h"

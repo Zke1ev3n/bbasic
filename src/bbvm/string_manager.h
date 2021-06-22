@@ -17,7 +17,7 @@ public:
 	unsigned int CreateString();
 	unsigned int ToInt(unsigned int Handle);
 	void PutString(unsigned int Handle, const unsigned char *Str);
-    inline bool EffectiveHandle(unsigned int Handle);
+    bool EffectiveHandle(unsigned int Handle);
 	unsigned char *GetString(unsigned int Handle);
 	string *QuoteString(unsigned int Handle);
 	void FreeString(unsigned int Handle);
