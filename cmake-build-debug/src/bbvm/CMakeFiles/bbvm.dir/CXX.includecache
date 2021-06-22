@@ -7,9 +7,7 @@
 #IncludeRegexTransform: 
 
 /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbvm/bbvm.cc
-SDL2/SDL.h
--
-thread
+sys/time.h
 -
 bbvm.h
 /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbvm/bbvm.h
@@ -32,55 +30,11 @@ string_manager.h
 
 /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbvm/config.h
 
-/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbvm/inport.cc
-time.h
--
-math.h
--
-string.h
--
-stdlib.h
--
-sys/time.h
--
-bbvm.h
-/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbvm/bbvm.h
-
-/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbvm/input.cc
-screen.h
-/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbvm/screen.h
-input.h
-/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbvm/input.h
-string.h
--
-ctype.h
--
-SDL2/SDL.h
--
-thread
--
-
 /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbvm/input.h
 string
 -
 vector
 -
-
-/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbvm/main.cc
-bbvm.h
-/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbvm/bbvm.h
-utils.h
-/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbvm/utils.h
-
-/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbvm/outport.cc
-string.h
--
-sys/time.h
--
-unistd.h
--
-bbvm.h
-/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbvm/bbvm.h
 
 /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbvm/renderer.h
 map

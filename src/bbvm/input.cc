@@ -103,7 +103,7 @@ inline int Input::__escape_charactor(int keymod, int key)
 //TODO 会阻塞主线程
 int Input::WaitKey(bool OnlyKeyboard)
 {
-    //SDL_Event event;
+    SDL_Event event;
     while(true) {
         //ShownKeyboard();
         if (SDL_WaitEvent(&event) != 0) {

@@ -25,7 +25,6 @@ class Input
 private:
     //键盘状态
     const Uint8* key_states;
-    SDL_Event event;
 
     inline int __escape_charactor(int keymod, int key);
     void ShownKeyboard();

@@ -1,9 +1,7 @@
 //
 // Created by liangyulin on 2021/6/18.
 //
-#include <SDL2/SDL.h>
-#include <thread>
-
+#include <sys/time.h>
 #include "bbvm.h"
 #include "utils.h"
 
@@ -31,15 +29,30 @@ int BBVM::Init() {
 
 void BBVM::Run() {
 
+    //TODO VMReset
     this->rp = this->rf = 0;
     this->r0 = this->r1 = 0;
     this->r2 = this->r3 = 0;
     this->rb = StateBase;
     this->rs = this->rb + 1000;
 
+    //40ms
+    long int delta=40;
+    long int last_time=0, time=0;
+    struct timeval tp;
+
+    gettimeofday(&tp, NULL);
+    last_time = tp.tv_sec * 1000 + tp.tv_usec / 1000;
     //消息循环
     while (status_ == true)
     {
+        //TODO Timer
+        gettimeofday(&tp, NULL);
+        time = tp.tv_sec * 1000 + tp.tv_usec / 1000;
+        if(time - last_time > delta ){
+            last_time = time;
+            input_->HandleEvents();
+        }
         if (Exec() == false) status_ = false;
     }
 
