@@ -130,17 +130,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named bbvm
+# Target rules for targets named bbc
 
 # Build rule for target.
-bbvm: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 bbvm
-.PHONY : bbvm
+bbc: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 bbc
+.PHONY : bbc
 
 # fast build rule for target.
-bbvm/fast:
-	$(MAKE) $(MAKESILENT) -f src/bbvm/CMakeFiles/bbvm.dir/build.make src/bbvm/CMakeFiles/bbvm.dir/build
-.PHONY : bbvm/fast
+bbc/fast:
+	$(MAKE) $(MAKESILENT) -f src/bbc/CMakeFiles/bbc.dir/build.make src/bbc/CMakeFiles/bbc.dir/build
+.PHONY : bbc/fast
 
 # Help Target
 help:
@@ -150,7 +150,7 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... bbvm"
+	@echo "... bbc"
 .PHONY : help
 
 

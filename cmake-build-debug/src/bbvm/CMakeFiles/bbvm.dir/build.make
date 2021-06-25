@@ -128,18 +128,18 @@ src/bbvm/CMakeFiles/bbvm.dir/inport.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/bbvm.dir/inport.cc.s"
 	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/src/bbvm && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbvm/inport.cc -o CMakeFiles/bbvm.dir/inport.cc.s
 
-src/bbvm/CMakeFiles/bbvm.dir/input.cc.o: src/bbvm/CMakeFiles/bbvm.dir/flags.make
-src/bbvm/CMakeFiles/bbvm.dir/input.cc.o: ../src/bbvm/input.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object src/bbvm/CMakeFiles/bbvm.dir/input.cc.o"
-	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/src/bbvm && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/bbvm.dir/input.cc.o -c /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbvm/input.cc
+src/bbvm/CMakeFiles/bbvm.dir/input_iml.cc.o: src/bbvm/CMakeFiles/bbvm.dir/flags.make
+src/bbvm/CMakeFiles/bbvm.dir/input_iml.cc.o: ../src/bbvm/input_iml.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object src/bbvm/CMakeFiles/bbvm.dir/input_iml.cc.o"
+	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/src/bbvm && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/bbvm.dir/input_iml.cc.o -c /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbvm/input_iml.cc
 
-src/bbvm/CMakeFiles/bbvm.dir/input.cc.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/bbvm.dir/input.cc.i"
-	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/src/bbvm && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbvm/input.cc > CMakeFiles/bbvm.dir/input.cc.i
+src/bbvm/CMakeFiles/bbvm.dir/input_iml.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/bbvm.dir/input_iml.cc.i"
+	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/src/bbvm && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbvm/input_iml.cc > CMakeFiles/bbvm.dir/input_iml.cc.i
 
-src/bbvm/CMakeFiles/bbvm.dir/input.cc.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/bbvm.dir/input.cc.s"
-	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/src/bbvm && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbvm/input.cc -o CMakeFiles/bbvm.dir/input.cc.s
+src/bbvm/CMakeFiles/bbvm.dir/input_iml.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/bbvm.dir/input_iml.cc.s"
+	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/src/bbvm && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbvm/input_iml.cc -o CMakeFiles/bbvm.dir/input_iml.cc.s
 
 src/bbvm/CMakeFiles/bbvm.dir/outport.cc.o: src/bbvm/CMakeFiles/bbvm.dir/flags.make
 src/bbvm/CMakeFiles/bbvm.dir/outport.cc.o: ../src/bbvm/outport.cc
@@ -225,7 +225,7 @@ bbvm_OBJECTS = \
 "CMakeFiles/bbvm.dir/bbvm.cc.o" \
 "CMakeFiles/bbvm.dir/renderer.cc.o" \
 "CMakeFiles/bbvm.dir/inport.cc.o" \
-"CMakeFiles/bbvm.dir/input.cc.o" \
+"CMakeFiles/bbvm.dir/input_iml.cc.o" \
 "CMakeFiles/bbvm.dir/outport.cc.o" \
 "CMakeFiles/bbvm.dir/screen.cc.o" \
 "CMakeFiles/bbvm.dir/storage.cc.o" \
@@ -240,7 +240,7 @@ src/bbvm/bbvm: src/bbvm/CMakeFiles/bbvm.dir/main.cc.o
 src/bbvm/bbvm: src/bbvm/CMakeFiles/bbvm.dir/bbvm.cc.o
 src/bbvm/bbvm: src/bbvm/CMakeFiles/bbvm.dir/renderer.cc.o
 src/bbvm/bbvm: src/bbvm/CMakeFiles/bbvm.dir/inport.cc.o
-src/bbvm/bbvm: src/bbvm/CMakeFiles/bbvm.dir/input.cc.o
+src/bbvm/bbvm: src/bbvm/CMakeFiles/bbvm.dir/input_iml.cc.o
 src/bbvm/bbvm: src/bbvm/CMakeFiles/bbvm.dir/outport.cc.o
 src/bbvm/bbvm: src/bbvm/CMakeFiles/bbvm.dir/screen.cc.o
 src/bbvm/bbvm: src/bbvm/CMakeFiles/bbvm.dir/storage.cc.o

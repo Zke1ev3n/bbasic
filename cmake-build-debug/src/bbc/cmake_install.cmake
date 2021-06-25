@@ -1,4 +1,4 @@
-# Install script for directory: /Users/liangyulin/Workspace/Dev/CLionProjects/bbc/src/bbc
+# Install script for directory: /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -34,6 +34,6 @@ endif()
 
 # Set default install directory permissions.
 if(NOT DEFINED CMAKE_OBJDUMP)
-  set(CMAKE_OBJDUMP "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/objdump")
+  set(CMAKE_OBJDUMP "/Library/Developer/CommandLineTools/usr/bin/objdump")
 endif()
 

@@ -4,97 +4,94 @@
 	<Project>
 		<Option title="bbc"/>
 		<Option makefile_is_custom="1"/>
-		<Option compiler="clang"/>
-		<Option virtualFolders="CMake Files\;CMake Files\src\;CMake Files\src\bbc\;CMake Files\src\bbvm\;"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;CMake Files\src\;CMake Files\src\bbc\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/Users/liangyulin/Workspace/Dev/CLionProjects/bbc/cmake-build-debug/src/bbc"/>
+				<Option working_dir="/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/src/bbc"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/liangyulin/Workspace/Dev/CLionProjects/bbc/cmake-build-debug/src/bbc/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/liangyulin/Workspace/Dev/CLionProjects/bbc/cmake-build-debug/src/bbc/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/liangyulin/Workspace/Dev/CLionProjects/bbc/cmake-build-debug/src/bbc/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/liangyulin/Workspace/Dev/CLionProjects/bbc/cmake-build-debug/src/bbc/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j12 -f &quot;/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/src/bbc/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/src/bbc/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/src/bbc/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/src/bbc/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="bbc">
-				<Option output="/Users/liangyulin/Workspace/Dev/CLionProjects/bbc/cmake-build-debug/src/bbc/bbc" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir=""/>
+				<Option output="/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/src/bbc/bbc" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/src/bbc"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
-				<Option compiler="clang"/>
+				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
 					<Add directory="/usr/local/include"/>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/12.0.0/include"/>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/12.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
 					<Add directory="/System/Library/Frameworks"/>
 					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/liangyulin/Workspace/Dev/CLionProjects/bbc/cmake-build-debug/src/bbc/Makefile&quot;  VERBOSE=1 bbc"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/liangyulin/Workspace/Dev/CLionProjects/bbc/cmake-build-debug/src/bbc/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/liangyulin/Workspace/Dev/CLionProjects/bbc/cmake-build-debug/src/bbc/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/liangyulin/Workspace/Dev/CLionProjects/bbc/cmake-build-debug/src/bbc/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j12 -f &quot;/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/src/bbc/Makefile&quot;  VERBOSE=1 bbc"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/src/bbc/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/src/bbc/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/src/bbc/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="bbc/fast">
-				<Option output="/Users/liangyulin/Workspace/Dev/CLionProjects/bbc/cmake-build-debug/src/bbc/bbc" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir=""/>
+				<Option output="/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/src/bbc/bbc" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/src/bbc"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
-				<Option compiler="clang"/>
+				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
 					<Add directory="/usr/local/include"/>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/12.0.0/include"/>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/12.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
 					<Add directory="/System/Library/Frameworks"/>
 					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/liangyulin/Workspace/Dev/CLionProjects/bbc/cmake-build-debug/src/bbc/Makefile&quot;  VERBOSE=1 bbc/fast"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/liangyulin/Workspace/Dev/CLionProjects/bbc/cmake-build-debug/src/bbc/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/liangyulin/Workspace/Dev/CLionProjects/bbc/cmake-build-debug/src/bbc/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/liangyulin/Workspace/Dev/CLionProjects/bbc/cmake-build-debug/src/bbc/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j12 -f &quot;/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/src/bbc/Makefile&quot;  VERBOSE=1 bbc/fast"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/src/bbc/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/src/bbc/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/src/bbc/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/Users/liangyulin/Workspace/Dev/CLionProjects/bbc/src/bbc/ast_dumper.cc">
+		<Unit filename="/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/ast_dumper.cc">
 			<Option target="bbc"/>
 		</Unit>
-		<Unit filename="/Users/liangyulin/Workspace/Dev/CLionProjects/bbc/src/bbc/ast_dumper.h">
+		<Unit filename="/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/ast_dumper.h">
 			<Option target="bbc"/>
 		</Unit>
-		<Unit filename="/Users/liangyulin/Workspace/Dev/CLionProjects/bbc/src/bbc/lexer.cc">
+		<Unit filename="/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/lexer.cc">
 			<Option target="bbc"/>
 		</Unit>
-		<Unit filename="/Users/liangyulin/Workspace/Dev/CLionProjects/bbc/src/bbc/lexer.h">
+		<Unit filename="/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/lexer.h">
 			<Option target="bbc"/>
 		</Unit>
-		<Unit filename="/Users/liangyulin/Workspace/Dev/CLionProjects/bbc/src/bbc/main.cc">
+		<Unit filename="/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/main.cc">
 			<Option target="bbc"/>
 		</Unit>
-		<Unit filename="/Users/liangyulin/Workspace/Dev/CLionProjects/bbc/src/bbc/parser.cc">
+		<Unit filename="/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/parser.cc">
 			<Option target="bbc"/>
 		</Unit>
-		<Unit filename="/Users/liangyulin/Workspace/Dev/CLionProjects/bbc/src/bbc/parser.h">
+		<Unit filename="/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/parser.h">
 			<Option target="bbc"/>
 		</Unit>
-		<Unit filename="/Users/liangyulin/Workspace/Dev/CLionProjects/bbc/src/bbc/token.cc">
+		<Unit filename="/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/token.cc">
 			<Option target="bbc"/>
 		</Unit>
-		<Unit filename="/Users/liangyulin/Workspace/Dev/CLionProjects/bbc/src/bbc/token.h">
+		<Unit filename="/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/token.h">
 			<Option target="bbc"/>
 		</Unit>
-		<Unit filename="/Users/liangyulin/Workspace/Dev/CLionProjects/bbc/CMakeLists.txt">
+		<Unit filename="/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
-		<Unit filename="/Users/liangyulin/Workspace/Dev/CLionProjects/bbc/src/bbc/CMakeLists.txt">
+		<Unit filename="/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\src\bbc\"/>
-		</Unit>
-		<Unit filename="/Users/liangyulin/Workspace/Dev/CLionProjects/bbc/src/bbvm/CMakeLists.txt">
-			<Option virtualFolder="CMake Files\src\bbvm\"/>
 		</Unit>
 	</Project>
 </CodeBlocks_project_file>

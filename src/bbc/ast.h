@@ -134,13 +134,13 @@ public:
     PROPERTY_GETTER(value)
 };
 
-class Variable : public Expression {
-    Token *target_;
+class VariableProxy : public Expression {
+    Symbol *target_;
 public:
-    explicit Variable(Token *target)
+    explicit VariableProxy(Symbol *target)
             : Expression(ASTNodeType::VariableProxy), target_(target) { }
 
-    ~Variable() final = default; // TODO add a proper destructor here
+    ~VariableProxy() final = default; // TODO add a proper destructor here
 
     PROPERTY_GETTER(target)
 };

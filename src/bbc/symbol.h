@@ -12,10 +12,10 @@ enum{
     ES_VARSTRING=0x12,
 };
 
-class symbol {
+class Symbol {
     std::string name_;
 public:
-    symbol(const std::string &name) : name_(name) {}
+    Symbol(const std::string &name) : name_(name) {}
 
     const std::string &get_name() const {
         return name_;
@@ -35,12 +35,12 @@ public:
 };
 
 
-class variable : public symbol {
+class Variable : public Symbol {
     int level_;
     int index_;
 public:
-    variable(const std::string &name, int level, int index)
-            : symbol(name), level_(level), index_(index) {}
+    Variable(const std::string &name, int level, int index)
+            : Symbol(name), level_(level), index_(index) {}
 
     int get_level() const {
         return level_;
@@ -57,11 +57,11 @@ public:
 };
 
 
-class constant : public symbol {
+class Constant : public Symbol {
     int value_;
 public:
-    constant(const std::string &name, int value)
-            : symbol(name), value_(value) {}
+    Constant(const std::string &name, int value)
+            : Symbol(name), value_(value) {}
 
     int get_value() const {
         return value_;
@@ -73,14 +73,14 @@ public:
 };
 
 
-class function : public symbol {
+class Function : public Symbol {
     int level_;
     int entry_address_;
 public:
     enum { invalid_address = -1 };
 
-    function(const std::string &name, int level)
-            : symbol(name), level_(level), entry_address_(invalid_address) {}
+    Function(const std::string &name, int level)
+            : Symbol(name), level_(level), entry_address_(invalid_address) {}
 
     int get_level() const {
         return level_;

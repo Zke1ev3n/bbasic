@@ -9,11 +9,23 @@ Token Parser::LookAhead() {
     return lexer_->LookAhead();
 }
 
+
+void Parser::EnterScope() {
+    top_ = new Scope(top_);
+}
+
+void Parser::LeaveScope() {
+    Scope *inner = top_;
+    top_ = top_->get_enclosing_scope();
+}
+
 Program* Parser::ParseProgram() {
+    EnterScope();
     vector<Line*> lines = ParseLines();
     if(current_token_.type_ != TokenType::T_EOF) {
         throw CompileException("expect EOF", current_token_);
     }
+    LeaveScope();
     return new Program(lines);
 }
 
@@ -137,11 +149,14 @@ VariableDeclaration* Parser::ParseVariableDeclare() {
                     throw CompileException("expect integer", current_token_);
                 }
             }
-            Variable* var = new Variable(name, type, 1);
-            vars.push_back(var);
+            //这里还不支持数组，暂时都这样吧
+            auto sym = new Variable(name, top_->get_level(), top_->get_variable_count());
+            vars.push_back(sym);
+            top_->define(sym);
         }else{
-            Variable* var = new Variable(name, type, 0);
-            vars.push_back(var);
+            auto sym = new Variable(name, top_->get_level(), top_->get_variable_count());
+            vars.push_back(sym);
+            top_->define(sym);
         }
 
         if (current_token_.type_ == TokenType::T_COMMA) {
@@ -163,20 +178,10 @@ func(1,2)
 */
 AssignVariable* Parser::ParseAssignVariable() {
     VariableProxy* var_proxy;
-    SymbolTable* symtab;
-    int type = GetVariableType();
-    if(current_func_ == nullptr) {
-        symtab = global_;
-    }else{
-        //TODO shared
-        symtab = current_func_->symtab;
-    }
-    //TODO 未声明时新生成变量
-    for(int i = 0; i < symtab->vars.size(); i++) {
-        if(symtab->vars[i]->GetName() == current_token_.lexeme_) {
-                var_proxy = new VariableProxy(symtab->vars[i]);
-        }
-    }
+    //当前仅支持int
+    //int type = GetVariableType();
+
+    var_proxy = LocalVariable();
     NextToken();
 
     return new AssignVariable(var_proxy, ParseExpression());
@@ -267,24 +272,12 @@ Expression* Parser::ParseTerm() {
 Expression* Parser::ParseFactor() {
     switch(current_token_.type_) {
         case TokenType::T_IDENTIFIER: {
-            //TODO throw exception
-            if (current_func_) {
-                for (int i = 0; i < current_func_->symtab->vars.size(); i++) {
-                    if (current_func_->symtab->vars[i]->GetName() == current_token_.lexeme_) {
-                        Expression *expr = new VariableProxy(current_func_->symtab->vars[i]);
-                        NextToken();
-                        return expr;
-                    }
-                }
-            } else {
-                for (int i = 0; i < global_->vars.size(); i++) {
-                    if (global_->vars[i]->GetName() == current_token_.lexeme_) {
-                        Expression *expr = new VariableProxy(global_->vars[i]);
-                        NextToken();
-                        return expr;
-                    }
-                }
-            }
+            std::string id = current_token_.lexeme_;
+            NextToken();
+            Symbol *sym = top_->resolve(id);
+            if (sym == nullptr)
+                throw CompileException("undeclared identifier", current_token_);
+            return new VariableProxy{sym};
         }
         case TokenType::T_INTEGER: {
             int num = current_token_.inum_;
@@ -301,5 +294,19 @@ Expression* Parser::ParseFactor() {
         default: {
             throw CompileException("unexpected token", current_token_);
         }
+    }
+}
+
+// expressions
+VariableProxy * Parser::LocalVariable() {
+    std::string id = current_token_.lexeme_;
+    Symbol *sym = top_->resolve(id);
+    if (sym == nullptr) {
+        //throw general_error("undeclared identifier \"", id, '"');
+        throw CompileException("undeclared identifier", current_token_);
+    } else if (sym->is_variable()) {
+        return new VariableProxy(dynamic_cast<Variable*>(sym));
+    } else {
+        throw CompileException("cannot assign value to a non-variable", current_token_);
     }
 }

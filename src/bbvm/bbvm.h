@@ -8,7 +8,7 @@
 #include "config.h"
 #include "renderer.h"
 #include "screen.h"
-#include "input.h"
+#include "input_iml.h"
 #include "storage.h"
 #include "string_manager.h"
 

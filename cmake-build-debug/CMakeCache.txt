@@ -231,6 +231,12 @@ bbasic_BINARY_DIR:STATIC=/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbas
 bbasic_SOURCE_DIR:STATIC=/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic
 
 //Value Computed by CMake
+bbc_BINARY_DIR:STATIC=/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/src/bbc
+
+//Value Computed by CMake
+bbc_SOURCE_DIR:STATIC=/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc
+
+//Value Computed by CMake
 bbvm_BINARY_DIR:STATIC=/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/src/bbvm
 
 //Value Computed by CMake

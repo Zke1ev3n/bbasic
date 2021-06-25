@@ -17,6 +17,7 @@ src/bbc/CMakeFiles/bbc.dir/main.cc.o: ../src/bbc/exception.h
 src/bbc/CMakeFiles/bbc.dir/main.cc.o: ../src/bbc/lexer.h
 src/bbc/CMakeFiles/bbc.dir/main.cc.o: ../src/bbc/main.cc
 src/bbc/CMakeFiles/bbc.dir/main.cc.o: ../src/bbc/parser.h
+src/bbc/CMakeFiles/bbc.dir/main.cc.o: ../src/bbc/scope.h
 src/bbc/CMakeFiles/bbc.dir/main.cc.o: ../src/bbc/symbol.h
 src/bbc/CMakeFiles/bbc.dir/main.cc.o: ../src/bbc/token.h
 
@@ -25,6 +26,7 @@ src/bbc/CMakeFiles/bbc.dir/parser.cc.o: ../src/bbc/exception.h
 src/bbc/CMakeFiles/bbc.dir/parser.cc.o: ../src/bbc/lexer.h
 src/bbc/CMakeFiles/bbc.dir/parser.cc.o: ../src/bbc/parser.cc
 src/bbc/CMakeFiles/bbc.dir/parser.cc.o: ../src/bbc/parser.h
+src/bbc/CMakeFiles/bbc.dir/parser.cc.o: ../src/bbc/scope.h
 src/bbc/CMakeFiles/bbc.dir/parser.cc.o: ../src/bbc/symbol.h
 src/bbc/CMakeFiles/bbc.dir/parser.cc.o: ../src/bbc/token.h
 

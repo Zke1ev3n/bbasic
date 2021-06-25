@@ -67,10 +67,10 @@ RM = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/liangyulin/Workspace/Dev/CLionProjects/bbc
+CMAKE_SOURCE_DIR = /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/liangyulin/Workspace/Dev/CLionProjects/bbc/cmake-build-debug
+CMAKE_BINARY_DIR = /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -99,14 +99,14 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /Users/liangyulin/Workspace/Dev/CLionProjects/bbc/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_progress_start /Users/liangyulin/Workspace/Dev/CLionProjects/bbc/cmake-build-debug/CMakeFiles /Users/liangyulin/Workspace/Dev/CLionProjects/bbc/cmake-build-debug/src/bbc//CMakeFiles/progress.marks
-	cd /Users/liangyulin/Workspace/Dev/CLionProjects/bbc/cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/bbc/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/liangyulin/Workspace/Dev/CLionProjects/bbc/cmake-build-debug/CMakeFiles 0
+	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_progress_start /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/CMakeFiles /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/src/bbc//CMakeFiles/progress.marks
+	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/bbc/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /Users/liangyulin/Workspace/Dev/CLionProjects/bbc/cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/bbc/clean
+	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/bbc/clean
 .PHONY : clean
 
 # The main clean target
@@ -116,22 +116,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /Users/liangyulin/Workspace/Dev/CLionProjects/bbc/cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/bbc/preinstall
+	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/bbc/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /Users/liangyulin/Workspace/Dev/CLionProjects/bbc/cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/bbc/preinstall
+	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/bbc/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /Users/liangyulin/Workspace/Dev/CLionProjects/bbc/cmake-build-debug && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 src/bbc/CMakeFiles/bbc.dir/rule:
-	cd /Users/liangyulin/Workspace/Dev/CLionProjects/bbc/cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/bbc/CMakeFiles/bbc.dir/rule
+	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/bbc/CMakeFiles/bbc.dir/rule
 .PHONY : src/bbc/CMakeFiles/bbc.dir/rule
 
 # Convenience name for target.
@@ -141,7 +141,7 @@ bbc: src/bbc/CMakeFiles/bbc.dir/rule
 
 # fast build rule for target.
 bbc/fast:
-	cd /Users/liangyulin/Workspace/Dev/CLionProjects/bbc/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/bbc/CMakeFiles/bbc.dir/build.make src/bbc/CMakeFiles/bbc.dir/build
+	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/bbc/CMakeFiles/bbc.dir/build.make src/bbc/CMakeFiles/bbc.dir/build
 .PHONY : bbc/fast
 
 ast_dumper.o: ast_dumper.cc.o
@@ -150,7 +150,7 @@ ast_dumper.o: ast_dumper.cc.o
 
 # target to build an object file
 ast_dumper.cc.o:
-	cd /Users/liangyulin/Workspace/Dev/CLionProjects/bbc/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/bbc/CMakeFiles/bbc.dir/build.make src/bbc/CMakeFiles/bbc.dir/ast_dumper.cc.o
+	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/bbc/CMakeFiles/bbc.dir/build.make src/bbc/CMakeFiles/bbc.dir/ast_dumper.cc.o
 .PHONY : ast_dumper.cc.o
 
 ast_dumper.i: ast_dumper.cc.i
@@ -159,7 +159,7 @@ ast_dumper.i: ast_dumper.cc.i
 
 # target to preprocess a source file
 ast_dumper.cc.i:
-	cd /Users/liangyulin/Workspace/Dev/CLionProjects/bbc/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/bbc/CMakeFiles/bbc.dir/build.make src/bbc/CMakeFiles/bbc.dir/ast_dumper.cc.i
+	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/bbc/CMakeFiles/bbc.dir/build.make src/bbc/CMakeFiles/bbc.dir/ast_dumper.cc.i
 .PHONY : ast_dumper.cc.i
 
 ast_dumper.s: ast_dumper.cc.s
@@ -168,7 +168,7 @@ ast_dumper.s: ast_dumper.cc.s
 
 # target to generate assembly for a file
 ast_dumper.cc.s:
-	cd /Users/liangyulin/Workspace/Dev/CLionProjects/bbc/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/bbc/CMakeFiles/bbc.dir/build.make src/bbc/CMakeFiles/bbc.dir/ast_dumper.cc.s
+	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/bbc/CMakeFiles/bbc.dir/build.make src/bbc/CMakeFiles/bbc.dir/ast_dumper.cc.s
 .PHONY : ast_dumper.cc.s
 
 lexer.o: lexer.cc.o
@@ -177,7 +177,7 @@ lexer.o: lexer.cc.o
 
 # target to build an object file
 lexer.cc.o:
-	cd /Users/liangyulin/Workspace/Dev/CLionProjects/bbc/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/bbc/CMakeFiles/bbc.dir/build.make src/bbc/CMakeFiles/bbc.dir/lexer.cc.o
+	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/bbc/CMakeFiles/bbc.dir/build.make src/bbc/CMakeFiles/bbc.dir/lexer.cc.o
 .PHONY : lexer.cc.o
 
 lexer.i: lexer.cc.i
@@ -186,7 +186,7 @@ lexer.i: lexer.cc.i
 
 # target to preprocess a source file
 lexer.cc.i:
-	cd /Users/liangyulin/Workspace/Dev/CLionProjects/bbc/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/bbc/CMakeFiles/bbc.dir/build.make src/bbc/CMakeFiles/bbc.dir/lexer.cc.i
+	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/bbc/CMakeFiles/bbc.dir/build.make src/bbc/CMakeFiles/bbc.dir/lexer.cc.i
 .PHONY : lexer.cc.i
 
 lexer.s: lexer.cc.s
@@ -195,7 +195,7 @@ lexer.s: lexer.cc.s
 
 # target to generate assembly for a file
 lexer.cc.s:
-	cd /Users/liangyulin/Workspace/Dev/CLionProjects/bbc/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/bbc/CMakeFiles/bbc.dir/build.make src/bbc/CMakeFiles/bbc.dir/lexer.cc.s
+	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/bbc/CMakeFiles/bbc.dir/build.make src/bbc/CMakeFiles/bbc.dir/lexer.cc.s
 .PHONY : lexer.cc.s
 
 main.o: main.cc.o
@@ -204,7 +204,7 @@ main.o: main.cc.o
 
 # target to build an object file
 main.cc.o:
-	cd /Users/liangyulin/Workspace/Dev/CLionProjects/bbc/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/bbc/CMakeFiles/bbc.dir/build.make src/bbc/CMakeFiles/bbc.dir/main.cc.o
+	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/bbc/CMakeFiles/bbc.dir/build.make src/bbc/CMakeFiles/bbc.dir/main.cc.o
 .PHONY : main.cc.o
 
 main.i: main.cc.i
@@ -213,7 +213,7 @@ main.i: main.cc.i
 
 # target to preprocess a source file
 main.cc.i:
-	cd /Users/liangyulin/Workspace/Dev/CLionProjects/bbc/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/bbc/CMakeFiles/bbc.dir/build.make src/bbc/CMakeFiles/bbc.dir/main.cc.i
+	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/bbc/CMakeFiles/bbc.dir/build.make src/bbc/CMakeFiles/bbc.dir/main.cc.i
 .PHONY : main.cc.i
 
 main.s: main.cc.s
@@ -222,7 +222,7 @@ main.s: main.cc.s
 
 # target to generate assembly for a file
 main.cc.s:
-	cd /Users/liangyulin/Workspace/Dev/CLionProjects/bbc/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/bbc/CMakeFiles/bbc.dir/build.make src/bbc/CMakeFiles/bbc.dir/main.cc.s
+	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/bbc/CMakeFiles/bbc.dir/build.make src/bbc/CMakeFiles/bbc.dir/main.cc.s
 .PHONY : main.cc.s
 
 parser.o: parser.cc.o
@@ -231,7 +231,7 @@ parser.o: parser.cc.o
 
 # target to build an object file
 parser.cc.o:
-	cd /Users/liangyulin/Workspace/Dev/CLionProjects/bbc/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/bbc/CMakeFiles/bbc.dir/build.make src/bbc/CMakeFiles/bbc.dir/parser.cc.o
+	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/bbc/CMakeFiles/bbc.dir/build.make src/bbc/CMakeFiles/bbc.dir/parser.cc.o
 .PHONY : parser.cc.o
 
 parser.i: parser.cc.i
@@ -240,7 +240,7 @@ parser.i: parser.cc.i
 
 # target to preprocess a source file
 parser.cc.i:
-	cd /Users/liangyulin/Workspace/Dev/CLionProjects/bbc/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/bbc/CMakeFiles/bbc.dir/build.make src/bbc/CMakeFiles/bbc.dir/parser.cc.i
+	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/bbc/CMakeFiles/bbc.dir/build.make src/bbc/CMakeFiles/bbc.dir/parser.cc.i
 .PHONY : parser.cc.i
 
 parser.s: parser.cc.s
@@ -249,7 +249,7 @@ parser.s: parser.cc.s
 
 # target to generate assembly for a file
 parser.cc.s:
-	cd /Users/liangyulin/Workspace/Dev/CLionProjects/bbc/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/bbc/CMakeFiles/bbc.dir/build.make src/bbc/CMakeFiles/bbc.dir/parser.cc.s
+	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/bbc/CMakeFiles/bbc.dir/build.make src/bbc/CMakeFiles/bbc.dir/parser.cc.s
 .PHONY : parser.cc.s
 
 token.o: token.cc.o
@@ -258,7 +258,7 @@ token.o: token.cc.o
 
 # target to build an object file
 token.cc.o:
-	cd /Users/liangyulin/Workspace/Dev/CLionProjects/bbc/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/bbc/CMakeFiles/bbc.dir/build.make src/bbc/CMakeFiles/bbc.dir/token.cc.o
+	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/bbc/CMakeFiles/bbc.dir/build.make src/bbc/CMakeFiles/bbc.dir/token.cc.o
 .PHONY : token.cc.o
 
 token.i: token.cc.i
@@ -267,7 +267,7 @@ token.i: token.cc.i
 
 # target to preprocess a source file
 token.cc.i:
-	cd /Users/liangyulin/Workspace/Dev/CLionProjects/bbc/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/bbc/CMakeFiles/bbc.dir/build.make src/bbc/CMakeFiles/bbc.dir/token.cc.i
+	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/bbc/CMakeFiles/bbc.dir/build.make src/bbc/CMakeFiles/bbc.dir/token.cc.i
 .PHONY : token.cc.i
 
 token.s: token.cc.s
@@ -276,7 +276,7 @@ token.s: token.cc.s
 
 # target to generate assembly for a file
 token.cc.s:
-	cd /Users/liangyulin/Workspace/Dev/CLionProjects/bbc/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/bbc/CMakeFiles/bbc.dir/build.make src/bbc/CMakeFiles/bbc.dir/token.cc.s
+	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/bbc/CMakeFiles/bbc.dir/build.make src/bbc/CMakeFiles/bbc.dir/token.cc.s
 .PHONY : token.cc.s
 
 # Help Target
@@ -314,6 +314,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /Users/liangyulin/Workspace/Dev/CLionProjects/bbc/cmake-build-debug && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

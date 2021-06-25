@@ -198,32 +198,32 @@ inport.cc.s:
 	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/bbvm/CMakeFiles/bbvm.dir/build.make src/bbvm/CMakeFiles/bbvm.dir/inport.cc.s
 .PHONY : inport.cc.s
 
-input.o: input.cc.o
+input_iml.o: input_iml.cc.o
 
-.PHONY : input.o
+.PHONY : input_iml.o
 
 # target to build an object file
-input.cc.o:
-	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/bbvm/CMakeFiles/bbvm.dir/build.make src/bbvm/CMakeFiles/bbvm.dir/input.cc.o
-.PHONY : input.cc.o
+input_iml.cc.o:
+	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/bbvm/CMakeFiles/bbvm.dir/build.make src/bbvm/CMakeFiles/bbvm.dir/input_iml.cc.o
+.PHONY : input_iml.cc.o
 
-input.i: input.cc.i
+input_iml.i: input_iml.cc.i
 
-.PHONY : input.i
+.PHONY : input_iml.i
 
 # target to preprocess a source file
-input.cc.i:
-	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/bbvm/CMakeFiles/bbvm.dir/build.make src/bbvm/CMakeFiles/bbvm.dir/input.cc.i
-.PHONY : input.cc.i
+input_iml.cc.i:
+	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/bbvm/CMakeFiles/bbvm.dir/build.make src/bbvm/CMakeFiles/bbvm.dir/input_iml.cc.i
+.PHONY : input_iml.cc.i
 
-input.s: input.cc.s
+input_iml.s: input_iml.cc.s
 
-.PHONY : input.s
+.PHONY : input_iml.s
 
 # target to generate assembly for a file
-input.cc.s:
-	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/bbvm/CMakeFiles/bbvm.dir/build.make src/bbvm/CMakeFiles/bbvm.dir/input.cc.s
-.PHONY : input.cc.s
+input_iml.cc.s:
+	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/bbvm/CMakeFiles/bbvm.dir/build.make src/bbvm/CMakeFiles/bbvm.dir/input_iml.cc.s
+.PHONY : input_iml.cc.s
 
 main.o: main.cc.o
 
@@ -456,9 +456,9 @@ help:
 	@echo "... inport.o"
 	@echo "... inport.i"
 	@echo "... inport.s"
-	@echo "... input.o"
-	@echo "... input.i"
-	@echo "... input.s"
+	@echo "... input_iml.o"
+	@echo "... input_iml.i"
+	@echo "... input_iml.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

@@ -1,5 +1,5 @@
 /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/CMakeFiles/rebuild_cache.dir
 /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/CMakeFiles/edit_cache.dir
-/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/src/bbvm/CMakeFiles/rebuild_cache.dir
-/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/src/bbvm/CMakeFiles/edit_cache.dir
-/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/src/bbvm/CMakeFiles/bbvm.dir
+/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/src/bbc/CMakeFiles/rebuild_cache.dir
+/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/src/bbc/CMakeFiles/edit_cache.dir
+/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/src/bbc/CMakeFiles/bbc.dir

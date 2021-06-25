@@ -1,6 +1,11 @@
-#pragma once
+//
+// Created by liangyulin on 2021/6/23.
+//
+
+#ifndef BBASIC_INPUT_H
+#define BBASIC_INPUT_H
+
 #include <string>
-#include <vector>
 
 #define KEYCODE_UP 38
 #define KEYCODE_DOWN 40
@@ -16,26 +21,19 @@ using namespace std;
 class Line
 {
 public:
-	Point PrintPosition;
-	string LineText;
+    Point PrintPosition;
+    string LineText;
 };
 
-class Input
-{
-private:
-    //键盘状态
-    const Uint8* key_states;
-
-    inline int __escape_charactor(int keymod, int key);
-    void ShownKeyboard();
-    void HiddenKeyboard();
+//输入设备的接口定义
+class Input {
 
 public:
-	Input();
-	~Input();
-
-	void HandleEvents();
-    bool KeyPressed(int key);
-    int WaitKey(bool OnlyKeyboard=false);
+    virtual void HandleEvents() = 0;
+    virtual bool KeyPressed(int key) = 0;
+    virtual int WaitKey(bool OnlyKeyboard=false) = 0;
 
 };
+
+
+#endif //BBASIC_INPUT_H

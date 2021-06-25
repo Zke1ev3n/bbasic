@@ -1,6 +1,6 @@
 #pragma once
 #include "lexer.h"
-#include "symbol.h"
+#include "scope.h"
 #include "ast.h"
 #include "exception.h"
 
@@ -11,15 +11,20 @@ class Parser {
     //前看
     Token next_token_;
 
-    //全局符号
-    SymbolTable* global_;
-    //所有函数
-    vector<Function*> functions_;
-    Function* current_func_;
-    int func_count_;
+    Scope *top_;
 
-public:
-    Program* ParseProgram();
+private:
+
+    VariableProxy* LocalVariable();
+
+    //scope control
+    void EnterScope();
+    void LeaveScope();
+
+    int GetVariableType();
+    Token NextToken();
+    Token LookAhead();
+
     vector<Line*> ParseLines();
     Line* ParseLine();
     Statement* ParseStatement();
@@ -31,10 +36,8 @@ public:
     Expression* ParseFactor();
 
 public:
-    Parser(Lexer* lexer): lexer_(lexer){};
-    int GetVariableType();
+    Parser(Lexer* lexer): lexer_(lexer),  top_(nullptr) {};
+    Program* ParseProgram();
 
-    Token NextToken();
-    Token LookAhead();
 
 };

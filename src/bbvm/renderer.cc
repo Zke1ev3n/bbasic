@@ -102,7 +102,7 @@ int Renderer::LoadPicture(const char *FileName, unsigned int index)
 	fread(&width,2, 1, fp);
     fread(&height, 2, 1, fp);
     //TODO
-    fseek(fp, 4, SEEK_CUR);
+    fseek(fp, 8, SEEK_CUR);
 	void *data = malloc(Size);
 	fread(data, 1, Size, fp);
 

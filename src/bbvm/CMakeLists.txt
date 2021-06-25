@@ -10,7 +10,7 @@ add_executable(bbvm
         bbvm.cc
         renderer.cc
         inport.cc
-        input.cc
+        input_iml.cc
         outport.cc
         screen.cc
         storage.cc

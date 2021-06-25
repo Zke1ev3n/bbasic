@@ -6,35 +6,23 @@
 
 #IncludeRegexTransform: 
 
-/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbvm/bbvm.cc
+/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbvm/config.h
+
+/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbvm/renderer.cc
+stdlib.h
+-
+stdio.h
+-
+math.h
+-
 sys/time.h
 -
-bbvm.h
-/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbvm/bbvm.h
-utils.h
-/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbvm/utils.h
-
-/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbvm/bbvm.h
-config.h
-/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbvm/config.h
 renderer.h
 /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbvm/renderer.h
-screen.h
-/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbvm/screen.h
-input.h
-/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbvm/input.h
-storage.h
-/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbvm/storage.h
-string_manager.h
-/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbvm/string_manager.h
-
-/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbvm/config.h
-
-/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbvm/input.h
-string
--
-vector
--
+utils.h
+/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbvm/utils.h
+sdl.h
+/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbvm/sdl.h
 
 /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbvm/renderer.h
 map
@@ -60,18 +48,6 @@ SDL2/SDL.h
 SDL2/SDL_ttf.h
 -
 SDL2/SDL_mouse.h
--
-
-/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbvm/storage.h
-map
--
-
-/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbvm/string_manager.h
-vector
--
-list
--
-string
 -
 
 /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbvm/utils.h

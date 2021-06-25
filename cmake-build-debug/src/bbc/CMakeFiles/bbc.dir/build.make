@@ -62,10 +62,10 @@ RM = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/liangyulin/Workspace/Dev/CLionProjects/bbc
+CMAKE_SOURCE_DIR = /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/liangyulin/Workspace/Dev/CLionProjects/bbc/cmake-build-debug
+CMAKE_BINARY_DIR = /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include src/bbc/CMakeFiles/bbc.dir/depend.make
@@ -78,68 +78,68 @@ include src/bbc/CMakeFiles/bbc.dir/flags.make
 
 src/bbc/CMakeFiles/bbc.dir/main.cc.o: src/bbc/CMakeFiles/bbc.dir/flags.make
 src/bbc/CMakeFiles/bbc.dir/main.cc.o: ../src/bbc/main.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/liangyulin/Workspace/Dev/CLionProjects/bbc/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object src/bbc/CMakeFiles/bbc.dir/main.cc.o"
-	cd /Users/liangyulin/Workspace/Dev/CLionProjects/bbc/cmake-build-debug/src/bbc && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/bbc.dir/main.cc.o -c /Users/liangyulin/Workspace/Dev/CLionProjects/bbc/src/bbc/main.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object src/bbc/CMakeFiles/bbc.dir/main.cc.o"
+	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/src/bbc && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/bbc.dir/main.cc.o -c /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/main.cc
 
 src/bbc/CMakeFiles/bbc.dir/main.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/bbc.dir/main.cc.i"
-	cd /Users/liangyulin/Workspace/Dev/CLionProjects/bbc/cmake-build-debug/src/bbc && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/liangyulin/Workspace/Dev/CLionProjects/bbc/src/bbc/main.cc > CMakeFiles/bbc.dir/main.cc.i
+	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/src/bbc && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/main.cc > CMakeFiles/bbc.dir/main.cc.i
 
 src/bbc/CMakeFiles/bbc.dir/main.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/bbc.dir/main.cc.s"
-	cd /Users/liangyulin/Workspace/Dev/CLionProjects/bbc/cmake-build-debug/src/bbc && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/liangyulin/Workspace/Dev/CLionProjects/bbc/src/bbc/main.cc -o CMakeFiles/bbc.dir/main.cc.s
+	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/src/bbc && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/main.cc -o CMakeFiles/bbc.dir/main.cc.s
 
 src/bbc/CMakeFiles/bbc.dir/token.cc.o: src/bbc/CMakeFiles/bbc.dir/flags.make
 src/bbc/CMakeFiles/bbc.dir/token.cc.o: ../src/bbc/token.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/liangyulin/Workspace/Dev/CLionProjects/bbc/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object src/bbc/CMakeFiles/bbc.dir/token.cc.o"
-	cd /Users/liangyulin/Workspace/Dev/CLionProjects/bbc/cmake-build-debug/src/bbc && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/bbc.dir/token.cc.o -c /Users/liangyulin/Workspace/Dev/CLionProjects/bbc/src/bbc/token.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object src/bbc/CMakeFiles/bbc.dir/token.cc.o"
+	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/src/bbc && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/bbc.dir/token.cc.o -c /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/token.cc
 
 src/bbc/CMakeFiles/bbc.dir/token.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/bbc.dir/token.cc.i"
-	cd /Users/liangyulin/Workspace/Dev/CLionProjects/bbc/cmake-build-debug/src/bbc && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/liangyulin/Workspace/Dev/CLionProjects/bbc/src/bbc/token.cc > CMakeFiles/bbc.dir/token.cc.i
+	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/src/bbc && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/token.cc > CMakeFiles/bbc.dir/token.cc.i
 
 src/bbc/CMakeFiles/bbc.dir/token.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/bbc.dir/token.cc.s"
-	cd /Users/liangyulin/Workspace/Dev/CLionProjects/bbc/cmake-build-debug/src/bbc && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/liangyulin/Workspace/Dev/CLionProjects/bbc/src/bbc/token.cc -o CMakeFiles/bbc.dir/token.cc.s
+	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/src/bbc && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/token.cc -o CMakeFiles/bbc.dir/token.cc.s
 
 src/bbc/CMakeFiles/bbc.dir/lexer.cc.o: src/bbc/CMakeFiles/bbc.dir/flags.make
 src/bbc/CMakeFiles/bbc.dir/lexer.cc.o: ../src/bbc/lexer.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/liangyulin/Workspace/Dev/CLionProjects/bbc/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object src/bbc/CMakeFiles/bbc.dir/lexer.cc.o"
-	cd /Users/liangyulin/Workspace/Dev/CLionProjects/bbc/cmake-build-debug/src/bbc && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/bbc.dir/lexer.cc.o -c /Users/liangyulin/Workspace/Dev/CLionProjects/bbc/src/bbc/lexer.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object src/bbc/CMakeFiles/bbc.dir/lexer.cc.o"
+	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/src/bbc && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/bbc.dir/lexer.cc.o -c /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/lexer.cc
 
 src/bbc/CMakeFiles/bbc.dir/lexer.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/bbc.dir/lexer.cc.i"
-	cd /Users/liangyulin/Workspace/Dev/CLionProjects/bbc/cmake-build-debug/src/bbc && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/liangyulin/Workspace/Dev/CLionProjects/bbc/src/bbc/lexer.cc > CMakeFiles/bbc.dir/lexer.cc.i
+	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/src/bbc && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/lexer.cc > CMakeFiles/bbc.dir/lexer.cc.i
 
 src/bbc/CMakeFiles/bbc.dir/lexer.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/bbc.dir/lexer.cc.s"
-	cd /Users/liangyulin/Workspace/Dev/CLionProjects/bbc/cmake-build-debug/src/bbc && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/liangyulin/Workspace/Dev/CLionProjects/bbc/src/bbc/lexer.cc -o CMakeFiles/bbc.dir/lexer.cc.s
+	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/src/bbc && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/lexer.cc -o CMakeFiles/bbc.dir/lexer.cc.s
 
 src/bbc/CMakeFiles/bbc.dir/parser.cc.o: src/bbc/CMakeFiles/bbc.dir/flags.make
 src/bbc/CMakeFiles/bbc.dir/parser.cc.o: ../src/bbc/parser.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/liangyulin/Workspace/Dev/CLionProjects/bbc/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object src/bbc/CMakeFiles/bbc.dir/parser.cc.o"
-	cd /Users/liangyulin/Workspace/Dev/CLionProjects/bbc/cmake-build-debug/src/bbc && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/bbc.dir/parser.cc.o -c /Users/liangyulin/Workspace/Dev/CLionProjects/bbc/src/bbc/parser.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object src/bbc/CMakeFiles/bbc.dir/parser.cc.o"
+	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/src/bbc && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/bbc.dir/parser.cc.o -c /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/parser.cc
 
 src/bbc/CMakeFiles/bbc.dir/parser.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/bbc.dir/parser.cc.i"
-	cd /Users/liangyulin/Workspace/Dev/CLionProjects/bbc/cmake-build-debug/src/bbc && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/liangyulin/Workspace/Dev/CLionProjects/bbc/src/bbc/parser.cc > CMakeFiles/bbc.dir/parser.cc.i
+	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/src/bbc && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/parser.cc > CMakeFiles/bbc.dir/parser.cc.i
 
 src/bbc/CMakeFiles/bbc.dir/parser.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/bbc.dir/parser.cc.s"
-	cd /Users/liangyulin/Workspace/Dev/CLionProjects/bbc/cmake-build-debug/src/bbc && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/liangyulin/Workspace/Dev/CLionProjects/bbc/src/bbc/parser.cc -o CMakeFiles/bbc.dir/parser.cc.s
+	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/src/bbc && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/parser.cc -o CMakeFiles/bbc.dir/parser.cc.s
 
 src/bbc/CMakeFiles/bbc.dir/ast_dumper.cc.o: src/bbc/CMakeFiles/bbc.dir/flags.make
 src/bbc/CMakeFiles/bbc.dir/ast_dumper.cc.o: ../src/bbc/ast_dumper.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/liangyulin/Workspace/Dev/CLionProjects/bbc/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object src/bbc/CMakeFiles/bbc.dir/ast_dumper.cc.o"
-	cd /Users/liangyulin/Workspace/Dev/CLionProjects/bbc/cmake-build-debug/src/bbc && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/bbc.dir/ast_dumper.cc.o -c /Users/liangyulin/Workspace/Dev/CLionProjects/bbc/src/bbc/ast_dumper.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object src/bbc/CMakeFiles/bbc.dir/ast_dumper.cc.o"
+	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/src/bbc && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/bbc.dir/ast_dumper.cc.o -c /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/ast_dumper.cc
 
 src/bbc/CMakeFiles/bbc.dir/ast_dumper.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/bbc.dir/ast_dumper.cc.i"
-	cd /Users/liangyulin/Workspace/Dev/CLionProjects/bbc/cmake-build-debug/src/bbc && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/liangyulin/Workspace/Dev/CLionProjects/bbc/src/bbc/ast_dumper.cc > CMakeFiles/bbc.dir/ast_dumper.cc.i
+	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/src/bbc && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/ast_dumper.cc > CMakeFiles/bbc.dir/ast_dumper.cc.i
 
 src/bbc/CMakeFiles/bbc.dir/ast_dumper.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/bbc.dir/ast_dumper.cc.s"
-	cd /Users/liangyulin/Workspace/Dev/CLionProjects/bbc/cmake-build-debug/src/bbc && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/liangyulin/Workspace/Dev/CLionProjects/bbc/src/bbc/ast_dumper.cc -o CMakeFiles/bbc.dir/ast_dumper.cc.s
+	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/src/bbc && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/ast_dumper.cc -o CMakeFiles/bbc.dir/ast_dumper.cc.s
 
 # Object files for target bbc
 bbc_OBJECTS = \
@@ -159,8 +159,8 @@ src/bbc/bbc: src/bbc/CMakeFiles/bbc.dir/parser.cc.o
 src/bbc/bbc: src/bbc/CMakeFiles/bbc.dir/ast_dumper.cc.o
 src/bbc/bbc: src/bbc/CMakeFiles/bbc.dir/build.make
 src/bbc/bbc: src/bbc/CMakeFiles/bbc.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/liangyulin/Workspace/Dev/CLionProjects/bbc/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable bbc"
-	cd /Users/liangyulin/Workspace/Dev/CLionProjects/bbc/cmake-build-debug/src/bbc && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/bbc.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable bbc"
+	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/src/bbc && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/bbc.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 src/bbc/CMakeFiles/bbc.dir/build: src/bbc/bbc
@@ -168,10 +168,10 @@ src/bbc/CMakeFiles/bbc.dir/build: src/bbc/bbc
 .PHONY : src/bbc/CMakeFiles/bbc.dir/build
 
 src/bbc/CMakeFiles/bbc.dir/clean:
-	cd /Users/liangyulin/Workspace/Dev/CLionProjects/bbc/cmake-build-debug/src/bbc && $(CMAKE_COMMAND) -P CMakeFiles/bbc.dir/cmake_clean.cmake
+	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/src/bbc && $(CMAKE_COMMAND) -P CMakeFiles/bbc.dir/cmake_clean.cmake
 .PHONY : src/bbc/CMakeFiles/bbc.dir/clean
 
 src/bbc/CMakeFiles/bbc.dir/depend:
-	cd /Users/liangyulin/Workspace/Dev/CLionProjects/bbc/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/liangyulin/Workspace/Dev/CLionProjects/bbc /Users/liangyulin/Workspace/Dev/CLionProjects/bbc/src/bbc /Users/liangyulin/Workspace/Dev/CLionProjects/bbc/cmake-build-debug /Users/liangyulin/Workspace/Dev/CLionProjects/bbc/cmake-build-debug/src/bbc /Users/liangyulin/Workspace/Dev/CLionProjects/bbc/cmake-build-debug/src/bbc/CMakeFiles/bbc.dir/DependInfo.cmake --color=$(COLOR)
+	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/src/bbc /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/src/bbc/CMakeFiles/bbc.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : src/bbc/CMakeFiles/bbc.dir/depend
 

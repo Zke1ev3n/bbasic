@@ -8,7 +8,7 @@
 int BBVM::Init() {
 
     scn_ = new Screen(SCREEN_WIDTH, SCREEN_HEIGHT);
-    Utils::Log("Virtual Memory...");
+    Utils::Log("Virtual Memory...\n");
     vmem_ = (unsigned char *)malloc(MEMSIZE);
     if (vmem_ == NULL)
     {
@@ -19,7 +19,7 @@ int BBVM::Init() {
 
     //TODO 这里暂时未找到更好的渲染器和显示器同步的方法，直接传实例了
     renderer_ = new Renderer(scn_);
-    input_ = new Input();
+    input_ = new InputImpl();
     storage_ = new Storage();
 
     status_ = true;

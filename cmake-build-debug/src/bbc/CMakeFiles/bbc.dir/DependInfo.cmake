@@ -4,13 +4,13 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/Users/liangyulin/Workspace/Dev/CLionProjects/bbc/src/bbc/ast_dumper.cc" "/Users/liangyulin/Workspace/Dev/CLionProjects/bbc/cmake-build-debug/src/bbc/CMakeFiles/bbc.dir/ast_dumper.cc.o"
-  "/Users/liangyulin/Workspace/Dev/CLionProjects/bbc/src/bbc/lexer.cc" "/Users/liangyulin/Workspace/Dev/CLionProjects/bbc/cmake-build-debug/src/bbc/CMakeFiles/bbc.dir/lexer.cc.o"
-  "/Users/liangyulin/Workspace/Dev/CLionProjects/bbc/src/bbc/main.cc" "/Users/liangyulin/Workspace/Dev/CLionProjects/bbc/cmake-build-debug/src/bbc/CMakeFiles/bbc.dir/main.cc.o"
-  "/Users/liangyulin/Workspace/Dev/CLionProjects/bbc/src/bbc/parser.cc" "/Users/liangyulin/Workspace/Dev/CLionProjects/bbc/cmake-build-debug/src/bbc/CMakeFiles/bbc.dir/parser.cc.o"
-  "/Users/liangyulin/Workspace/Dev/CLionProjects/bbc/src/bbc/token.cc" "/Users/liangyulin/Workspace/Dev/CLionProjects/bbc/cmake-build-debug/src/bbc/CMakeFiles/bbc.dir/token.cc.o"
+  "/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/ast_dumper.cc" "/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/src/bbc/CMakeFiles/bbc.dir/ast_dumper.cc.o"
+  "/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/lexer.cc" "/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/src/bbc/CMakeFiles/bbc.dir/lexer.cc.o"
+  "/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/main.cc" "/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/src/bbc/CMakeFiles/bbc.dir/main.cc.o"
+  "/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/parser.cc" "/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/src/bbc/CMakeFiles/bbc.dir/parser.cc.o"
+  "/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/token.cc" "/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/src/bbc/CMakeFiles/bbc.dir/token.cc.o"
   )
-set(CMAKE_CXX_COMPILER_ID "Clang")
+set(CMAKE_CXX_COMPILER_ID "AppleClang")
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
