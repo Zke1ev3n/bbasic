@@ -1,4 +1,16 @@
 ### BBC 
+分为几个模块：
+* lexer: 代码到token
+* parser: token到ast
+* codegen: ast到汇编
+* assembler: 汇编到bin
+
+少了一个优化模块，没有生成四元表达式做优化。
+
+codegen时主要有两个问题：
+* 局部变量相对rb的偏移如何存储
+* 拿到operation时的参数的类型
+
 
 #### v0.0.1
 * 只支持int类型的变量类型

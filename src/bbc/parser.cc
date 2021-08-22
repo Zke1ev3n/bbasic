@@ -150,11 +150,11 @@ VariableDeclaration* Parser::ParseVariableDeclare() {
                 }
             }
             //这里还不支持数组，暂时都这样吧
-            auto sym = new Variable(name, top_->get_level(), top_->get_variable_count());
+            auto sym = new Variable(name, top_->get_level(), top_->get_variable_count(), true);
             vars.push_back(sym);
             top_->define(sym);
         }else{
-            auto sym = new Variable(name, top_->get_level(), top_->get_variable_count());
+            auto sym = new Variable(name, top_->get_level(), top_->get_variable_count(), true);
             vars.push_back(sym);
             top_->define(sym);
         }

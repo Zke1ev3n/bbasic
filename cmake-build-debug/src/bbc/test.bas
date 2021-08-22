@@ -2,7 +2,7 @@
 1 DIM I,J,AMA
 
 I = 1
-J = 1 + I * 2
+J = (1 + I) * 2
 AMA = -I
 
 IF I + J > AMA THEN

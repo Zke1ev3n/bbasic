@@ -38,9 +38,10 @@ public:
 class Variable : public Symbol {
     int level_;
     int index_;
+    bool is_global_;
 public:
-    Variable(const std::string &name, int level, int index)
-            : Symbol(name), level_(level), index_(index) {}
+    Variable(const std::string &name, int level, int index, bool is_global)
+            : Symbol(name), level_(level), index_(index), is_global_(is_global) {}
 
     int get_level() const {
         return level_;
@@ -48,6 +49,10 @@ public:
 
     int get_index() const {
         return index_;
+    }
+
+    bool is_global() {
+        return is_global_;
     }
 
     virtual bool is_variable() const {

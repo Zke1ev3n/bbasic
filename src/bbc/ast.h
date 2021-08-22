@@ -4,6 +4,7 @@
 #include <vector>
 #include "symbol.h"
 #include "token.h"
+#include "scope.h"
 
 #define AST_NODE_LIST(V) \
     V(Program)           \
@@ -71,10 +72,14 @@ private:
 
 class Program : public ASTNode {
 private:
+    //TODO 这里其实
+    //Scope *belonging_scope_;
     vector<Line*> lines_;
 
 public:
     explicit Program(vector<Line*> lines): ASTNode(ASTNodeType::Program), lines_(std::move(lines)) {}
+
+    //PROPERTY_GETTER(belonging_scope)
 
     PROPERTY_GETTER(lines)
 };
@@ -135,9 +140,9 @@ public:
 };
 
 class VariableProxy : public Expression {
-    Symbol *target_;
+    Variable *target_;
 public:
-    explicit VariableProxy(Symbol *target)
+    explicit VariableProxy(Variable *target)
             : Expression(ASTNodeType::VariableProxy), target_(target) { }
 
     ~VariableProxy() final = default; // TODO add a proper destructor here
