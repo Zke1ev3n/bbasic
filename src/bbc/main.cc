@@ -4,6 +4,7 @@
 
 #include "lexer.h"
 #include "parser.h"
+#include "symbol.h"
 #include "ast_dumper.h"
 
 using namespace std;

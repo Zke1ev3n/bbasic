@@ -12,94 +12,31 @@ enum{
     ES_VARSTRING=0x12,
 };
 
-class Symbol {
-    std::string name_;
-public:
-    Symbol(const std::string &name) : name_(name) {}
-
-    const std::string &get_name() const {
-        return name_;
-    }
-
-    virtual bool is_variable() const {
-        return false;
-    }
-
-    virtual bool is_constant() const {
-        return false;
-    }
-
-    virtual bool is_function() const {
-        return false;
-    }
+struct Variable
+{
+    string name;
+    // 模式：0:单个变量  >0:变量数组
+    int mode;
+    // 类型：INT/REAL/STRING
+    int type;
+    // 数组的大小
+    int size;
+    // 在栈中相对sp的偏移
+    int spos;
+    vector<int> array;
 };
 
+class VariableSet {
+protected:
 
-class Variable : public Symbol {
-    int level_;
-    int index_;
-    bool is_global_;
+    //TODO 是否符合需求
+    vector<Variable*> vars;
+    //变量个数，是否在栈中
+    int count, in_stack;
 public:
-    Variable(const std::string &name, int level, int index, bool is_global)
-            : Symbol(name), level_(level), index_(index), is_global_(is_global) {}
-
-    int get_level() const {
-        return level_;
-    }
-
-    int get_index() const {
-        return index_;
-    }
-
-    bool is_global() {
-        return is_global_;
-    }
-
-    virtual bool is_variable() const {
-        return true;
-    }
-
-};
-
-
-class Constant : public Symbol {
-    int value_;
-public:
-    Constant(const std::string &name, int value)
-            : Symbol(name), value_(value) {}
-
-    int get_value() const {
-        return value_;
-    }
-
-    virtual bool is_constant() const {
-        return true;
-    }
-};
-
-
-class Function : public Symbol {
-    int level_;
-    int entry_address_;
-public:
-    enum { invalid_address = -1 };
-
-    Function(const std::string &name, int level)
-            : Symbol(name), level_(level), entry_address_(invalid_address) {}
-
-    int get_level() const {
-        return level_;
-    }
-
-    void set_entry_address(int ea) {
-        entry_address_ = ea;
-    }
-
-    int get_entry_address() const {
-        return entry_address_;
-    }
-
-    virtual bool is_function() const {
-        return true;
-    }
+    int stackp;
+    VariableSet() : count(0), in_stack(0) {}
+    int RegVar(const string& name, int type, int* array, int off = 0);
+    int Pos(string name);
+    string VarName(string name, int type);
 };

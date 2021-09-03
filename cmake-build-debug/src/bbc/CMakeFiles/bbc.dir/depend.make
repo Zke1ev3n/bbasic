@@ -8,14 +8,6 @@ src/bbc/CMakeFiles/bbc.dir/ast_dumper.cc.o: \
  ../src/bbc/scope.h \
  ../src/bbc/symbol.h \
  ../src/bbc/token.h
-src/bbc/CMakeFiles/bbc.dir/codegen.cc.o: \
- ../src/bbc/ast.h \
- ../src/bbc/codegen.cc \
- ../src/bbc/codegen.h \
- ../src/bbc/scope.h \
- ../src/bbc/symbol.h \
- ../src/bbc/token.h \
- ../src/bbc/utils.h
 src/bbc/CMakeFiles/bbc.dir/lexer.cc.o: \
  ../src/bbc/lexer.cc \
  ../src/bbc/lexer.h \

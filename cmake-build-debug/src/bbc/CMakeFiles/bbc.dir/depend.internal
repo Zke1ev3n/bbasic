@@ -8,14 +8,6 @@ src/bbc/CMakeFiles/bbc.dir/ast_dumper.cc.o
  /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/scope.h
  /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/symbol.h
  /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/token.h
-src/bbc/CMakeFiles/bbc.dir/codegen.cc.o
- /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/ast.h
- /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/codegen.cc
- /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/codegen.h
- /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/scope.h
- /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/symbol.h
- /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/token.h
- /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/utils.h
 src/bbc/CMakeFiles/bbc.dir/lexer.cc.o
  /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/lexer.cc
  /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/lexer.h

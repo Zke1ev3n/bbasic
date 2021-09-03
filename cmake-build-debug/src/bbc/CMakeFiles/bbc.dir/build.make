@@ -118,22 +118,9 @@ src/bbc/CMakeFiles/bbc.dir/parser.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/bbc.dir/parser.cc.s"
 	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/src/bbc && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/parser.cc -o CMakeFiles/bbc.dir/parser.cc.s
 
-src/bbc/CMakeFiles/bbc.dir/codegen.cc.o: src/bbc/CMakeFiles/bbc.dir/flags.make
-src/bbc/CMakeFiles/bbc.dir/codegen.cc.o: ../src/bbc/codegen.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object src/bbc/CMakeFiles/bbc.dir/codegen.cc.o"
-	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/src/bbc && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/bbc.dir/codegen.cc.o -c /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/codegen.cc
-
-src/bbc/CMakeFiles/bbc.dir/codegen.cc.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/bbc.dir/codegen.cc.i"
-	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/src/bbc && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/codegen.cc > CMakeFiles/bbc.dir/codegen.cc.i
-
-src/bbc/CMakeFiles/bbc.dir/codegen.cc.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/bbc.dir/codegen.cc.s"
-	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/src/bbc && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/codegen.cc -o CMakeFiles/bbc.dir/codegen.cc.s
-
 src/bbc/CMakeFiles/bbc.dir/ast_dumper.cc.o: src/bbc/CMakeFiles/bbc.dir/flags.make
 src/bbc/CMakeFiles/bbc.dir/ast_dumper.cc.o: ../src/bbc/ast_dumper.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object src/bbc/CMakeFiles/bbc.dir/ast_dumper.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object src/bbc/CMakeFiles/bbc.dir/ast_dumper.cc.o"
 	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/src/bbc && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/bbc.dir/ast_dumper.cc.o -c /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/ast_dumper.cc
 
 src/bbc/CMakeFiles/bbc.dir/ast_dumper.cc.i: cmake_force
@@ -143,6 +130,19 @@ src/bbc/CMakeFiles/bbc.dir/ast_dumper.cc.i: cmake_force
 src/bbc/CMakeFiles/bbc.dir/ast_dumper.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/bbc.dir/ast_dumper.cc.s"
 	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/src/bbc && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/ast_dumper.cc -o CMakeFiles/bbc.dir/ast_dumper.cc.s
+
+src/bbc/CMakeFiles/bbc.dir/symbol.cc.o: src/bbc/CMakeFiles/bbc.dir/flags.make
+src/bbc/CMakeFiles/bbc.dir/symbol.cc.o: ../src/bbc/symbol.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object src/bbc/CMakeFiles/bbc.dir/symbol.cc.o"
+	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/src/bbc && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/bbc.dir/symbol.cc.o -c /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/symbol.cc
+
+src/bbc/CMakeFiles/bbc.dir/symbol.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/bbc.dir/symbol.cc.i"
+	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/src/bbc && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/symbol.cc > CMakeFiles/bbc.dir/symbol.cc.i
+
+src/bbc/CMakeFiles/bbc.dir/symbol.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/bbc.dir/symbol.cc.s"
+	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/src/bbc && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/symbol.cc -o CMakeFiles/bbc.dir/symbol.cc.s
 
 src/bbc/CMakeFiles/bbc.dir/utils.cc.o: src/bbc/CMakeFiles/bbc.dir/flags.make
 src/bbc/CMakeFiles/bbc.dir/utils.cc.o: ../src/bbc/utils.cc
@@ -163,8 +163,8 @@ bbc_OBJECTS = \
 "CMakeFiles/bbc.dir/token.cc.o" \
 "CMakeFiles/bbc.dir/lexer.cc.o" \
 "CMakeFiles/bbc.dir/parser.cc.o" \
-"CMakeFiles/bbc.dir/codegen.cc.o" \
 "CMakeFiles/bbc.dir/ast_dumper.cc.o" \
+"CMakeFiles/bbc.dir/symbol.cc.o" \
 "CMakeFiles/bbc.dir/utils.cc.o"
 
 # External object files for target bbc
@@ -174,8 +174,8 @@ src/bbc/bbc: src/bbc/CMakeFiles/bbc.dir/main.cc.o
 src/bbc/bbc: src/bbc/CMakeFiles/bbc.dir/token.cc.o
 src/bbc/bbc: src/bbc/CMakeFiles/bbc.dir/lexer.cc.o
 src/bbc/bbc: src/bbc/CMakeFiles/bbc.dir/parser.cc.o
-src/bbc/bbc: src/bbc/CMakeFiles/bbc.dir/codegen.cc.o
 src/bbc/bbc: src/bbc/CMakeFiles/bbc.dir/ast_dumper.cc.o
+src/bbc/bbc: src/bbc/CMakeFiles/bbc.dir/symbol.cc.o
 src/bbc/bbc: src/bbc/CMakeFiles/bbc.dir/utils.cc.o
 src/bbc/bbc: src/bbc/CMakeFiles/bbc.dir/build.make
 src/bbc/bbc: src/bbc/CMakeFiles/bbc.dir/link.txt

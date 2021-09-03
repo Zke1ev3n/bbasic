@@ -1,8 +1,8 @@
 #pragma once
 #include "lexer.h"
-#include "scope.h"
 #include "ast.h"
 #include "exception.h"
+#include "symbol.h"
 
 class Parser {
     Lexer* lexer_;
@@ -11,15 +11,10 @@ class Parser {
     //前看
     Token next_token_;
 
-    Scope *top_;
-
 private:
 
     VariableProxy* LocalVariable();
 
-    //scope control
-    void EnterScope();
-    void LeaveScope();
 
     int GetVariableType();
     Token NextToken();
@@ -36,7 +31,7 @@ private:
     Expression* ParseFactor();
 
 public:
-    Parser(Lexer* lexer): lexer_(lexer),  top_(nullptr) {};
+    Parser(Lexer* lexer): lexer_(lexer) {};
     Program* ParseProgram();
 
 

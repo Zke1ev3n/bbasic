@@ -86,12 +86,6 @@
 		<Unit filename="/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/ast_dumper.h">
 			<Option target="bbc"/>
 		</Unit>
-		<Unit filename="/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/codegen.cc">
-			<Option target="bbc"/>
-		</Unit>
-		<Unit filename="/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/codegen.h">
-			<Option target="bbc"/>
-		</Unit>
 		<Unit filename="/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/lexer.cc">
 			<Option target="bbc"/>
 		</Unit>
@@ -105,6 +99,12 @@
 			<Option target="bbc"/>
 		</Unit>
 		<Unit filename="/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/parser.h">
+			<Option target="bbc"/>
+		</Unit>
+		<Unit filename="/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/symbol.cc">
+			<Option target="bbc"/>
+		</Unit>
+		<Unit filename="/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/symbol.h">
 			<Option target="bbc"/>
 		</Unit>
 		<Unit filename="/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/token.cc">

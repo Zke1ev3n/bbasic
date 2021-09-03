@@ -9,23 +9,11 @@ Token Parser::LookAhead() {
     return lexer_->LookAhead();
 }
 
-
-void Parser::EnterScope() {
-    top_ = new Scope(top_);
-}
-
-void Parser::LeaveScope() {
-    Scope *inner = top_;
-    top_ = top_->get_enclosing_scope();
-}
-
 Program* Parser::ParseProgram() {
-    EnterScope();
     vector<Line*> lines = ParseLines();
     if(current_token_.type_ != TokenType::T_EOF) {
         throw CompileException("expect EOF", current_token_);
     }
-    LeaveScope();
     return new Program(lines);
 }
 
@@ -127,6 +115,7 @@ int Parser::GetVariableType() {
 
 VariableDeclaration* Parser::ParseVariableDeclare() {
     VariableDeclaration::list_type vars;
+    VariableSet* varset;
 
     NextToken();
     while(true) {
@@ -138,26 +127,8 @@ VariableDeclaration* Parser::ParseVariableDeclare() {
         string name = current_token_.lexeme_;
         NextToken();
         int type = GetVariableType();
-        //数组
-        if (current_token_.type_ == TokenType::T_LPAREN) {
-            NextToken();
-
-            while(current_token_.type_ != TokenType::T_RPAREN){
-                if(current_token_.type_ != TokenType::T_INTEGER) {
-                    //error
-                    //TODO
-                    throw CompileException("expect integer", current_token_);
-                }
-            }
-            //这里还不支持数组，暂时都这样吧
-            auto sym = new Variable(name, top_->get_level(), top_->get_variable_count(), true);
-            vars.push_back(sym);
-            top_->define(sym);
-        }else{
-            auto sym = new Variable(name, top_->get_level(), top_->get_variable_count(), true);
-            vars.push_back(sym);
-            top_->define(sym);
-        }
+        //TODO 目前不支持数组
+        varset->RegVar(varset->VarName(name, type), type, NULL);
 
         if (current_token_.type_ == TokenType::T_COMMA) {
 			NextToken();
@@ -274,7 +245,7 @@ Expression* Parser::ParseFactor() {
         case TokenType::T_IDENTIFIER: {
             std::string id = current_token_.lexeme_;
             NextToken();
-            Symbol *sym = top_->resolve(id);
+            Variable *sym = (Variable*)top_->resolve(id);
             if (sym == nullptr)
                 throw CompileException("undeclared identifier", current_token_);
             return new VariableProxy{sym};

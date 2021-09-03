@@ -8,6 +8,7 @@ add_executable(bbc
         token.cc
         lexer.cc
         parser.cc
-        codegen.cc
+        #codegen.cc
         ast_dumper.cc
+        symbol.cc
         utils.cc)

@@ -154,30 +154,6 @@ ast_dumper.cc.s:
 	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/bbc/CMakeFiles/bbc.dir/build.make src/bbc/CMakeFiles/bbc.dir/ast_dumper.cc.s
 .PHONY : ast_dumper.cc.s
 
-codegen.o: codegen.cc.o
-.PHONY : codegen.o
-
-# target to build an object file
-codegen.cc.o:
-	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/bbc/CMakeFiles/bbc.dir/build.make src/bbc/CMakeFiles/bbc.dir/codegen.cc.o
-.PHONY : codegen.cc.o
-
-codegen.i: codegen.cc.i
-.PHONY : codegen.i
-
-# target to preprocess a source file
-codegen.cc.i:
-	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/bbc/CMakeFiles/bbc.dir/build.make src/bbc/CMakeFiles/bbc.dir/codegen.cc.i
-.PHONY : codegen.cc.i
-
-codegen.s: codegen.cc.s
-.PHONY : codegen.s
-
-# target to generate assembly for a file
-codegen.cc.s:
-	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/bbc/CMakeFiles/bbc.dir/build.make src/bbc/CMakeFiles/bbc.dir/codegen.cc.s
-.PHONY : codegen.cc.s
-
 lexer.o: lexer.cc.o
 .PHONY : lexer.o
 
@@ -250,6 +226,30 @@ parser.cc.s:
 	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/bbc/CMakeFiles/bbc.dir/build.make src/bbc/CMakeFiles/bbc.dir/parser.cc.s
 .PHONY : parser.cc.s
 
+symbol.o: symbol.cc.o
+.PHONY : symbol.o
+
+# target to build an object file
+symbol.cc.o:
+	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/bbc/CMakeFiles/bbc.dir/build.make src/bbc/CMakeFiles/bbc.dir/symbol.cc.o
+.PHONY : symbol.cc.o
+
+symbol.i: symbol.cc.i
+.PHONY : symbol.i
+
+# target to preprocess a source file
+symbol.cc.i:
+	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/bbc/CMakeFiles/bbc.dir/build.make src/bbc/CMakeFiles/bbc.dir/symbol.cc.i
+.PHONY : symbol.cc.i
+
+symbol.s: symbol.cc.s
+.PHONY : symbol.s
+
+# target to generate assembly for a file
+symbol.cc.s:
+	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/bbc/CMakeFiles/bbc.dir/build.make src/bbc/CMakeFiles/bbc.dir/symbol.cc.s
+.PHONY : symbol.cc.s
+
 token.o: token.cc.o
 .PHONY : token.o
 
@@ -310,9 +310,6 @@ help:
 	@echo "... ast_dumper.o"
 	@echo "... ast_dumper.i"
 	@echo "... ast_dumper.s"
-	@echo "... codegen.o"
-	@echo "... codegen.i"
-	@echo "... codegen.s"
 	@echo "... lexer.o"
 	@echo "... lexer.i"
 	@echo "... lexer.s"
@@ -322,6 +319,9 @@ help:
 	@echo "... parser.o"
 	@echo "... parser.i"
 	@echo "... parser.s"
+	@echo "... symbol.o"
+	@echo "... symbol.i"
+	@echo "... symbol.s"
 	@echo "... token.o"
 	@echo "... token.i"
 	@echo "... token.s"
