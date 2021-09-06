@@ -115,7 +115,6 @@ int Parser::GetVariableType() {
 
 VariableDeclaration* Parser::ParseVariableDeclare() {
     VariableDeclaration::list_type vars;
-    VariableSet* varset;
 
     NextToken();
     while(true) {
@@ -128,7 +127,8 @@ VariableDeclaration* Parser::ParseVariableDeclare() {
         NextToken();
         int type = GetVariableType();
         //TODO 目前不支持数组
-        varset->RegVar(varset->VarName(name, type), type, NULL);
+        Variable* var = new Variable(name, type);
+        vars.push_back(var);
 
         if (current_token_.type_ == TokenType::T_COMMA) {
 			NextToken();
@@ -148,14 +148,14 @@ a(1,2) = 'aaa'
 func(1,2)
 */
 AssignVariable* Parser::ParseAssignVariable() {
-    VariableProxy* var_proxy;
+    VariableProxy* var;
     //当前仅支持int
     //int type = GetVariableType();
 
-    var_proxy = LocalVariable();
+    var = LocalVariable();
     NextToken();
 
-    return new AssignVariable(var_proxy, ParseExpression());
+    return new AssignVariable(var, ParseExpression());
 }
 
 IFStatement* Parser::ParseIFStatement() {
@@ -245,10 +245,7 @@ Expression* Parser::ParseFactor() {
         case TokenType::T_IDENTIFIER: {
             std::string id = current_token_.lexeme_;
             NextToken();
-            Variable *sym = (Variable*)top_->resolve(id);
-            if (sym == nullptr)
-                throw CompileException("undeclared identifier", current_token_);
-            return new VariableProxy{sym};
+            return new VariableProxy(id);
         }
         case TokenType::T_INTEGER: {
             int num = current_token_.inum_;
@@ -260,6 +257,7 @@ Expression* Parser::ParseFactor() {
             if (current_token_.type_ != TokenType::T_RPAREN) {
                 throw CompileException("expect )", current_token_);
             }
+            NextToken();
             return expr;
         }
         default: {
@@ -271,13 +269,5 @@ Expression* Parser::ParseFactor() {
 // expressions
 VariableProxy * Parser::LocalVariable() {
     std::string id = current_token_.lexeme_;
-    Symbol *sym = top_->resolve(id);
-    if (sym == nullptr) {
-        //throw general_error("undeclared identifier \"", id, '"');
-        throw CompileException("undeclared identifier", current_token_);
-    } else if (sym->is_variable()) {
-        return new VariableProxy(dynamic_cast<Variable*>(sym));
-    } else {
-        throw CompileException("cannot assign value to a non-variable", current_token_);
-    }
+    return new VariableProxy(id);
 }

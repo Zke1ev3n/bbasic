@@ -80,10 +80,25 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/assembler.cc">
+			<Option target="bbc"/>
+		</Unit>
 		<Unit filename="/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/ast_dumper.cc">
 			<Option target="bbc"/>
 		</Unit>
 		<Unit filename="/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/ast_dumper.h">
+			<Option target="bbc"/>
+		</Unit>
+		<Unit filename="/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/codegen.cc">
+			<Option target="bbc"/>
+		</Unit>
+		<Unit filename="/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/codegen.h">
+			<Option target="bbc"/>
+		</Unit>
+		<Unit filename="/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/identfinder.cc">
+			<Option target="bbc"/>
+		</Unit>
+		<Unit filename="/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/identfinder.h">
 			<Option target="bbc"/>
 		</Unit>
 		<Unit filename="/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/lexer.cc">
@@ -99,6 +114,12 @@
 			<Option target="bbc"/>
 		</Unit>
 		<Unit filename="/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/parser.h">
+			<Option target="bbc"/>
+		</Unit>
+		<Unit filename="/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/stringident.cc">
+			<Option target="bbc"/>
+		</Unit>
+		<Unit filename="/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/stringident.h">
 			<Option target="bbc"/>
 		</Unit>
 		<Unit filename="/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/symbol.cc">

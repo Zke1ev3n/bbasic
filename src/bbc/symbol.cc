@@ -4,6 +4,18 @@
 
 #include "symbol.h"
 
+string VariableSet::VarName(string name, int type){
+    static string n;
+    switch (type)
+    {
+        case 0x10:	n="VINT_"; break;
+        case 0x11:	n="VFLO_"; break;
+        case 0x12:	n="VSTR_"; break;
+    }
+    n.append(name);
+    return n;
+}
+
 int VariableSet::RegVar(const string& name, int type, int* array, int off) {
     int i;
     for (i=0;i<count;i++)

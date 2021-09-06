@@ -4,7 +4,6 @@
 #include <vector>
 #include "symbol.h"
 #include "token.h"
-#include "scope.h"
 
 #define AST_NODE_LIST(V) \
     V(Program)           \
@@ -12,6 +11,7 @@
     V(VariableDeclaration) \
     V(VariableProxy)     \
     V(AssignVariable)    \
+    V(Expression)       \
     V(UnaryOperation)    \
     V(BinaryOperation)  \
     V(Literal)           \
@@ -140,14 +140,15 @@ public:
 };
 
 class VariableProxy : public Expression {
-    Variable *target_;
+    string name_;
+
 public:
-    explicit VariableProxy(Variable *target)
-            : Expression(ASTNodeType::VariableProxy), target_(target) { }
+    explicit VariableProxy(string name)
+            : Expression(ASTNodeType::VariableProxy), name_(name) { }
 
     ~VariableProxy() final = default; // TODO add a proper destructor here
 
-    PROPERTY_GETTER(target)
+    PROPERTY_GETTER(name)
 };
 
 class VariableDeclaration : public Statement {

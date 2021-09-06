@@ -4,8 +4,9 @@
 
 #include "lexer.h"
 #include "parser.h"
-#include "symbol.h"
 #include "ast_dumper.h"
+#include "codegen.h"
+#include "assember.h"
 
 using namespace std;
 
@@ -40,6 +41,30 @@ int main(int argc, char* argv[]) {
 
     ASTDumper ast_dumper(std::cout);
     ast_dumper.VisitProgram(program);
+
+    CodeGen code_gen;
+    code_gen.VisitProgram(program);
+    string asm_code = code_gen.GetStream();
+
+    std::cout<<asm_code;
+
+//    std::ifstream asm_file("test.obj");
+//    if (asm_file.fail()) {
+//        cerr << "failed to open file" << endl;;
+//        return -1;
+//    }
+//
+//    stringstream asm_in;
+//    if (asm_file) {
+//        asm_in << asm_file.rdbuf();
+//        asm_file.close();
+//    }
+
+    stringstream stream(asm_code);
+
+    Assembler assembler;
+    assembler.LoadAsm(stream);
+    assembler.Output("test.bin");
 
     fin.close();
 

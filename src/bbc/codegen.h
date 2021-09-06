@@ -7,19 +7,21 @@
 
 #include <sstream>
 #include "ast.h"
+#include "symbol.h"
 
 class CodeGen:public ASTVisitor<CodeGen>{
 
-    Scope *top_scope_;
-    std::ostringstream stream_;
+    std::stringstream stream_;
+    long LABEL_ID;
+
+    VariableSet global;
 
     DEFINE_AST_VISITOR_SUBCLASS_MEMBERS()
-    DECLARE_VISIT_METHODS
 
 public:
-    CodeGen() : top_scope_(nullptr) { }
-
-    void gen(Program *program);
+    CodeGen() { LABEL_ID = 0; }
+    DECLARE_VISIT_METHODS
+    string GetStream();
 };
 
 #endif //BBC_CODEGEN_H

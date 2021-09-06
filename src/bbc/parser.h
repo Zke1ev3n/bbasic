@@ -15,7 +15,6 @@ private:
 
     VariableProxy* LocalVariable();
 
-
     int GetVariableType();
     Token NextToken();
     Token LookAhead();
@@ -33,6 +32,4 @@ private:
 public:
     Parser(Lexer* lexer): lexer_(lexer) {};
     Program* ParseProgram();
-
-
 };

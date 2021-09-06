@@ -23,7 +23,7 @@ void ASTDumper::VisitLine(Line *node) {
 void ASTDumper::VisitVariableDeclaration(VariableDeclaration *node) {
     out_ << "variable declaration [ ";
     for (auto sym : node->variables())
-        out_ << sym->get_name() << ' ';
+        out_ << sym << ' ';
     out_.put(']');
 }
 
@@ -41,7 +41,7 @@ void ASTDumper::VisitAssignVariable(AssignVariable *node) {
 }
 
 void ASTDumper::VisitVariableProxy(VariableProxy *node) {
-    Symbol* var = node->target();
+    string var = node->name();
 //    if (sym->is_constant()) {
 //        out_ << "constant ";
 //    } else if (sym->is_variable()) {
@@ -49,11 +49,15 @@ void ASTDumper::VisitVariableProxy(VariableProxy *node) {
 //    } else if (sym->is_procedure()) {
 //        out_ << "procedure ";
 //    }
-    out_ << var->get_name();
+    out_ << var;
 }
 
 void ASTDumper::VisitLiteral(Literal *node) {
     out_ << "literal " << node->value();
+}
+
+void ASTDumper::VisitExpression(Expression *node) {
+
 }
 
 void ASTDumper::VisitUnaryOperation(UnaryOperation *node) {

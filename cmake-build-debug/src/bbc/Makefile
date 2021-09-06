@@ -130,6 +130,30 @@ bbc/fast:
 	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/bbc/CMakeFiles/bbc.dir/build.make src/bbc/CMakeFiles/bbc.dir/build
 .PHONY : bbc/fast
 
+assembler.o: assembler.cc.o
+.PHONY : assembler.o
+
+# target to build an object file
+assembler.cc.o:
+	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/bbc/CMakeFiles/bbc.dir/build.make src/bbc/CMakeFiles/bbc.dir/assembler.cc.o
+.PHONY : assembler.cc.o
+
+assembler.i: assembler.cc.i
+.PHONY : assembler.i
+
+# target to preprocess a source file
+assembler.cc.i:
+	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/bbc/CMakeFiles/bbc.dir/build.make src/bbc/CMakeFiles/bbc.dir/assembler.cc.i
+.PHONY : assembler.cc.i
+
+assembler.s: assembler.cc.s
+.PHONY : assembler.s
+
+# target to generate assembly for a file
+assembler.cc.s:
+	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/bbc/CMakeFiles/bbc.dir/build.make src/bbc/CMakeFiles/bbc.dir/assembler.cc.s
+.PHONY : assembler.cc.s
+
 ast_dumper.o: ast_dumper.cc.o
 .PHONY : ast_dumper.o
 
@@ -153,6 +177,54 @@ ast_dumper.s: ast_dumper.cc.s
 ast_dumper.cc.s:
 	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/bbc/CMakeFiles/bbc.dir/build.make src/bbc/CMakeFiles/bbc.dir/ast_dumper.cc.s
 .PHONY : ast_dumper.cc.s
+
+codegen.o: codegen.cc.o
+.PHONY : codegen.o
+
+# target to build an object file
+codegen.cc.o:
+	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/bbc/CMakeFiles/bbc.dir/build.make src/bbc/CMakeFiles/bbc.dir/codegen.cc.o
+.PHONY : codegen.cc.o
+
+codegen.i: codegen.cc.i
+.PHONY : codegen.i
+
+# target to preprocess a source file
+codegen.cc.i:
+	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/bbc/CMakeFiles/bbc.dir/build.make src/bbc/CMakeFiles/bbc.dir/codegen.cc.i
+.PHONY : codegen.cc.i
+
+codegen.s: codegen.cc.s
+.PHONY : codegen.s
+
+# target to generate assembly for a file
+codegen.cc.s:
+	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/bbc/CMakeFiles/bbc.dir/build.make src/bbc/CMakeFiles/bbc.dir/codegen.cc.s
+.PHONY : codegen.cc.s
+
+identfinder.o: identfinder.cc.o
+.PHONY : identfinder.o
+
+# target to build an object file
+identfinder.cc.o:
+	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/bbc/CMakeFiles/bbc.dir/build.make src/bbc/CMakeFiles/bbc.dir/identfinder.cc.o
+.PHONY : identfinder.cc.o
+
+identfinder.i: identfinder.cc.i
+.PHONY : identfinder.i
+
+# target to preprocess a source file
+identfinder.cc.i:
+	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/bbc/CMakeFiles/bbc.dir/build.make src/bbc/CMakeFiles/bbc.dir/identfinder.cc.i
+.PHONY : identfinder.cc.i
+
+identfinder.s: identfinder.cc.s
+.PHONY : identfinder.s
+
+# target to generate assembly for a file
+identfinder.cc.s:
+	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/bbc/CMakeFiles/bbc.dir/build.make src/bbc/CMakeFiles/bbc.dir/identfinder.cc.s
+.PHONY : identfinder.cc.s
 
 lexer.o: lexer.cc.o
 .PHONY : lexer.o
@@ -225,6 +297,30 @@ parser.s: parser.cc.s
 parser.cc.s:
 	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/bbc/CMakeFiles/bbc.dir/build.make src/bbc/CMakeFiles/bbc.dir/parser.cc.s
 .PHONY : parser.cc.s
+
+stringident.o: stringident.cc.o
+.PHONY : stringident.o
+
+# target to build an object file
+stringident.cc.o:
+	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/bbc/CMakeFiles/bbc.dir/build.make src/bbc/CMakeFiles/bbc.dir/stringident.cc.o
+.PHONY : stringident.cc.o
+
+stringident.i: stringident.cc.i
+.PHONY : stringident.i
+
+# target to preprocess a source file
+stringident.cc.i:
+	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/bbc/CMakeFiles/bbc.dir/build.make src/bbc/CMakeFiles/bbc.dir/stringident.cc.i
+.PHONY : stringident.cc.i
+
+stringident.s: stringident.cc.s
+.PHONY : stringident.s
+
+# target to generate assembly for a file
+stringident.cc.s:
+	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/bbc/CMakeFiles/bbc.dir/build.make src/bbc/CMakeFiles/bbc.dir/stringident.cc.s
+.PHONY : stringident.cc.s
 
 symbol.o: symbol.cc.o
 .PHONY : symbol.o
@@ -307,9 +403,18 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... bbc"
+	@echo "... assembler.o"
+	@echo "... assembler.i"
+	@echo "... assembler.s"
 	@echo "... ast_dumper.o"
 	@echo "... ast_dumper.i"
 	@echo "... ast_dumper.s"
+	@echo "... codegen.o"
+	@echo "... codegen.i"
+	@echo "... codegen.s"
+	@echo "... identfinder.o"
+	@echo "... identfinder.i"
+	@echo "... identfinder.s"
 	@echo "... lexer.o"
 	@echo "... lexer.i"
 	@echo "... lexer.s"
@@ -319,6 +424,9 @@ help:
 	@echo "... parser.o"
 	@echo "... parser.i"
 	@echo "... parser.s"
+	@echo "... stringident.o"
+	@echo "... stringident.i"
+	@echo "... stringident.s"
 	@echo "... symbol.o"
 	@echo "... symbol.i"
 	@echo "... symbol.s"
