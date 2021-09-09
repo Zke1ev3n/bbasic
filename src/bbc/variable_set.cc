@@ -31,30 +31,24 @@ int VariableSet::RegVar(const string& name, int type, int* array, int off) {
         }
         return i;
     }
-    Variable* var = new Variable();
-    var->name=name;
-    var->type=type;
-    var->mode=0;
-    var->size=1;
-    if (off) var->spos=off;
-    else var->spos=stackp;
+    i=vars.Alloc();
+    count++;
+    vars[i]->name=name;
+    vars[i]->type=type;
+    vars[i]->mode=0;
+    vars[i]->size=1;
+    if (off) vars[i]->spos=off;
+    else vars[i]->spos=stackp;
     if (array) {
         int j,size=1;
-        //var->array.AutoSize(1);
-        //TODO ???
-        var->array.resize(sizeof(array));
-        //自动扩容
-        for (j=0;array[j];j++) var->array[j]=array[j],size*=array[j];
-        var->array[j]=0;
-        var->mode=j;
-        //var->array.AutoSize(0);
-        var->size=size;
-        var->spos=var->spos-size*4+4;
+        vars[i]->array.AutoSize(1);
+        for (j=0;array[j];j++) vars[i]->array[j]=array[j],size*=array[j];
+        vars[i]->array[j]=0;
+        vars[i]->mode=j;
+        vars[i]->array.AutoSize(0);
+        vars[i]->size=size;
+        vars[i]->spos=vars[i]->spos-size*4+4;
     }
-    stackp-=var->size*4;
-    vars.push_back(var);
-    count++;
-
+    stackp-=vars[i]->size*4;
     return i;
-
 }

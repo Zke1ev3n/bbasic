@@ -220,11 +220,11 @@ Token Lexer::Lex() {
             case '\"': {
                 // lexeme
 				std::string t_lexme;
-				t_lexme.push_back(c);
+				//t_lexme.push_back(c);
                 while ((c1 =getc()) && c1 != '\"') {
                         t_lexme.push_back(c1);
                 }
-                t_lexme.push_back(c1);
+                //t_lexme.push_back(c1);
                 Token t(TokenType::T_STRING, t_lexme, line_, column_);
                 return t;
             }

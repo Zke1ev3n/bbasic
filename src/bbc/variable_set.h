@@ -1,8 +1,9 @@
 #pragma once
 
 #include <string>
-#include <vector>
 #include <map>
+#include "ivector.h"
+#include "ilister.h"
 
 using namespace std;
 
@@ -14,6 +15,7 @@ enum{
 
 class VariableSet {
 protected:
+
     struct Variable
     {
         string name;
@@ -25,11 +27,10 @@ protected:
         int size;
         // 在栈中相对sp的偏移
         int spos;
-        vector<int> array;
+        IVector<int> array;
     };
 
-    //TODO 是否符合需求
-    vector<Variable*> vars;
+    ILister<Variable> vars;
     //变量个数，是否在栈中
     int count, in_stack;
 public:
