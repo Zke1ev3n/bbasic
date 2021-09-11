@@ -2,8 +2,8 @@
 #define BBC_AST_H
 
 #include <vector>
-#include "symbol.h"
 #include "token.h"
+#include "symbol.h"
 
 #define AST_NODE_LIST(V) \
     V(Program)           \
@@ -15,7 +15,9 @@
     V(UnaryOperation)    \
     V(BinaryOperation)  \
     V(Literal)           \
+    V(LiteralString)      \
     V(IFStatement)       \
+    V(PrintStatement)    \
     V(EndStatement)     \
 
 
@@ -85,10 +87,16 @@ public:
 };
 
 class Expression : public ASTNode {
+    int expr_type_;
 public:
     explicit Expression(ASTNodeType type) : ASTNode(type) { }
 
     ~Expression() override = default;
+
+    void SetType(int expr_type) {expr_type_ = expr_type;}
+
+    PROPERTY_GETTER(expr_type)
+
 };
 
 class UnaryOperation : public Expression {
@@ -139,6 +147,17 @@ public:
     PROPERTY_GETTER(value)
 };
 
+class LiteralString : public Expression {
+    string value_;
+public:
+    explicit LiteralString(string value)
+            : Expression(ASTNodeType::LiteralString), value_(value) { }
+
+    ~LiteralString() final = default;
+
+    PROPERTY_GETTER(value)
+};
+
 class VariableProxy : public Expression {
     string name_;
 
@@ -153,7 +172,7 @@ public:
 
 class VariableDeclaration : public Statement {
 public:
-    typedef std::vector<Variable*> list_type;
+    typedef std::vector<VariableSymbol*> list_type;
 
 private:
     const list_type variables_;
@@ -213,6 +232,19 @@ public:
     PROPERTY_GETTER(then_lines)
 
     PROPERTY_GETTER(else_lines)
+};
+
+class PrintStatement : public Statement {
+    vector<Expression*> expressions_;
+public:
+    PrintStatement(vector<Expression*> expressions) : Statement(ASTNodeType::PrintStatement), expressions_(std::move(expressions)) {}
+
+    ~PrintStatement() final {
+        for(auto expression : expressions_)  delete expression;
+    }
+
+    PROPERTY_GETTER(expressions);
+
 };
 
 class EndStatement: public Statement {

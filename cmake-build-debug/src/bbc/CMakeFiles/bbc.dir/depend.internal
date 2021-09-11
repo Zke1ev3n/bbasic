@@ -11,15 +11,20 @@ src/bbc/CMakeFiles/bbc.dir/ast_dumper.cc.o
  /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/ast.h
  /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/ast_dumper.cc
  /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/ast_dumper.h
+ /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/ivector.h
  /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/symbol.h
  /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/token.h
 src/bbc/CMakeFiles/bbc.dir/codegen.cc.o
  /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/ast.h
  /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/codegen.cc
  /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/codegen.h
+ /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/ilister.h
+ /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/ivector.h
+ /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/stringident.h
  /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/symbol.h
  /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/token.h
  /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/utils.h
+ /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/variable_set.h
 src/bbc/CMakeFiles/bbc.dir/identfinder.cc.o
  /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/identfinder.cc
  /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/identfinder.h
@@ -35,6 +40,7 @@ src/bbc/CMakeFiles/bbc.dir/main.cc.o
  /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/codegen.h
  /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/exception.h
  /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/identfinder.h
+ /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/ilister.h
  /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/ivector.h
  /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/lexer.h
  /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/main.cc
@@ -42,9 +48,11 @@ src/bbc/CMakeFiles/bbc.dir/main.cc.o
  /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/stringident.h
  /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/symbol.h
  /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/token.h
+ /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/variable_set.h
 src/bbc/CMakeFiles/bbc.dir/parser.cc.o
  /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/ast.h
  /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/exception.h
+ /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/ivector.h
  /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/lexer.h
  /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/parser.cc
  /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/parser.h
@@ -54,12 +62,15 @@ src/bbc/CMakeFiles/bbc.dir/stringident.cc.o
  /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/ivector.h
  /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/stringident.cc
  /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/stringident.h
-src/bbc/CMakeFiles/bbc.dir/symbol.cc.o
- /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/symbol.cc
- /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/symbol.h
 src/bbc/CMakeFiles/bbc.dir/token.cc.o
  /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/token.cc
  /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/token.h
 src/bbc/CMakeFiles/bbc.dir/utils.cc.o
  /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/utils.cc
  /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/utils.h
+src/bbc/CMakeFiles/bbc.dir/variable_set.cc.o
+ /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/ilister.h
+ /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/ivector.h
+ /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/symbol.h
+ /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/variable_set.cc
+ /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/variable_set.h

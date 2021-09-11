@@ -322,30 +322,6 @@ stringident.cc.s:
 	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/bbc/CMakeFiles/bbc.dir/build.make src/bbc/CMakeFiles/bbc.dir/stringident.cc.s
 .PHONY : stringident.cc.s
 
-symbol.o: symbol.cc.o
-.PHONY : symbol.o
-
-# target to build an object file
-symbol.cc.o:
-	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/bbc/CMakeFiles/bbc.dir/build.make src/bbc/CMakeFiles/bbc.dir/symbol.cc.o
-.PHONY : symbol.cc.o
-
-symbol.i: symbol.cc.i
-.PHONY : symbol.i
-
-# target to preprocess a source file
-symbol.cc.i:
-	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/bbc/CMakeFiles/bbc.dir/build.make src/bbc/CMakeFiles/bbc.dir/symbol.cc.i
-.PHONY : symbol.cc.i
-
-symbol.s: symbol.cc.s
-.PHONY : symbol.s
-
-# target to generate assembly for a file
-symbol.cc.s:
-	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/bbc/CMakeFiles/bbc.dir/build.make src/bbc/CMakeFiles/bbc.dir/symbol.cc.s
-.PHONY : symbol.cc.s
-
 token.o: token.cc.o
 .PHONY : token.o
 
@@ -394,6 +370,30 @@ utils.cc.s:
 	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/bbc/CMakeFiles/bbc.dir/build.make src/bbc/CMakeFiles/bbc.dir/utils.cc.s
 .PHONY : utils.cc.s
 
+variable_set.o: variable_set.cc.o
+.PHONY : variable_set.o
+
+# target to build an object file
+variable_set.cc.o:
+	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/bbc/CMakeFiles/bbc.dir/build.make src/bbc/CMakeFiles/bbc.dir/variable_set.cc.o
+.PHONY : variable_set.cc.o
+
+variable_set.i: variable_set.cc.i
+.PHONY : variable_set.i
+
+# target to preprocess a source file
+variable_set.cc.i:
+	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/bbc/CMakeFiles/bbc.dir/build.make src/bbc/CMakeFiles/bbc.dir/variable_set.cc.i
+.PHONY : variable_set.cc.i
+
+variable_set.s: variable_set.cc.s
+.PHONY : variable_set.s
+
+# target to generate assembly for a file
+variable_set.cc.s:
+	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/bbc/CMakeFiles/bbc.dir/build.make src/bbc/CMakeFiles/bbc.dir/variable_set.cc.s
+.PHONY : variable_set.cc.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -427,15 +427,15 @@ help:
 	@echo "... stringident.o"
 	@echo "... stringident.i"
 	@echo "... stringident.s"
-	@echo "... symbol.o"
-	@echo "... symbol.i"
-	@echo "... symbol.s"
 	@echo "... token.o"
 	@echo "... token.i"
 	@echo "... token.s"
 	@echo "... utils.o"
 	@echo "... utils.i"
 	@echo "... utils.s"
+	@echo "... variable_set.o"
+	@echo "... variable_set.i"
+	@echo "... variable_set.s"
 .PHONY : help
 
 

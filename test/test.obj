@@ -1,0 +1,84 @@
+CALL LABEL0 ; For initialization
+
+;================ MAIN PROG ==================
+;<Init data ptr>
+LD dword r2,CD_INITDATA
+IN r2,22
+;</Init data ptr>
+LABEL_1:
+;<Epression>
+; Flush stack: 1 16 + 1 *  [5]
+PUSH 1
+PUSH [VINT_J]
+POP r1
+POP r0
+CAL int ADD r0,r1
+PUSH r0
+PUSH 2
+POP r1
+POP r0
+CAL int MUL r0,r1
+PUSH r0
+POP r3
+;</Epression>
+LD int r0,VINT_I
+LD int [r0],r3
+; If code
+;<Epression>
+; Flush stack: 16 16 > 16 1 [ |  [7]
+PUSH [VINT_I]
+PUSH [VINT_J]
+POP r1
+POP r0
+CMP int r0,r1
+JPC BE LABEL5
+PUSH 1
+JMP LABEL6
+LABEL5:
+PUSH 0
+LABEL6:
+PUSH [VINT_J]
+PUSH 2
+POP r1
+POP r0
+CMP int r0,r1
+JPC A LABEL7
+PUSH 1
+JMP LABEL8
+LABEL7:
+PUSH 0
+LABEL8:
+POP r1
+POP r0
+CAL int ADD r0,r1
+PUSH r0
+POP r3
+;</Epression>
+CMP int r3,0
+JPC Z LABEL3
+;<Epression>
+; Flush stack: 1  [1]
+PUSH 1
+POP r3
+;</Epression>
+LD int r0,VINT_AMA
+LD int [r0],r3
+JMP LABEL4
+LABEL3:	; Else
+LABEL4:	; End of If
+EXIT
+
+;================ FUNCTIONS ==================
+
+;================ Init Code ==================
+LABEL0:
+RET
+LABEL1:
+EXIT
+
+; Declaration:
+LABEL2:
+DATA VINT_I dword 0
+DATA VINT_J dword 0
+DATA VINT_AMA dword 0
+DATA CD_INITDATA bin %%

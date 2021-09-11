@@ -7,9 +7,9 @@ file(REMOVE_RECURSE
   "CMakeFiles/bbc.dir/main.cc.o"
   "CMakeFiles/bbc.dir/parser.cc.o"
   "CMakeFiles/bbc.dir/stringident.cc.o"
-  "CMakeFiles/bbc.dir/symbol.cc.o"
   "CMakeFiles/bbc.dir/token.cc.o"
   "CMakeFiles/bbc.dir/utils.cc.o"
+  "CMakeFiles/bbc.dir/variable_set.cc.o"
   "bbc"
   "bbc.pdb"
 )

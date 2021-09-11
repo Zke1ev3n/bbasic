@@ -25,7 +25,9 @@ private:
     VariableDeclaration* ParseVariableDeclare();
     AssignVariable* ParseAssignVariable();
     IFStatement* ParseIFStatement();
+    PrintStatement* ParsePrintStatement();
     Expression* ParseExpression();
+    Expression* ParseAddSubExpression();
     Expression* ParseTerm();
     Expression* ParseFactor();
 

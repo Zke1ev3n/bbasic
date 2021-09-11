@@ -4,14 +4,9 @@
 #include <map>
 #include "ivector.h"
 #include "ilister.h"
+#include "symbol.h"
 
 using namespace std;
-
-enum{
-    ES_VARINT=0x10,
-    ES_VARFLOAT=0x11,
-    ES_VARSTRING=0x12,
-};
 
 class VariableSet {
 protected:

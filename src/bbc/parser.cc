@@ -19,20 +19,11 @@ Program* Parser::ParseProgram() {
 
 //TODO 前看符号
 vector<Line*> Parser::ParseLines() {
-//    vector<Line*> lines;
-//    Line* line = ParseLine();
-//    lines.push_back(line);
-//    if(tok.GetType() != TokenType::T_EOF) {
-//        vector<Line*> lines2 = ParseLines();
-//        lines.insert(lines.end(), lines2.begin(), lines2.end());
-//    }
-//
-//    return lines;
-
     vector<Line*> lines;
 
     //前看，避免回溯
-    while(LookAhead().type_ != TokenType::T_EOF && LookAhead().type_ != TokenType::T_ELSE) {
+    //TODO 优化
+    while(LookAhead().type_ != TokenType::T_EOF && LookAhead().type_ != TokenType::T_ELSE && !(current_token_.type_ == TokenType::T_END && LookAhead().type_ == TokenType::T_IF)) {
         Line* line = ParseLine();
         if(line) {
             lines.push_back(line);
@@ -65,7 +56,8 @@ Line* Parser::ParseLine() {
         }
     }
 
-    if(current_token_.type_ != TokenType::T_EOL && current_token_.type_ != TokenType::T_EOF) {
+    //TODO 优化
+    if(current_token_.type_ != TokenType::T_EOL && current_token_.type_ != TokenType::T_EOF && current_token_.type_ != TokenType::T_END) {
         throw CompileException("except EOL", current_token_);
     }
 
@@ -84,10 +76,12 @@ Statement* Parser::ParseStatement() {
         case TokenType::T_IDENTIFIER:
             statement = ParseAssignVariable();
             break;
+        case TokenType::T_PRINT:
+            statement = ParsePrintStatement();
+            break;
         case TokenType::T_END:
-            if(NextToken().type_ == TokenType::T_IF) {
+            if(LookAhead().type_ == TokenType::T_IF) {
                 //skip if
-                NextToken();
                 break;
             }
             statement = new EndStatement();
@@ -127,7 +121,9 @@ VariableDeclaration* Parser::ParseVariableDeclare() {
         NextToken();
         int type = GetVariableType();
         //TODO 目前不支持数组
-        Variable* var = new Variable(name, type);
+        VariableSymbol* var = new VariableSymbol();
+        var->name = name;
+        var->type = type;
         vars.push_back(var);
 
         if (current_token_.type_ == TokenType::T_COMMA) {
@@ -158,19 +154,53 @@ AssignVariable* Parser::ParseAssignVariable() {
     return new AssignVariable(var, ParseExpression());
 }
 
-IFStatement* Parser::ParseIFStatement() {
-    Expression* condition;
+PrintStatement* Parser::ParsePrintStatement() {
+    vector<Expression*> expressions;
 
-    auto left = ParseExpression();
-    Token cmp_op = current_token_;
-    //NextToken();
-    if (!Token::is_cmp_op(current_token_)) {
-        throw CompileException("expect compare operand", current_token_);
+    NextToken();
+    while(true) {
+        if(current_token_.type_ == TokenType::T_EOL || current_token_.type_ == TokenType::T_EOF) {
+            //直接换行
+            expressions.push_back(new LiteralString("\n"));
+            break;
+        }
+        if(current_token_.type_ == TokenType::T_COLON) {
+            expressions.push_back(new LiteralString("\n"));
+            break;
+        }
+        //;
+        if(current_token_.type_ == TokenType::T_SEMICOLON) {
+            NextToken();
+            if(current_token_.type_ == TokenType::T_EOL || current_token_.type_ == TokenType::T_EOF) {
+                break;
+            }
+        }
+        //,
+        else if(current_token_.type_ == TokenType::T_COMMA) {
+            NextToken();
+            expressions.push_back(new LiteralString("\t"));
+            if(current_token_.type_ == TokenType::T_EOL || current_token_.type_ == TokenType::T_EOF) {
+                break;
+            }
+        }
+
+        if(current_token_.type_ == TokenType::T_EOL || current_token_.type_ == TokenType::T_EOF) {
+            expressions.push_back(new LiteralString("\n"));
+            break;
+        }
+
+        Expression* r = ParseExpression();
+        expressions.push_back(r);
     }
-    condition = new BinaryOperation(cmp_op, left, ParseExpression());
-    if(current_token_.type_ != TokenType::T_THEN) {
-        throw CompileException("expect THEN", current_token_);
-    }
+
+    return new PrintStatement(expressions);
+}
+
+IFStatement* Parser::ParseIFStatement() {
+
+    int has_endif = 1;
+    NextToken();
+    auto expr = ParseExpression();
 
     NextToken();
 
@@ -199,19 +229,37 @@ IFStatement* Parser::ParseIFStatement() {
     }
 
     //TODO 校验END IF
-//    if(has_endif == 1) {
-//        if(current_token_.type_ != TokenType::T_IF){
-//            throw CompileException("expect IF", current_token_);
-//        }
-//    }
+    if(has_endif == 1) {
+        if(current_token_.type_ != TokenType::T_END){
+            throw CompileException("expect IF", current_token_);
+        }
+        NextToken();
+        NextToken();
+    }
 
-    return new IFStatement(condition, then_lines, else_lines);
+    return new IFStatement(expr, then_lines, else_lines);
 }
 
+/*
+ *
+ */
 Expression* Parser::ParseExpression() {
+    Expression* left = ParseAddSubExpression();
+    while(current_token_.type_ == TokenType::T_EQ|| current_token_.type_ == TokenType::T_NEQ
+        || current_token_.type_ == TokenType::T_GE || current_token_.type_ == TokenType::T_GEQ
+        || current_token_.type_ == TokenType::T_LE || current_token_.type_ == TokenType::T_LEQ) {
+        Token op = current_token_;
+        NextToken();
+        left = new BinaryOperation(op, left, ParseAddSubExpression());
+    }
+
+    return left;
+}
+
+//关系表达式
+Expression* Parser::ParseAddSubExpression() {
     Expression* left;
 
-    NextToken();
     if(current_token_.type_ == TokenType::T_PLUS || current_token_.type_ == TokenType::T_MINUS) {
         Token op = current_token_;
         NextToken();
@@ -253,12 +301,18 @@ Expression* Parser::ParseFactor() {
             return new Literal(num);
         }
         case TokenType::T_LPAREN: {
+            NextToken();
             Expression *expr = ParseExpression();
             if (current_token_.type_ != TokenType::T_RPAREN) {
                 throw CompileException("expect )", current_token_);
             }
             NextToken();
             return expr;
+        }
+        case TokenType::T_STRING: {
+            string str = current_token_.lexeme_;
+            NextToken();
+            return new LiteralString(str);
         }
         default: {
             throw CompileException("unexpected token", current_token_);
@@ -269,5 +323,6 @@ Expression* Parser::ParseFactor() {
 // expressions
 VariableProxy * Parser::LocalVariable() {
     std::string id = current_token_.lexeme_;
+    NextToken();
     return new VariableProxy(id);
 }

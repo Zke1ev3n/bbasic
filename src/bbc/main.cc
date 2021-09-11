@@ -60,6 +60,7 @@ int main(int argc, char* argv[]) {
 //        asm_file.close();
 //    }
 
+    //////////////
     stringstream stream(asm_code);
 
     Assembler assembler;

@@ -2,7 +2,7 @@
 // Created by liangyulin on 2021/9/3.
 //
 
-#include "symbol.h"
+#include "variable_set.h"
 
 string VariableSet::VarName(string name, int type){
     static string n;

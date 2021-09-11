@@ -13,5 +13,5 @@ add_executable(bbc
         ast_dumper.cc
         identfinder.cc
         stringident.cc
-        symbol.cc
+        variable_set.cc
         utils.cc)

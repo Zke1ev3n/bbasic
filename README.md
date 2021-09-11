@@ -25,7 +25,11 @@ codegen时主要有两个问题：
   * GOTO
   
 #### TODO
-* 生成ASM[]
+- [x] 生成ASM
+- [x] 生成二进制
+- [x] Expression表达式返回值类型确定
+- [x] 完成PRINT语句
+- [ ] 实现关系运算符
     
     
 ### BBVM

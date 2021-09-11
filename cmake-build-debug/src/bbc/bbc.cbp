@@ -102,12 +102,6 @@
 		<Unit filename="/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/stringident.h">
 			<Option target="bbc"/>
 		</Unit>
-		<Unit filename="/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/symbol.cc">
-			<Option target="bbc"/>
-		</Unit>
-		<Unit filename="/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/symbol.h">
-			<Option target="bbc"/>
-		</Unit>
 		<Unit filename="/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/token.cc">
 			<Option target="bbc"/>
 		</Unit>
@@ -118,6 +112,12 @@
 			<Option target="bbc"/>
 		</Unit>
 		<Unit filename="/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/utils.h">
+			<Option target="bbc"/>
+		</Unit>
+		<Unit filename="/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/variable_set.cc">
+			<Option target="bbc"/>
+		</Unit>
+		<Unit filename="/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/variable_set.h">
 			<Option target="bbc"/>
 		</Unit>
 		<Unit filename="/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/CMakeLists.txt">

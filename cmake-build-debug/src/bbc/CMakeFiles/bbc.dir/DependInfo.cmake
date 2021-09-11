@@ -16,9 +16,9 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/main.cc" "/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/src/bbc/CMakeFiles/bbc.dir/main.cc.o"
   "/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/parser.cc" "/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/src/bbc/CMakeFiles/bbc.dir/parser.cc.o"
   "/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/stringident.cc" "/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/src/bbc/CMakeFiles/bbc.dir/stringident.cc.o"
-  "/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/symbol.cc" "/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/src/bbc/CMakeFiles/bbc.dir/symbol.cc.o"
   "/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/token.cc" "/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/src/bbc/CMakeFiles/bbc.dir/token.cc.o"
   "/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/utils.cc" "/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/src/bbc/CMakeFiles/bbc.dir/utils.cc.o"
+  "/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/variable_set.cc" "/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/src/bbc/CMakeFiles/bbc.dir/variable_set.cc.o"
   )
 set(CMAKE_CXX_COMPILER_ID "AppleClang")
 

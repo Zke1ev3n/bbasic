@@ -23,7 +23,7 @@ void ASTDumper::VisitLine(Line *node) {
 void ASTDumper::VisitVariableDeclaration(VariableDeclaration *node) {
     out_ << "variable declaration [ ";
     for (auto sym : node->variables())
-        out_ << sym << ' ';
+        out_ << sym->name << ' ';
     out_.put(']');
 }
 
@@ -41,19 +41,15 @@ void ASTDumper::VisitAssignVariable(AssignVariable *node) {
 }
 
 void ASTDumper::VisitVariableProxy(VariableProxy *node) {
-    string var = node->name();
-//    if (sym->is_constant()) {
-//        out_ << "constant ";
-//    } else if (sym->is_variable()) {
-//        out_ << "variable ";
-//    } else if (sym->is_procedure()) {
-//        out_ << "procedure ";
-//    }
-    out_ << var;
+    out_ << "varibale " << node->name();
 }
 
 void ASTDumper::VisitLiteral(Literal *node) {
     out_ << "literal " << node->value();
+}
+
+void ASTDumper::VisitLiteralString(LiteralString *node) {
+    out_ << "literal_string " << node->value();
 }
 
 void ASTDumper::VisitExpression(Expression *node) {
@@ -87,6 +83,17 @@ void ASTDumper::VisitBinaryOperation(BinaryOperation *node) {
     end_block();
 }
 
+void ASTDumper::VisitPrintStatement(PrintStatement *node) {
+    out_ << "print";
+    begin_block();
+    end_line();
+    for(int i = 0; i < node->expressions().size(); i++) {
+        visit(node->expressions()[i]);
+        end_line();
+    }
+    end_block();
+}
+
 void ASTDumper::VisitIFStatement(IFStatement *node) {
     out_ << "if";
     begin_block();
@@ -95,17 +102,23 @@ void ASTDumper::VisitIFStatement(IFStatement *node) {
     visit(node->condition());
     end_line();
     out_ << "then = ";
+    begin_block();
+    end_line();
     for(auto line: node->then_lines()){
         VisitLine(line);
         end_line();
     }
+    end_block();
     if (node->HasElseStatement()) {
         end_line();
         out_ << "else = ";
+        begin_block();
+        end_line();
         for(auto line: node->else_lines()){
             VisitLine(line);
             end_line();
         }
+        end_block();
     }
     end_block();
 }

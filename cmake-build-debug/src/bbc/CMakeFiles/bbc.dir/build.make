@@ -183,18 +183,18 @@ src/bbc/CMakeFiles/bbc.dir/stringident.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/bbc.dir/stringident.cc.s"
 	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/src/bbc && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/stringident.cc -o CMakeFiles/bbc.dir/stringident.cc.s
 
-src/bbc/CMakeFiles/bbc.dir/symbol.cc.o: src/bbc/CMakeFiles/bbc.dir/flags.make
-src/bbc/CMakeFiles/bbc.dir/symbol.cc.o: ../src/bbc/symbol.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object src/bbc/CMakeFiles/bbc.dir/symbol.cc.o"
-	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/src/bbc && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/bbc.dir/symbol.cc.o -c /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/symbol.cc
+src/bbc/CMakeFiles/bbc.dir/variable_set.cc.o: src/bbc/CMakeFiles/bbc.dir/flags.make
+src/bbc/CMakeFiles/bbc.dir/variable_set.cc.o: ../src/bbc/variable_set.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object src/bbc/CMakeFiles/bbc.dir/variable_set.cc.o"
+	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/src/bbc && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/bbc.dir/variable_set.cc.o -c /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/variable_set.cc
 
-src/bbc/CMakeFiles/bbc.dir/symbol.cc.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/bbc.dir/symbol.cc.i"
-	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/src/bbc && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/symbol.cc > CMakeFiles/bbc.dir/symbol.cc.i
+src/bbc/CMakeFiles/bbc.dir/variable_set.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/bbc.dir/variable_set.cc.i"
+	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/src/bbc && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/variable_set.cc > CMakeFiles/bbc.dir/variable_set.cc.i
 
-src/bbc/CMakeFiles/bbc.dir/symbol.cc.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/bbc.dir/symbol.cc.s"
-	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/src/bbc && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/symbol.cc -o CMakeFiles/bbc.dir/symbol.cc.s
+src/bbc/CMakeFiles/bbc.dir/variable_set.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/bbc.dir/variable_set.cc.s"
+	cd /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/cmake-build-debug/src/bbc && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/variable_set.cc -o CMakeFiles/bbc.dir/variable_set.cc.s
 
 src/bbc/CMakeFiles/bbc.dir/utils.cc.o: src/bbc/CMakeFiles/bbc.dir/flags.make
 src/bbc/CMakeFiles/bbc.dir/utils.cc.o: ../src/bbc/utils.cc
@@ -220,7 +220,7 @@ bbc_OBJECTS = \
 "CMakeFiles/bbc.dir/ast_dumper.cc.o" \
 "CMakeFiles/bbc.dir/identfinder.cc.o" \
 "CMakeFiles/bbc.dir/stringident.cc.o" \
-"CMakeFiles/bbc.dir/symbol.cc.o" \
+"CMakeFiles/bbc.dir/variable_set.cc.o" \
 "CMakeFiles/bbc.dir/utils.cc.o"
 
 # External object files for target bbc
@@ -235,7 +235,7 @@ src/bbc/bbc: src/bbc/CMakeFiles/bbc.dir/assembler.cc.o
 src/bbc/bbc: src/bbc/CMakeFiles/bbc.dir/ast_dumper.cc.o
 src/bbc/bbc: src/bbc/CMakeFiles/bbc.dir/identfinder.cc.o
 src/bbc/bbc: src/bbc/CMakeFiles/bbc.dir/stringident.cc.o
-src/bbc/bbc: src/bbc/CMakeFiles/bbc.dir/symbol.cc.o
+src/bbc/bbc: src/bbc/CMakeFiles/bbc.dir/variable_set.cc.o
 src/bbc/bbc: src/bbc/CMakeFiles/bbc.dir/utils.cc.o
 src/bbc/bbc: src/bbc/CMakeFiles/bbc.dir/build.make
 src/bbc/bbc: src/bbc/CMakeFiles/bbc.dir/link.txt
