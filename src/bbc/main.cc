@@ -39,8 +39,8 @@ int main(int argc, char* argv[]) {
         return EXIT_FAILURE;
     }
 
-    ASTDumper ast_dumper(std::cout);
-    ast_dumper.VisitProgram(program);
+//    ASTDumper ast_dumper(std::cout);
+//    ast_dumper.VisitProgram(program);
 
     CodeGen code_gen;
     code_gen.VisitProgram(program);
@@ -50,7 +50,7 @@ int main(int argc, char* argv[]) {
 
 //    std::ifstream asm_file("test.obj");
 //    if (asm_file.fail()) {
-//        cerr << "failed to open file" << endl;;
+//        cerr << strerror(errno) << endl;;
 //        return -1;
 //    }
 //

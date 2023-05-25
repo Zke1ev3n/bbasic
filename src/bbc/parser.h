@@ -25,6 +25,8 @@ private:
     VariableDeclaration* ParseVariableDeclare();
     AssignVariable* ParseAssignVariable();
     IFStatement* ParseIFStatement();
+    WhileStatement* ParseWhileStatement();
+    GOTOStatement* ParseGOTOStatement(int callf);
     PrintStatement* ParsePrintStatement();
     Expression* ParseExpression();
     Expression* ParseAddSubExpression();

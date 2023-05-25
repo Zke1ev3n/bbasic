@@ -88,6 +88,19 @@ void CodeGen::VisitProgram(Program *node) {
 
 void CodeGen::VisitLine(Line *node) {
     //TODO make label
+    string s = node->label();
+    if(s != ""){
+        //TODO 检测是否定义过
+        if (labels.Id((char*)s.c_str())>=0) {
+            //iserr<<"Label had already been defined";
+        }
+        //labels.Add(label.c_str(), node->)
+//        if (FunPoint==NULL) label.VarArg("LABEL_%s",s);
+//        else label.VarArg("LABEL_%s_%s",FunPoint->name.GetString(),s);
+//        Output<<label.GetString()<<":\n";
+        string label = Utils::FormatString("LABEL_%s", s.c_str());
+        stream_ << label << ":\n";
+    }
     visit(node->statement());
 }
 
@@ -100,18 +113,22 @@ void CodeGen::VisitVariableDeclaration(VariableDeclaration* node) {
 
 void CodeGen::VisitPrintStatement(PrintStatement *node) {
     for(int i = 0; i < node->expressions().size(); i++){
-        visit(node->expressions()[i]);
-        stream_<<"POP r3\n";
-        //TODO 输出单个字符
-        if(node->expressions()[i]->expr_type() == ES_IMMINT) {
-            stream_ << "OUT 3,r3\n";
-        }
-        else if(node->expressions()[i]->expr_type() == ES_IMMFLOAT){
-            stream_ << "OUT 5,r3\n";
-        }
-        else if(node->expressions()[i]->expr_type() == ES_VARSTRING) {
-            stream_ << "OUT 2,r3\n";
-            stream_ << "IN r3,8\n";
+        if(node->expressions()[i]->type() == ASTNodeType::Literal){
+
+        }else{
+            visit(node->expressions()[i]);
+            stream_<<"POP r3\n";
+            //TODO 输出单个字符
+            if(node->expressions()[i]->expr_type() == ES_IMMINT) {
+                stream_ << "OUT 3,r3\n";
+            }
+            else if(node->expressions()[i]->expr_type() == ES_IMMFLOAT){
+                stream_ << "OUT 5,r3\n";
+            }
+            else if(node->expressions()[i]->expr_type() == ES_VARSTRING) {
+                stream_ << "OUT 2,r3\n";
+                stream_ << "IN r3,8\n";
+            }
         }
     }
 }
@@ -134,6 +151,34 @@ void CodeGen::VisitIFStatement(IFStatement* node) {
     }
 
     stream_<<Utils::FormatString("LABEL%ld:\t; End of If\n",LabelEndif);
+}
+
+void CodeGen::VisitWhileStatement(WhileStatement *node) {
+    long WStart=LABEL_ID++;
+    long WEnd=LABEL_ID++;
+    stream_<<Utils::FormatString("LABEL%d:\t; While code\n",WStart);
+    visit(node->condition());
+    stream_<<"POP r3\n";
+    stream_<<"CMP int r3,0\n";
+    stream_<<Utils::FormatString("JPC Z LABEL%ld\n",WEnd);
+    for(int i = 0; i < node->lines().size(); i++) {
+        visit(node->lines()[i]);
+    }
+    stream_<<Utils::FormatString("JMP LABEL%d\n",WStart);
+    stream_<<Utils::FormatString("LABEL%d:\t; End of While\n",WEnd);
+}
+
+void CodeGen::VisitGOTOStatement(GOTOStatement *node) {
+    string s = node->label();
+    //TODO 检测是否定义过
+    //if(reference.Id((char*)s.c_str()) < 0) reference.Add((char*)s.c_str(), 0);
+    string label;
+    label = Utils::FormatString("LABEL_%s", s.c_str());
+    if(node->callf() == 1){
+        stream_ << "CALL " << label << "\n";
+    }else{
+        stream_ << "JMP " << label << "\n";
+    }
 }
 
 void CodeGen::VisitAssignVariable(AssignVariable *node) {
@@ -277,7 +322,7 @@ void CodeGen::VisitVariableProxy(VariableProxy *node) {
 }
 
 void CodeGen::VisitEndStatement(EndStatement* node) {
-
+    stream_ << "EXIT\n";
 }
 
 string CodeGen::GetStream() {

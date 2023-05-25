@@ -6,6 +6,18 @@
 
 #IncludeRegexTransform: 
 
+/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/assember.h
+vector
+-
+sstream
+-
+identfinder.h
+/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/identfinder.h
+stringident.h
+/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/stringident.h
+ivector.h
+/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/ivector.h
+
 /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/ast.h
 vector
 -
@@ -14,11 +26,11 @@ token.h
 symbol.h
 /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/symbol.h
 
-/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/codegen.cc
-codegen.h
-/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/codegen.h
-utils.h
-/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/utils.h
+/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/ast_dumper.h
+ostream
+-
+ast.h
+/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/ast.h
 
 /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/codegen.h
 sstream
@@ -30,9 +42,59 @@ variable_set.h
 stringident.h
 /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/stringident.h
 
+/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/exception.h
+sstream
+-
+string
+-
+token.h
+/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/token.h
+
+/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/identfinder.h
+ivector.h
+/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/ivector.h
+
 /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/ilister.h
 
 /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/ivector.h
+
+/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/lexer.h
+string
+-
+fstream
+-
+istream
+-
+token.h
+/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/token.h
+
+/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/main.cc
+fstream
+-
+iostream
+-
+string
+-
+lexer.h
+/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/lexer.h
+parser.h
+/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/parser.h
+ast_dumper.h
+/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/ast_dumper.h
+codegen.h
+/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/codegen.h
+assember.h
+/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/assember.h
+
+/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/parser.h
+lexer.h
+/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/lexer.h
+ast.h
+/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/ast.h
+exception.h
+/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/exception.h
+symbol.h
+/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/symbol.h
 
 /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/stringident.h
 ivector.h
@@ -52,10 +114,6 @@ iostream
 string
 -
 utility
--
-
-/Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/utils.h
-string
 -
 
 /Users/liangyulin/WorkSpace/Projects/CLionProjects/bbasic/src/bbc/variable_set.h

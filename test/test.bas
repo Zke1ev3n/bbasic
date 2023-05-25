@@ -1,12 +1,12 @@
 '默认是int类型
 1 DIM I,J,AMA
 
-I = 2
+J = 1
 
-IF I > 0 THEN
-    J = I - 1
-ELSE
-    J = I + 1
+LABEL2:
+J = J + 1
+
+IF J < 20 THEN
+    GOTO LABEL2
 END IF
-
-PRINT "J=";J;
+PRINT "J=";J

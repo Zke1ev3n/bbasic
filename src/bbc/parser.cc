@@ -23,7 +23,8 @@ vector<Line*> Parser::ParseLines() {
 
     //前看，避免回溯
     //TODO 优化
-    while(LookAhead().type_ != TokenType::T_EOF && LookAhead().type_ != TokenType::T_ELSE && !(current_token_.type_ == TokenType::T_END && LookAhead().type_ == TokenType::T_IF)) {
+    while(LookAhead().type_ != TokenType::T_EOF && LookAhead().type_ != TokenType::T_ELSE &&
+            !(current_token_.type_ == TokenType::T_END && LookAhead().type_ == TokenType::T_IF) && current_token_.type_ != TokenType::T_WEND) {
         Line* line = ParseLine();
         if(line) {
             lines.push_back(line);
@@ -49,7 +50,17 @@ Line* Parser::ParseLine() {
         if(statement){
             line = new Line(statement, line_number);
         }
-    }else {
+    }else if(current_token_.type_ == TokenType::T_IDENTIFIER && LookAhead().type_ == TokenType::T_COLON){
+        string label = current_token_.lexeme_;
+        NextToken();
+        NextToken();
+        //跳过换行
+        if(current_token_.type_ == TokenType::T_EOL) NextToken();
+        Statement* statement = ParseStatement();
+        if(statement){
+            line = new Line(statement, label);
+        }
+    }else{
         Statement* statement = ParseStatement();
         if(statement){
             line = new Line(statement);
@@ -57,7 +68,8 @@ Line* Parser::ParseLine() {
     }
 
     //TODO 优化
-    if(current_token_.type_ != TokenType::T_EOL && current_token_.type_ != TokenType::T_EOF && current_token_.type_ != TokenType::T_END) {
+    if(current_token_.type_ != TokenType::T_EOL && current_token_.type_ != TokenType::T_EOF
+    && current_token_.type_ != TokenType::T_END && current_token_.type_ != TokenType::T_WEND) {
         throw CompileException("except EOL", current_token_);
     }
 
@@ -67,8 +79,16 @@ Line* Parser::ParseLine() {
 Statement* Parser::ParseStatement() {
     Statement* statement = nullptr;
     switch(current_token_.type_) {
+        case TokenType::T_WHILE:
+            statement = ParseWhileStatement();
+            break;
         case TokenType::T_IF:
             statement = ParseIFStatement();
+            break;
+        case TokenType::T_ELSE:
+            break;
+        case TokenType::T_GOTO:
+            statement = ParseGOTOStatement(0);
             break;
         case TokenType::T_DIM:
             statement = ParseVariableDeclare();
@@ -78,6 +98,8 @@ Statement* Parser::ParseStatement() {
             break;
         case TokenType::T_PRINT:
             statement = ParsePrintStatement();
+            break;
+        case TokenType::T_WEND:
             break;
         case TokenType::T_END:
             if(LookAhead().type_ == TokenType::T_IF) {
@@ -145,8 +167,8 @@ func(1,2)
 */
 AssignVariable* Parser::ParseAssignVariable() {
     VariableProxy* var;
-    //当前仅支持int
-    //int type = GetVariableType();
+
+    //if(current_token_.type_ == )
 
     var = LocalVariable();
     NextToken();
@@ -160,12 +182,14 @@ PrintStatement* Parser::ParsePrintStatement() {
     NextToken();
     while(true) {
         if(current_token_.type_ == TokenType::T_EOL || current_token_.type_ == TokenType::T_EOF) {
-            //直接换行
-            expressions.push_back(new LiteralString("\n"));
+            //0是换行，1是制表
+            expressions.push_back(new Literal(0));
             break;
         }
+        //:
         if(current_token_.type_ == TokenType::T_COLON) {
-            expressions.push_back(new LiteralString("\n"));
+            //expressions.push_back(new LiteralString("\n"));
+            expressions.push_back(new Literal(0));
             break;
         }
         //;
@@ -178,14 +202,16 @@ PrintStatement* Parser::ParsePrintStatement() {
         //,
         else if(current_token_.type_ == TokenType::T_COMMA) {
             NextToken();
-            expressions.push_back(new LiteralString("\t"));
+            //expressions.push_back(new LiteralString("\t"));
+            expressions.push_back(new Literal(1));
             if(current_token_.type_ == TokenType::T_EOL || current_token_.type_ == TokenType::T_EOF) {
                 break;
             }
         }
 
         if(current_token_.type_ == TokenType::T_EOL || current_token_.type_ == TokenType::T_EOF) {
-            expressions.push_back(new LiteralString("\n"));
+            //expressions.push_back(new LiteralString("\n"));
+            expressions.push_back(new Literal(0));
             break;
         }
 
@@ -216,7 +242,8 @@ IFStatement* Parser::ParseIFStatement() {
         then_lines.push_back(single_line);
     }
 
-    NextToken();
+    //TODO 优化逻辑
+    if(current_token_.type_ != TokenType::T_END) NextToken();
 
     if(current_token_.type_ == TokenType::T_ELSE) {
         NextToken();
@@ -238,6 +265,56 @@ IFStatement* Parser::ParseIFStatement() {
     }
 
     return new IFStatement(expr, then_lines, else_lines);
+}
+
+WhileStatement* Parser::ParseWhileStatement() {
+
+    int mode =0;
+
+    vector<Line*> lines;
+
+    NextToken();
+    auto expr = ParseExpression();
+
+    /*
+     * WHILE expr : statement
+     */
+    if(current_token_.type_ == TokenType::T_COLON){
+        mode = 1;
+    } else if(current_token_.type_ == TokenType::T_EOL) {
+    }else{
+        throw CompileException("expect EOL", current_token_);
+    }
+
+    if(mode ==0){
+        lines = ParseLines();
+    }else{
+        Line* single = ParseLine();
+        lines.push_back(single);
+        NextToken();
+    }
+
+    if(current_token_.type_ != TokenType::T_WEND){
+        throw CompileException("expect WEND", current_token_);
+    }
+
+    NextToken();
+
+    return new WhileStatement(expr, lines);
+}
+
+GOTOStatement* Parser::ParseGOTOStatement(int callf) {
+    NextToken();
+    if(current_token_.type_ != TokenType::T_IDENTIFIER) {
+        throw CompileException("expect identifier", current_token_);
+    }
+
+    string label = current_token_.lexeme_;
+
+    //LABEL
+    NextToken();
+
+    return new GOTOStatement(label, callf);
 }
 
 /*

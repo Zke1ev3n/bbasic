@@ -15,7 +15,9 @@
     V(UnaryOperation)    \
     V(BinaryOperation)  \
     V(Literal)           \
-    V(LiteralString)      \
+    V(LiteralString)     \
+    V(WhileStatement)    \
+    V(GOTOStatement)     \
     V(IFStatement)       \
     V(PrintStatement)    \
     V(EndStatement)     \
@@ -56,13 +58,17 @@ class Line : public ASTNode {
 private:
     Statement* statement_;
     int line_number_;
+    string label_;
 
 public:
+    explicit Line(Statement* statement, int line_number, string label) : ASTNode(ASTNodeType::Line), statement_(statement), line_number_(line_number), label_(label) {}
+    explicit Line(Statement* statement, string label) : ASTNode(ASTNodeType::Line), statement_(statement), label_(label) {}
     explicit Line(Statement* statement, int line_number) : ASTNode(ASTNodeType::Line), statement_(statement), line_number_(line_number) {}
     explicit Line(Statement* statement) : ASTNode(ASTNodeType::Line), statement_(statement){}
 
     PROPERTY_GETTER(statement)
     PROPERTY_GETTER(line_number)
+    PROPERTY_GETTER(label)
 };
 
 class Lines : public ASTNode {
@@ -234,10 +240,47 @@ public:
     PROPERTY_GETTER(else_lines)
 };
 
+class WhileStatement : public Statement {
+    Expression *condition_;
+    vector<Line*> lines_;
+
+public:
+    WhileStatement(Expression *condition, vector<Line*> lines) : Statement(ASTNodeType::WhileStatement),
+    condition_(std::move(condition)), lines_(std::move(lines)){}
+
+    ~WhileStatement() final{
+        delete condition_;
+        for(auto line : lines_) {
+            delete line;
+        }
+    }
+
+    PROPERTY_GETTER(condition)
+
+    PROPERTY_GETTER(lines)
+
+};
+
+class GOTOStatement : public Statement {
+    int callf_;
+    string label_;
+public:
+    GOTOStatement(string label, int callf) : Statement(ASTNodeType::GOTOStatement), label_(label), callf_(callf) {}
+
+    ~GOTOStatement() final {
+    }
+
+    PROPERTY_GETTER(callf)
+    PROPERTY_GETTER(label)
+
+};
+
 class PrintStatement : public Statement {
     vector<Expression*> expressions_;
+
 public:
-    PrintStatement(vector<Expression*> expressions) : Statement(ASTNodeType::PrintStatement), expressions_(std::move(expressions)) {}
+    PrintStatement(vector<Expression*> expressions) : Statement(ASTNodeType::PrintStatement),
+    expressions_(std::move(expressions)) {}
 
     ~PrintStatement() final {
         for(auto expression : expressions_)  delete expression;

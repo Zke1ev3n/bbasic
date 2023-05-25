@@ -1,12 +1,23 @@
 '默认是int类型
 1 DIM I,J,AMA
+'int类型赋值
+J = 1
 
-I = 499
+'label
+LABEL2:
+'简单的表达式
+J = J + 1
 
-IF I > 0 THEN
-    J = I - 1
-ELSE
-    J = I + 1
-END IF
+'IF 语句
+' IF J < 20 THEN
+'     PRINT "J=";J
+'     J = J + 1
+'     GOTO LABEL2
+' END IF
+WHILE J < 20
+    PRINT "J=";J
+    J = J + 1
+WEND
 
-PRINT "J=";J;
+'PRINT语句
+PRINT "J=";J

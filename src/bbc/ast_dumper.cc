@@ -15,6 +15,14 @@ void ASTDumper::VisitProgram(Program *node) {
 void ASTDumper::VisitLine(Line *node) {
     out_ << "line";
     begin_block();
+    if(node->line_number() != 0) {
+        end_line();
+        out_ << "line_number = " << node->line_number();
+    }
+    if(node->label() != ""){
+        end_line();
+        out_ << "label = " << node->label();
+    }
     end_line();
     visit(node->statement());
     end_block();
@@ -122,6 +130,31 @@ void ASTDumper::VisitIFStatement(IFStatement *node) {
     }
     end_block();
 }
+
+void ASTDumper::VisitWhileStatement(WhileStatement *node) {
+    out_ << "while";
+    begin_block();
+    end_line();
+    out_ << "condition = ";
+    visit(node->condition());
+    end_line();
+    out_ << "lines = ";
+
+    begin_block();
+    end_line();
+    for(auto line : node->lines()){
+        VisitLine(line);
+        end_line();
+    }
+    end_block();
+
+    end_block();
+}
+
+void ASTDumper::VisitGOTOStatement(GOTOStatement *node) {
+    out_ << "goto" << node->label();
+}
+
 
 void ASTDumper::VisitEndStatement(EndStatement *node) {
     out_ << "end";
